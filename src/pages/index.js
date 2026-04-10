@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import ImageCarousel from '../components/ImageCarousel';
 
 export default function Home() {
   return (
@@ -60,7 +61,7 @@ export default function Home() {
           <span className="ql-about__dot">◆</span>
           <span>Speakerin</span>
           <span className="ql-about__dot">◆</span>
-          <span>FitnessVitalcoach</span>
+          <span>Fitness- &Vitalcoach</span>
         </div>
 
         {/* ——————————————————————————————————————————————
@@ -69,11 +70,7 @@ export default function Home() {
         <section className="ql-section" id="profil">
           <div className="ql-about">
             <div className="ql-about__image">
-              <img
-                src="/img/steffi_professionell.jpg"
-                alt="Dr. Stefanie Schinnerl"
-                loading="lazy"
-              />
+              <ImageCarousel />
             </div>
             <div className="ql-about__text">
               <p className="ql-section__label">Über mich</p>

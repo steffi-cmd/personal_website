@@ -230,9 +230,10 @@ footer.footer {
 .ql-section__text {
   font-family: var(--font-sans);
   font-size: 0.95rem;
-  line-height: 1.8;
+  line-height: 1.85;
   color: var(--color-text);
   max-width: 600px;
+  margin-bottom: 1.5rem;
 }
 
 /* Centered section variant */
@@ -257,9 +258,19 @@ footer.footer {
    ============================================= */
 .ql-about {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+  grid-template-columns: 1fr 1fr; /* Balanced so text isn't crushed */
+  gap: 4rem; /* Perfect luxury whitespace */
+  align-items: center; /* Harmonious vertical balance */
+  padding: 3rem 0;
+}
+
+.ql-about__image {
+  position: relative;
+}
+
+.ql-about__text {
+  padding: 0;
+  position: relative;
 }
 
 .ql-about__image img {
@@ -270,44 +281,50 @@ footer.footer {
 
 .ql-about__name {
   font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 400;
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 300;
   color: var(--color-dark);
-  margin: 0 0 0.75rem;
-  line-height: 1.2;
+  margin: 0 0 1rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .ql-about__roles {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.65rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--color-muted);
-  margin: 0 0 2rem;
+  letter-spacing: 0.25em;
+  color: var(--color-accent);
+  margin: 0 0 2.5rem;
 }
 
 .ql-about__dot {
-  color: var(--color-accent);
-  margin: 0 0.4rem;
-  font-size: 0.5rem;
+  color: rgba(0, 0, 0, 0.15);
+  margin: 0 0.6rem;
+  font-size: 0.4rem;
   vertical-align: middle;
 }
 
 .ql-about__headline {
   font-family: var(--font-serif);
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 400;
   font-style: italic;
   color: var(--color-dark);
   margin: 0 0 1.5rem;
+  border-left: 2px solid var(--color-accent);
+  padding-left: 1.2rem;
 }
 
 .ql-about__signature {
   font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-style: italic;
+  font-weight: 300;
   color: var(--color-accent);
-  margin-top: 2rem;
+  margin-top: 3rem;
+  opacity: 0.9;
 }
 
 /* =============================================
@@ -676,8 +693,16 @@ footer.footer {
 
   /* About */
   .ql-about {
+    display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 3rem;
+    padding: 0;
+  }
+
+  .ql-about__text {
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   /* Zwei Welten */
