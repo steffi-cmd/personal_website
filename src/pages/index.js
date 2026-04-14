@@ -17,7 +17,7 @@ export default function Home() {
           <ul className="ql-navbar__links">
             <li><a href="#profil">Profil</a></li>
             <li><a href="#zwei-welten">Zwei Welten</a></li>
-            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#engagement">Engagement</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
           </ul>
         </nav>
@@ -109,7 +109,18 @@ export default function Home() {
         <section className="ql-section ql-section--centered" id="zwei-welten">
           <div className="ql-section__inner">
             <p className="ql-section__label">Meine Expertise</p>
-            <h2 className="ql-section__title">Zwei Welten. Eine Vision.</h2>
+            <h2 className="ql-section__title" style={{ marginBottom: '1.5rem' }}>Zwei Welten. Eine Vision.</h2>
+            <p className="ql-section__text" style={{ margin: '0 auto 1.5rem auto', maxWidth: '650px' }}>
+              Wirtschaftliche Exzellenz und persönliche Vitalität sind keine Gegensätze, 
+              sondern bedingen einander. Wer dauerhaft auf höchstem Niveau <em>performen</em> will, 
+              braucht ein unerschütterliches physisches und mentales Fundament. Meine Vision ist es, 
+              diese beiden Welten zu vereinen – für nachhaltige High-Performance und Leadership, 
+              das von innen kommt.
+            </p>
+            <p className="ql-section__text" style={{ margin: '0 auto 4rem auto', maxWidth: '650px', fontStyle: 'italic', opacity: 0.85 }}>
+              Diese gelebte Dualität bildet das Fundament meiner Arbeit und spiegelt sich direkt in 
+              meinen Ausbildungen und Kernkompetenzen wider:
+            </p>
 
             <div className="ql-worlds">
               {/* Business Karte */}
@@ -198,11 +209,11 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ⑤ EXPERTISE & ENGAGEMENT – Wo bist du sichtbar?
+            ⑤ ENGAGEMENT – Wo bist du sichtbar?
            —————————————————————————————————————————————— */}
-        <section className="ql-section ql-section--centered" id="expertise">
+        <section className="ql-section ql-section--centered" id="engagement">
           <div className="ql-section__inner">
-            <p className="ql-section__label">Expertise &amp; Engagement</p>
+            <p className="ql-section__label">Mein Engagement</p>
             <h2 className="ql-section__title">Sichtbar &amp; Engagiert</h2>
             <div className="ql-engagement">
               <article className="ql-engagement__card">
@@ -283,10 +294,14 @@ export default function Home() {
             </p>
           </div>
           <div className="ql-quote-band__item ql-quote-band__item--image">
-            <img
-              src="/img/Schinnerl Stefanie_Original.jpg"
-              alt="Dr. Stefanie Schinnerl"
-              loading="lazy"
+            <ImageCarousel 
+              variant="fill"
+              images={[
+                '/img/steffi_professionell.jpg',
+                '/img/IMG_3690.jpg',
+                '/img/IMG_5878.JPG',
+                '/img/unnamed.jpg'
+              ]} 
             />
           </div>
           <div className="ql-quote-band__item ql-quote-band__item--quote">

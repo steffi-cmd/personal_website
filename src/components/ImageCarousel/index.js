@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styles from './styles.module.css';
 
-const slides = [
+const defaultSlides = [
   {
     id: 0,
     src: '/img/steffi_professionell.jpg',
@@ -20,7 +20,11 @@ const slides = [
   },
 ];
 
-export default function ImageCarousel() {
+export default function ImageCarousel({ images, variant = 'default' }) {
+  const slides = images && images.length > 0
+    ? images.map((src, idx) => ({ id: idx, src }))
+    : defaultSlides;
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToSlide = useCallback((index) => {
@@ -35,16 +39,10 @@ export default function ImageCarousel() {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   }, []);
 
-  // Optional: Auto-play functionality (can be uncommented if user wants it later)
-  // useEffect(() => {
-  //   const interval = setInterval(nextSlide, 5000);
-  //   return () => clearInterval(interval);
-  // }, [nextSlide]);
-
   return (
-    <div className={styles.carouselContainer}>
+    <div className={`${styles.carouselContainer} ${variant === 'fill' ? styles.fillContainer : ''}`}>
       {/* Main Large Image */}
-      <div className={styles.mainSlide}>
+      <div className={`${styles.mainSlide} ${variant === 'fill' ? styles.fillSlide : ''}`}>
         {slides.map((slide, idx) => {
           const isActive = idx === currentIndex;
           return (
@@ -85,30 +83,34 @@ export default function ImageCarousel() {
       </div>
 
       {/* Dots underneath main image */}
-      <div className={styles.dots}>
-        {slides.map((slide, idx) => (
-          <button
-            key={`dot-${slide.id}`}
-            className={`${styles.dot} ${idx === currentIndex ? styles.active : ''}`}
-            onClick={() => goToSlide(idx)}
-            aria-label={`Gehe zu Slide ${idx + 1}`}
-          />
-        ))}
-      </div>
+      {variant !== 'fill' && (
+        <div className={styles.dots}>
+          {slides.map((slide, idx) => (
+            <button
+              key={`dot-${slide.id}`}
+              className={`${styles.dot} ${idx === currentIndex ? styles.active : ''}`}
+              onClick={() => goToSlide(idx)}
+              aria-label={`Gehe zu Slide ${idx + 1}`}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Thumbnails */}
-      <div className={styles.thumbnails}>
-        {slides.map((slide, idx) => (
-          <button
-            key={`thumb-${slide.id}`}
-            className={`${styles.thumbBtn} ${idx === currentIndex ? styles.active : ''}`}
-            onClick={() => goToSlide(idx)}
-            aria-label={`Vorschau für Bild ${idx + 1}`}
-          >
-            <img src={slide.src} alt={`Thumbnail ${idx + 1}`} className={styles.thumbImage} loading="lazy" />
-          </button>
-        ))}
-      </div>
+      {variant !== 'fill' && (
+        <div className={styles.thumbnails}>
+          {slides.map((slide, idx) => (
+            <button
+              key={`thumb-${slide.id}`}
+              className={`${styles.thumbBtn} ${idx === currentIndex ? styles.active : ''}`}
+              onClick={() => goToSlide(idx)}
+              aria-label={`Vorschau für Bild ${idx + 1}`}
+            >
+              <img src={slide.src} alt={`Thumbnail ${idx + 1}`} className={styles.thumbImage} loading="lazy" />
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

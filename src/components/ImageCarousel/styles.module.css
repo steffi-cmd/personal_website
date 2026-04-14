@@ -166,8 +166,22 @@
 
 /* Responsive Scaling */
 @media (max-width: 768px) {
-  .thumbBtn {
-    width: 60px;
-    height: 60px;
+  .ql-hero__content {
+    align-self: flex-end;
+    padding-bottom: 3rem;
   }
+}
+
+/* ——— Fill Variant for Quote Band ——— */
+.fillContainer {
+  max-width: none;
+  height: 100%;
+  margin: 0;
+  gap: 0;
+}
+
+.fillSlide {
+  aspect-ratio: auto;
+  height: 100%;
+  border-radius: 0;
 }
