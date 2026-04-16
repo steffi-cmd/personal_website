@@ -185,3 +185,7 @@
   height: 100%;
   border-radius: 0;
 }
+
+.fillSlide .slideImage {
+  object-position: center 25%; /* Bias towards upper part showing faces */
+}

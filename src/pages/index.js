@@ -214,7 +214,10 @@ export default function Home() {
         <section className="ql-section ql-section--centered" id="engagement">
           <div className="ql-section__inner">
             <p className="ql-section__label">Mein Engagement</p>
-            <h2 className="ql-section__title">Sichtbar &amp; Engagiert</h2>
+            <h2 className="ql-section__title" style={{ marginBottom: '1.5rem' }}>Sichtbar &amp; Engagiert</h2>
+            <p className="ql-section__text" style={{ margin: '0 auto 4rem auto', maxWidth: '700px' }}>
+              Meine Arbeit endet nicht am Schreibtisch. Die Verbindung aus strategischer Exzellenz, wissenschaftlichem Fundament und ganzheitlicher Vitalität ist für mich gelebte Praxis. Dieser Abschnitt bietet Ihnen einen konkreten Einblick in mein Portfolio und bisheriges Schaffen. Von Podcast-Interviews und Speaker-Auftritten über Fachpublikationen bis hin zu meiner aktiven Rolle in Netzwerken und als Mentorin: Hier finden Sie gebündelte Referenzen und aktuelle Projekte, die zeigen, wie und wo ich meine Expertise konkret in die Tat umsetze.
+            </p>
             <div className="ql-engagement">
               <article className="ql-engagement__card">
                 <div className="ql-engagement__icon">
@@ -227,8 +230,9 @@ export default function Home() {
                   </svg>
                 </div>
                 <h3>Media</h3>
-                <p>Der Standard Podcast: Frauen in Führung →</p>
-                <p>Women in Law: 10-Jahres-Jubiläumsinterview →</p>
+                <p><a href="https://www.derstandard.at/story/3000000208394/frauen-in-fuehrungspositionen" target="_blank" rel="noopener noreferrer">Der Standard Podcast: Frauen in Führung →</a></p>
+                <p><a href="https://women-in-law.org/2025/02/16/10-jahre-women-in-law-jubilaeum-stefanie-schinnerl-im-interview/" target="_blank" rel="noopener noreferrer">Women in Law: 10-Jahres-Jubiläumsinterview →</a></p>
+                <p><a href="https://taxtech.at/3-fragen-an-unsere-ttk26-speakerinnen-stefanie-schinnerl/" target="_blank" rel="noopener noreferrer">Tax Tech Konferenz 2026: Speaker-Interview →</a></p>
                 <span className="ql-engagement__sub">Expertise teilen &amp; Sichtbarkeit schaffen</span>
               </article>
 
@@ -242,8 +246,8 @@ export default function Home() {
                   </svg>
                 </div>
                 <h3>Networks</h3>
-                <p>Austrian Experts: Vorstand &amp; Video-Beitrag →</p>
-                <p>Young CEPLIS: International Reports &amp; Hosting →</p>
+                <p><a href="https://www.youtube.com/watch?v=1vVHKa60oHY" target="_blank" rel="noopener noreferrer">Austrian Experts: Vorstand &amp; Video-Beitrag →</a></p>
+                <p><a href="https://www.freie-berufe.at/hosting-ceplis-2024/" target="_blank" rel="noopener noreferrer">Young CEPLIS: International Reports &amp; Hosting →</a></p>
                 <span className="ql-engagement__sub">Netzwerke stärken &amp; Brücken bauen</span>
               </article>
 
@@ -260,8 +264,9 @@ export default function Home() {
                   </svg>
                 </div>
                 <h3>Mentoring</h3>
-                <p>Women in Tax &amp; AI: Die Zukunft der KI →</p>
-                <p>BDO Frauennetzwerk: Kooperations-Lead →</p>
+                <p><a href="https://women-in-law.org/2024/02/26/women-in-law-the-future-of-ai-in-tax/" target="_blank" rel="noopener noreferrer">Women in Tax &amp; AI: Die Zukunft der KI →</a></p>
+                <p><a href="https://women-in-law.org/2024/01/03/dr-stefanie-schinnerl-im-interview/" target="_blank" rel="noopener noreferrer">Mentoring-Programm: Interview →</a></p>
+                <p><a href="https://women-in-law.org/2024/01/22/unser-jahrespartner-bdo-austria-hat-ein-eigenes-frauennetzwerk-etabliert/" target="_blank" rel="noopener noreferrer">BDO Frauennetzwerk: Kooperations-Lead →</a></p>
                 <span className="ql-engagement__sub">Zukunft gestalten &amp; Potenziale fördern</span>
               </article>
 
@@ -274,8 +279,8 @@ export default function Home() {
                   </svg>
                 </div>
                 <h3>Research</h3>
-                <p>Tax Moot Court: Weltspitze mit dem WU-Team →</p>
-                <p>WU Wien: Ehemalige Mitarbeiterin →</p>
+                <p><a href="https://www.diepresse.com/5197618/erneut-ein-wu-team-an-der-weltspitze" target="_blank" rel="noopener noreferrer">Tax Moot Court: Weltspitze mit dem WU-Team →</a></p>
+                <p><a href="https://www.wu.ac.at/am/ehemalige-mitarbeiterinnen/stefanie-schinnerl" target="_blank" rel="noopener noreferrer">WU Wien: Ehemalige Mitarbeiterin →</a></p>
                 <span className="ql-engagement__sub">Wissen vertiefen &amp; Fundamente setzen</span>
               </article>
             </div>
@@ -283,17 +288,29 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ⑥ ZITAT-BAND – Emotionaler Anker
+            ⑥ EDITORIAL GALLERY – Emotionaler Anker
            —————————————————————————————————————————————— */}
-        <section className="ql-quote-band">
-          <div className="ql-quote-band__item ql-quote-band__item--quote">
-            <span className="ql-quote-band__mark">"</span>
-            <p>
-              Wahre Stärke zeigt sich nicht darin, nie zu fallen – sondern
-              darin, jedes Mal bewusster aufzustehen.
-            </p>
+        <section className="ql-editorial-gallery">
+          <div className="ql-editorial-gallery__quotes">
+            <div className="ql-editorial-gallery__quote">
+              <span className="ql-quote-mark">"</span>
+              <p>
+                Wahre Stärke zeigt sich nicht darin, nie zu fallen – sondern
+                darin, jedes Mal bewusster aufzustehen.
+              </p>
+            </div>
+            
+            <div className="ql-editorial-gallery__divider"></div>
+            
+            <div className="ql-editorial-gallery__quote">
+              <span className="ql-quote-mark">"</span>
+              <p>
+                You never regret investing in yourself.
+              </p>
+            </div>
           </div>
-          <div className="ql-quote-band__item ql-quote-band__item--image">
+
+          <div className="ql-editorial-gallery__media">
             <ImageCarousel 
               variant="fill"
               images={[
@@ -303,12 +320,6 @@ export default function Home() {
                 '/img/unnamed.jpg'
               ]} 
             />
-          </div>
-          <div className="ql-quote-band__item ql-quote-band__item--quote">
-            <span className="ql-quote-band__mark">"</span>
-            <p>
-              You never regret investing in yourself.
-            </p>
           </div>
         </section>
 
@@ -321,14 +332,15 @@ export default function Home() {
             <h2 className="ql-section__title">Lassen Sie uns sprechen.</h2>
             <p className="ql-section__text">
               Ob Steuerberatung, Coaching, Moderation oder Fachbeitrag –
-              ich freue mich auf Ihre Anfrage.
+              ich freue mich auf Ihre Anfrage. Ich melde mich daraufhin gerne per E-Mail oder telefonisch bei Ihnen.
             </p>
             <form className="ql-contact__form" onSubmit={(e) => e.preventDefault()}>
               <input type="text" name="name" placeholder="Name" required />
               <input type="email" name="email" placeholder="E-Mail" required />
+              <input type="tel" name="phone" placeholder="Telefonnummer (optional)" />
               <select name="inquiry" defaultValue="" required>
                 <option value="" disabled>
-                  Anfrage für …
+                  Themenbereich auswählen …
                 </option>
                 <option value="steuerberatung">Steuerberatung</option>
                 <option value="coaching">Coaching / Training</option>
@@ -337,6 +349,7 @@ export default function Home() {
                 <option value="fachbeitrag">Fachbeitrag</option>
                 <option value="sonstiges">Sonstiges</option>
               </select>
+              <textarea name="message" placeholder="Ihre Nachricht – worum geht es konkret?" rows="5" required></textarea>
               <button type="submit" className="ql-btn">
                 Anfrage senden
               </button>
