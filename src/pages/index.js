@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '@theme/Layout';
 import ImageCarousel from '../components/ImageCarousel';
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const closeMenu = () => setIsMobileMenuOpen(false);
+
   return (
     <Layout
       title="Strategie & Resilienz"
@@ -10,15 +14,22 @@ export default function Home() {
     >
       {/* ——— NAVBAR ——— */}
       <header className="ql-navbar">
-        <a href="#home" className="ql-navbar__brand">
+        <a href="#home" className="ql-navbar__brand" onClick={closeMenu}>
           Dr. Stefanie Schinnerl
         </a>
-        <nav>
+        <button
+          className={`ql-navbar__toggle ${isMobileMenuOpen ? 'ql-navbar__toggle--open' : ''}`}
+          onClick={toggleMenu}
+          aria-label="Menü öffnen"
+        >
+          <span className="ql-navbar__toggle-icon"></span>
+        </button>
+        <nav className={`ql-navbar__nav ${isMobileMenuOpen ? 'ql-navbar__nav--open' : ''}`}>
           <ul className="ql-navbar__links">
-            <li><a href="#profil">Profil</a></li>
-            <li><a href="#zwei-welten">Zwei Welten</a></li>
-            <li><a href="#engagement">Engagement</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
+            <li><a href="#profil" onClick={closeMenu}>Profil</a></li>
+            <li><a href="#zwei-welten" onClick={closeMenu}>Zwei Welten</a></li>
+            <li><a href="#engagement" onClick={closeMenu}>Engagement</a></li>
+            <li><a href="#kontakt" onClick={closeMenu}>Kontakt</a></li>
           </ul>
         </nav>
       </header>
@@ -61,7 +72,7 @@ export default function Home() {
           <span className="ql-about__dot">◆</span>
           <span>Speakerin</span>
           <span className="ql-about__dot">◆</span>
-          <span>Fitness- &Vitalcoach</span>
+          <span>Fitness- & Vitalcoach</span>
         </div>
 
         {/* ——————————————————————————————————————————————
@@ -83,17 +94,19 @@ export default function Home() {
               </p>
               <h3 className="ql-about__headline">Zwei Welten, eine Haltung.</h3>
               <p className="ql-section__text">
-                Ich kenne die Anforderungen des echten Business-Alltags, die Deadlines, den Druck und die Erwartungshaltung. Als promovierte Wirtschaftswissenschaftlerin und Steuerberaterin mit langjähriger Kanzleierfahrung und heute bei BDO weiß ich, was es bedeutet, in diesem Umfeld dauerhaft zu <em>performen.</em> {' '}
-                {' '}
+                Ich kenne die Anforderungen des echten Business-Alltags, die Deadlines, den Druck und die Erwartungshaltung. Als Steuerberaterin bei BDO Austria in Wien bin ich spezialisiert auf Körperschaftsteuerrecht, Umgründungen, internationales Steuerrecht und Privatstiftungen. Davor war ich als Universitätsassistentin an der Wirtschaftsuniversität Wien (WU) tätig, wo ich zum Thema <em>hybride Finanzierungsinstrumente und Umgründungen</em> promoviert habe.
               </p>
               <p className="ql-section__text">
-                Ich weiß aber auch, wie schnell man dabei vergisst, dass der Körper keine Maschine ist. Meine eigene Brustkrebsdiagnose hat das für mich unübersehbar gemacht. Sie hat meinen Blick auf Leistung fundamental verändert: Wahre High-Performance bedeutet nicht, sich auszubrennen, sondern die eigene Vitalität als Grundlage für alles andere zu begreifen.
+                Ich weiß aber auch, wie schnell man in einem High-Performance-Umfeld vergisst, dass der Körper keine Maschine ist. Meine eigene Brustkrebsdiagnose hat das für mich unübersehbar gemacht und meinen Blick auf Leistung fundamental verändert: Wahre Stärke bedeutet nicht, sich auszubrennen, sondern die eigene Vitalität als unverzichtbare Grundlage für alles andere zu begreifen.
               </p>
               <p className="ql-section__text">
-                Diesen Ansatz lebe ich. Neben meiner Kanzleitätigkeit bin ich zertifizierte Trainerin in mehreren Disziplinen, von Yoga und Barre bis Gruppenfitness, und ausgebildete Fitness- und Vitalcoach. Bewegung, Resilienz und gesunde Leistungsfähigkeit sind für mich kein Widerspruch zur Karriere. Sie sind deren Fundament.
+                Diesen Ansatz lebe ich. Neben meiner Kanzleitätigkeit bin ich seit 2021 als freiberufliche Fitnesstrainerin und Vitalcoach tätig (u.a. im Turnsaal-Women und im GK-Studio). Bewegung, Resilienz und gesunde Leistungsfähigkeit sind für mich kein Widerspruch zur Karriere, sondern deren Fundament.
               </p>
               <p className="ql-section__text">
-                Darüber hinaus engagiere ich mich für Themen, die über den Schreibtisch hinausgehen, vor allem für Gleichstellung und die Sichtbarkeit von Frauen in Wirtschaft und Gesellschaft.
+                Dieses ganzheitliche Verständnis prägte bis zu meiner Diagnose auch Formate jenseits des Schreibtisches: Etwa durch die Gründung des CSR-Projekts <em>Fit4Donation</em> bei BDO, mein ehrenamtliches Engagement im Diversity-Arbeitskreis der Kammer der Steuerberater:innen und Wirtschaftsprüfer:innen (KSW) und beim European Council of the Liberal Professions (CEPLIS) oder durch meine Berufung in den Vorstand von Austrian Experts.
+              </p>
+              <p className="ql-section__text">
+                Im Zuge meiner Erkrankung habe ich diese ehrenamtlichen Funktionen beendet oder niedergelegt. Auch wenn derzeit noch offen ist, in welcher Form ich mich in Zukunft wieder engagiere, bleibt meine Grundüberzeugung unverändert: Nachhaltiges Wirtschaften und echtes Leadership erfordern immer auch den Einsatz für Gleichstellung und Diversität.
               </p>
               <p className="ql-section__text">
                 Das alles formt, wer ich bin und was ich in eine Beratung, einen Vortrag oder einen Raum mitbringe.
@@ -109,16 +122,16 @@ export default function Home() {
         <section className="ql-section ql-section--centered" id="zwei-welten">
           <div className="ql-section__inner">
             <p className="ql-section__label">Meine Expertise</p>
-            <h2 className="ql-section__title" style={{ marginBottom: '1.5rem' }}>Zwei Welten. Eine Vision.</h2>
-            <p className="ql-section__text" style={{ margin: '0 auto 1.5rem auto', maxWidth: '650px' }}>
-              Wirtschaftliche Exzellenz und persönliche Vitalität sind keine Gegensätze, 
-              sondern bedingen einander. Wer dauerhaft auf höchstem Niveau <em>performen</em> will, 
-              braucht ein unerschütterliches physisches und mentales Fundament. Meine Vision ist es, 
-              diese beiden Welten zu vereinen – für nachhaltige High-Performance und Leadership, 
+            <h2 className="ql-section__title ql-section__title--mb">Zwei Welten. Eine Vision.</h2>
+            <p className="ql-section__text ql-section__text--intro">
+              Wirtschaftliche Exzellenz und persönliche Vitalität sind keine Gegensätze,
+              sondern bedingen einander. Wer dauerhaft auf höchstem Niveau <em>performen</em> will,
+              braucht ein unerschütterliches physisches und mentales Fundament. Meine Vision ist es,
+              diese beiden Welten zu vereinen – für nachhaltige High-Performance und Leadership,
               das von innen kommt.
             </p>
-            <p className="ql-section__text" style={{ margin: '0 auto 4rem auto', maxWidth: '650px', fontStyle: 'italic', opacity: 0.85 }}>
-              Diese gelebte Dualität bildet das Fundament meiner Arbeit und spiegelt sich direkt in 
+            <p className="ql-section__text ql-section__text--intro-italic">
+              Diese gelebte Dualität bildet das Fundament meiner Arbeit und spiegelt sich direkt in
               meinen Ausbildungen und Kernkompetenzen wider:
             </p>
 
@@ -145,19 +158,28 @@ export default function Home() {
                   <ul>
                     <li>Steuerberaterin</li>
                     <li>Dr. in Wirtschafts- &amp; Sozialwissenschaften (WU Wien)</li>
-                    <li>MSc in Steuern &amp; Rechnungslegung</li>
-                    <li>Autorin von Fachbeiträgen (LexisNexis, Linde, RDB)</li>
-                    <li>Fachvortragende</li>
+                    <li>MSc in Steuern &amp; Rechnungslegung (WU Wien)</li>
+                    <li>BSc in Wirtschafts- &amp; Sozialwissenschaften (WU Wien)</li>
                   </ul>
                 </div>
 
                 <div className="ql-worlds__section">
-                  <h4>Was ich anbiete</h4>
+                  <h4 style={{ marginBottom: '0.2rem' }}>Strategische Steuerberatung</h4>
+                  <p style={{ fontWeight: 'normal', fontSize: '0.75rem', color: 'var(--color-muted)', fontStyle: 'italic', marginBottom: '0.8rem', lineHeight: 1.3 }}>
+                    (Als Tax Manager im Corporate Tax Expert Center, BDO Austria)
+                  </p>
                   <ul className="ql-worlds__offers">
-                    <li>Strategische Steuerberatung</li>
-                    <li>Fachvorträge &amp; Keynotes</li>
-                    <li>Moderation &amp; Hosting</li>
-                    <li>Interviews &amp; Fachbeiträge</li>
+                    <li style={{ lineHeight: 1.4, paddingBottom: '0.3rem' }}>Konzernstrukturberatung</li>
+                    <li style={{ lineHeight: 1.4, paddingBottom: '0.3rem' }}>Nationale &amp; internationale Umgründungen</li>
+                    <li style={{ lineHeight: 1.4, paddingBottom: '0.3rem' }}>Zu- und Wegzug (natürlich &amp; juristisch)</li>
+                    <li style={{ lineHeight: 1.4, paddingBottom: '0.3rem' }}>Privatstiftungen (AT, LI, CH) &amp; Personengesellschaften</li>
+                    <li style={{ lineHeight: 1.4, paddingBottom: '1rem' }}>Hybride Finanzierungsinstrumente</li>
+                  </ul>
+
+                  <h4>Fachkommunikation</h4>
+                  <ul className="ql-worlds__offers">
+                    <li style={{ lineHeight: 1.4, paddingBottom: '0.3rem' }}>Fachvorträge &amp; Seminare</li>
+                    <li style={{ lineHeight: 1.4 }}>Fachbeiträge &amp; Publikationen (u.a. LexisNexis, Linde, RDB)</li>
                   </ul>
                 </div>
               </article>
@@ -186,22 +208,58 @@ export default function Home() {
                 <div className="ql-worlds__section">
                   <h4>Qualifikationen</h4>
                   <ul>
-                    <li>Gesundheits- &amp; Vitalcoach i.A. (Universität Wien)</li>
+                    <li>Gesundheits- &amp; Vitalcoach (Universität Wien)</li>
                     <li>RYT-200 Ashtanga Vinyasa Yoga Teacher</li>
                     <li>Barre Revolution Instructor</li>
                     <li>PILOXING® Instructor</li>
+                    <li>Jumping Instructor</li>
                     <li>Group Fitness Instructor</li>
                   </ul>
                 </div>
 
                 <div className="ql-worlds__section">
-                  <h4>Was ich anbiete</h4>
+                  <h4>Personal Training &amp; Kurse</h4>
                   <ul className="ql-worlds__offers">
-                    <li>High-Performance Coaching</li>
-                    <li>Yoga &amp; Mobility Training</li>
-                    <li>Resilienz-Strategien</li>
-                    <li>Fitness &amp; Vitalität</li>
+                    <li>Personal Training (1:1 Betreuung)</li>
+                    <li>Yoga &amp; Pilates</li>
+                    <li>Mobility &amp; Funktionelles Training</li>
+                    <li>Group Workouts (u.a. Barre, PILOXING®)</li>
                   </ul>
+                  <p style={{ fontWeight: 'normal', fontSize: '0.8rem', color: 'var(--color-text)', marginTop: '1rem', opacity: 0.8, lineHeight: 1.4 }}>
+                    Laufende Trainings u.a. im Turnsaal-Women und im GK-Studio.
+                  </p>
+                </div>
+              </article>
+
+              {/* Speaking & Formate Karte */}
+              <article className="ql-worlds__card" style={{ gridColumn: '1 / -1', marginTop: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '3.5rem 2.5rem' }}>
+                <div className="ql-worlds__header" style={{ justifyContent: 'center', marginBottom: '1.5rem' }}>
+                  <div className="ql-worlds__icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 2a10 10 0 0 1 0 20" opacity="0.1" />
+                      <circle cx="12" cy="12" r="3" />
+                      <path d="M19 12a7 7 0 0 0-14 0" />
+                      <path d="M22 12a10 10 0 0 0-20 0" />
+                    </svg>
+                  </div>
+                  <h3 style={{ fontSize: '1.8rem' }}>Bühne &amp; Medien: Übergeordnete Formate</h3>
+                </div>
+                
+                <div style={{ maxWidth: '780px', margin: '0 auto' }}>
+                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.98rem', lineHeight: 1.8, color: 'var(--color-text)', marginBottom: '1rem' }}>
+                    Während meine steuerlichen Fachvorträge tief in die Materie eintauchen, richte ich mich in meinen <strong>Keynotes, Panels und Interviews</strong> vor allem an ein breiteres Fach- und Führungspublikum. Hier teile ich meine Erfahrungen aus der Praxis – sei es zur Stärkung von Frauen in Führungspositionen, zu Branchentrends wie KI, oder zu spezifischen gesundheitlichen Präventionsthemen.
+                  </p>
+                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.98rem', lineHeight: 1.8, color: 'var(--color-text)', marginBottom: '2.5rem' }}>
+                    Meine Vision ist es zudem, Formate an der direkten <strong>Schnittstelle beider Welten</strong> zu platzieren: Wenn Business-Exzellenz auf Vitalität trifft. Künftig möchte ich vermehrt Themen wie nachhaltiges Leadership, Resilienz im Kanzleialltag und meine ganz persönliche Geschichte vom existentiellen Rückschlag zurück zur High-Performerin auf die Bühne bringen.
+                  </p>
+                  
+                  <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', fontFamily: 'var(--font-sans)', fontSize: '0.85rem', fontWeight: 600, color: 'var(--color-dark)', textTransform: 'uppercase', letterSpacing: '0.15em', flexWrap: 'wrap' }}>
+                    <span>Keynotes</span>
+                    <span style={{ color: 'var(--color-accent)', opacity: 0.5 }}>◆</span>
+                    <span>Panel-Moderation</span>
+                    <span style={{ color: 'var(--color-accent)', opacity: 0.5 }}>◆</span>
+                    <span>Interviews &amp; Medien</span>
+                  </div>
                 </div>
               </article>
             </div>
@@ -214,9 +272,9 @@ export default function Home() {
         <section className="ql-section ql-section--centered" id="engagement">
           <div className="ql-section__inner">
             <p className="ql-section__label">Mein Engagement</p>
-            <h2 className="ql-section__title" style={{ marginBottom: '1.5rem' }}>Sichtbar &amp; Engagiert</h2>
-            <p className="ql-section__text" style={{ margin: '0 auto 4rem auto', maxWidth: '700px' }}>
-              Meine Arbeit endet nicht am Schreibtisch. Die Verbindung aus strategischer Exzellenz, wissenschaftlichem Fundament und ganzheitlicher Vitalität ist für mich gelebte Praxis. Dieser Abschnitt bietet Ihnen einen konkreten Einblick in mein Portfolio und bisheriges Schaffen. Von Podcast-Interviews und Speaker-Auftritten über Fachpublikationen bis hin zu meiner aktiven Rolle in Netzwerken und als Mentorin: Hier finden Sie gebündelte Referenzen und aktuelle Projekte, die zeigen, wie und wo ich meine Expertise konkret in die Tat umsetze.
+            <h2 className="ql-section__title ql-section__title--mb">Sichtbar &amp; Engagiert</h2>
+            <p className="ql-section__text ql-section__text--intro-wide">
+              Meine Arbeit endet nicht am Schreibtisch. Ob als Keynote-Speakerin, in Podcast-Interviews, durch Fachpublikationen oder im Rahmen gezielter Initiativen: Die Verbindung aus strategischer Exzellenz und ganzheitlicher Vitalität ist für mich gelebte Praxis. Hier finden Sie eine Auswahl bisheriger Referenzen sowie anstehender Termine, die zeigen, wie ich meine Expertise konkret umsetze.
             </p>
             <div className="ql-engagement">
               <article className="ql-engagement__card">
@@ -246,9 +304,9 @@ export default function Home() {
                   </svg>
                 </div>
                 <h3>Networks</h3>
-                <p><a href="https://www.youtube.com/watch?v=1vVHKa60oHY" target="_blank" rel="noopener noreferrer">Austrian Experts: Vorstand &amp; Video-Beitrag →</a></p>
-                <p><a href="https://www.freie-berufe.at/hosting-ceplis-2024/" target="_blank" rel="noopener noreferrer">Young CEPLIS: International Reports &amp; Hosting →</a></p>
-                <span className="ql-engagement__sub">Netzwerke stärken &amp; Brücken bauen</span>
+                <p><a href="https://www.youtube.com/watch?v=1vVHKa60oHY" target="_blank" rel="noopener noreferrer">Austrian Experts: Ehem. Board Member &amp; Video →</a></p>
+                <p><a href="https://www.freie-berufe.at/hosting-ceplis-2024/" target="_blank" rel="noopener noreferrer">CEPLIS: Ehem. Committee-Mitglied →</a></p>
+                <span className="ql-engagement__sub">Fokus auf Young Professionals &amp; Innovation</span>
               </article>
 
               <article className="ql-engagement__card">
@@ -263,10 +321,10 @@ export default function Home() {
                     <polygon points="12 8 14 12 12 16 10 12" fill="currentColor" opacity="0.25" />
                   </svg>
                 </div>
-                <h3>Mentoring</h3>
-                <p><a href="https://women-in-law.org/2024/02/26/women-in-law-the-future-of-ai-in-tax/" target="_blank" rel="noopener noreferrer">Women in Tax &amp; AI: Die Zukunft der KI →</a></p>
-                <p><a href="https://women-in-law.org/2024/01/03/dr-stefanie-schinnerl-im-interview/" target="_blank" rel="noopener noreferrer">Mentoring-Programm: Interview →</a></p>
+                <h3>Diversity &amp; Mentoring</h3>
+                <p><a href="https://women-in-law.org/2024/02/26/women-in-law-the-future-of-ai-in-tax/" target="_blank" rel="noopener noreferrer">Women in Tax &amp; AI: Panel / Mentoring →</a></p>
                 <p><a href="https://women-in-law.org/2024/01/22/unser-jahrespartner-bdo-austria-hat-ein-eigenes-frauennetzwerk-etabliert/" target="_blank" rel="noopener noreferrer">BDO Frauennetzwerk: Kooperations-Lead →</a></p>
+                <p><span style={{ color: 'var(--color-text)', opacity: 0.8, paddingLeft: '0.25rem', fontSize: '0.88rem' }}>KSW Arbeitskreis: Ehem. Mitglied (Diversity &amp; Gleichstellung)</span></p>
                 <span className="ql-engagement__sub">Zukunft gestalten &amp; Potenziale fördern</span>
               </article>
 
@@ -299,9 +357,9 @@ export default function Home() {
                 darin, jedes Mal bewusster aufzustehen.
               </p>
             </div>
-            
+
             <div className="ql-editorial-gallery__divider"></div>
-            
+
             <div className="ql-editorial-gallery__quote">
               <span className="ql-quote-mark">"</span>
               <p>
@@ -311,14 +369,14 @@ export default function Home() {
           </div>
 
           <div className="ql-editorial-gallery__media">
-            <ImageCarousel 
+            <ImageCarousel
               variant="fill"
               images={[
                 '/img/steffi_professionell.jpg',
                 '/img/IMG_3690.jpg',
                 '/img/IMG_5878.JPG',
                 '/img/unnamed.jpg'
-              ]} 
+              ]}
             />
           </div>
         </section>
@@ -331,7 +389,7 @@ export default function Home() {
             <p className="ql-section__label">Kontakt</p>
             <h2 className="ql-section__title">Lassen Sie uns sprechen.</h2>
             <p className="ql-section__text">
-              Ob Steuerberatung, Coaching, Moderation oder Fachbeitrag –
+              Ob Steuer- und Strukturberatung (ausschließlich im Rahmen meiner Tätigkeit bei BDO Austria), Coaching, Moderation oder Fachbeitrag –
               ich freue mich auf Ihre Anfrage. Ich melde mich daraufhin gerne per E-Mail oder telefonisch bei Ihnen.
             </p>
             <form className="ql-contact__form" onSubmit={(e) => e.preventDefault()}>
@@ -342,7 +400,7 @@ export default function Home() {
                 <option value="" disabled>
                   Themenbereich auswählen …
                 </option>
-                <option value="steuerberatung">Steuerberatung</option>
+                <option value="steuerberatung">Steuer- &amp; Strukturberatung (via BDO Austria)</option>
                 <option value="coaching">Coaching / Training</option>
                 <option value="moderation">Moderation / Speaking</option>
                 <option value="interview">Interview / Podcast</option>
