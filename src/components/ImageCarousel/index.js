@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import styles from './styles.module.css';
 
 const defaultSlides = [
@@ -20,12 +20,14 @@ const defaultSlides = [
   },
 ];
 
-export default function ImageCarousel({ images, variant = 'default' }) {
+export default function ImageCarousel({ images, variant = 'default', autoPlay = false }) {
   const slides = images && images.length > 0
     ? images.map((src, idx) => ({ id: idx, src }))
     : defaultSlides;
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef(null);
 
   const goToSlide = useCallback((index) => {
     setCurrentIndex(index);
@@ -33,14 +35,39 @@ export default function ImageCarousel({ images, variant = 'default' }) {
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % slides.length);
-  }, []);
+  }, [slides.length]);
 
   const prevSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
-  }, []);
+  }, [slides.length]);
+
+  // Autoplay logic
+  useEffect(() => {
+    if (!autoPlay || isPaused) {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+      return;
+    }
+
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % slides.length);
+    }, 5000);
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [autoPlay, isPaused, slides.length]);
 
   return (
-    <div className={`${styles.carouselContainer} ${variant === 'fill' ? styles.fillContainer : ''}`}>
+    <div
+      className={`${styles.carouselContainer} ${variant === 'fill' ? styles.fillContainer : ''}`}
+      onMouseEnter={() => autoPlay && setIsPaused(true)}
+      onMouseLeave={() => autoPlay && setIsPaused(false)}
+    >
       {/* Main Large Image */}
       <div className={`${styles.mainSlide} ${variant === 'fill' ? styles.fillSlide : ''}`}>
         {slides.map((slide, idx) => {
@@ -51,18 +78,16 @@ export default function ImageCarousel({ images, variant = 'default' }) {
                 src={slide.src}
                 alt={`Slide ${idx + 1}`}
                 className={`${styles.slideImage} ${isActive ? styles.active : ''}`}
-                loading={idx === 0 ? "eager" : "lazy"} // Eager load first image
+                loading={idx === 0 ? "eager" : "lazy"}
               />
               <div className={`${styles.overlay} ${isActive ? styles['opacity-1'] : styles['opacity-0']}`}>
-                {/* No text overlay as requested */}
-                
                 <div className={styles.arrows}>
                   <button 
                     className={styles.arrowBtn} 
                     onClick={prevSlide}
                     aria-label="Vorheriges Bild"
                   >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M15 18l-6-6 6-6" />
                     </svg>
                   </button>
@@ -71,7 +96,7 @@ export default function ImageCarousel({ images, variant = 'default' }) {
                     onClick={nextSlide}
                     aria-label="Nächstes Bild"
                   >
-                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M9 18l6-6-6-6" />
                     </svg>
                   </button>
