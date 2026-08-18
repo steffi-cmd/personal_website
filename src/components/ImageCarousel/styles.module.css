@@ -50,20 +50,13 @@
 }
 
 .slideImage.active + .overlay,
-.mainSlide:hover .overlay { /* also show on hover for safety, otherwise it stays */ }
+.mainSlide:hover .overlay {
+  opacity: 1;
+}
 
 /* Always keep overlay visible but softly animated in */
 .opacity-1 { opacity: 1; }
 .opacity-0 { opacity: 0; pointer-events: none; }
-
-.overlayText {
-  color: #fff; /* Classic contrast */
-  font-family: var(--font-heading, "Playfair Display", serif);
-  font-size: 1.25rem;
-  letter-spacing: 0.05em;
-  font-weight: 300;
-  margin: 0;
-}
 
 /* ——— Navigation Arrows ——— */
 .arrows {
@@ -85,6 +78,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .arrowBtn:hover {
@@ -162,14 +156,6 @@
 .dot.active {
   background-color: var(--color-text, #333333);
   transform: scale(1.2);
-}
-
-/* Responsive Scaling */
-@media (max-width: 768px) {
-  .ql-hero__content {
-    align-self: flex-end;
-    padding-bottom: 3rem;
-  }
 }
 
 /* ——— Fill Variant for Quote Band ——— */
