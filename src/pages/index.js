@@ -669,7 +669,69 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ⑧ KONTAKT – Wie erreiche ich dich?
+            ⑧ ABLAUF – In 3 Schritten zur Zusammenarbeit
+           —————————————————————————————————————————————— */}
+        <section className="ql-process ql-reveal" id="ablauf">
+          <div className="ql-process__container">
+            <span className="ql-process__kicker">ZUSAMMENARBEIT &amp; ABLAUF</span>
+            <h2 className="ql-process__headline">In 3 Schritten zu deiner Begleitung</h2>
+            <p className="ql-process__subtext">
+              Persönlich, unkompliziert und mit Raum für deine individuellen Anliegen.
+            </p>
+
+            <div className="ql-process__grid">
+              {/* Schritt 1 */}
+              <div className="ql-process__card ql-stagger">
+                <div className="ql-process__card-header">
+                  <span className="ql-process__step-num">01</span>
+                  <span className="ql-process__step-badge">Schritt 1</span>
+                </div>
+                <h3 className="ql-process__card-title">Kurze Anfrage</h3>
+                <p className="ql-process__card-text">
+                  Schicke mir eine Nachricht über das Kontaktformular mit deinen Wünschen oder ersten Fragen.
+                </p>
+              </div>
+
+              {/* Schritt 2 */}
+              <div className="ql-process__card ql-stagger">
+                <div className="ql-process__card-header">
+                  <span className="ql-process__step-num">02</span>
+                  <span className="ql-process__step-badge">Schritt 2</span>
+                </div>
+                <h3 className="ql-process__card-title">Kurzes Telefonat</h3>
+                <p className="ql-process__card-text">
+                  Wir telefonieren kurz, um dein Thema kurz abzustimmen und direkt einen Termin für unser persönliches Treffen zu vereinbaren.
+                </p>
+              </div>
+
+              {/* Schritt 3 */}
+              <div className="ql-process__card ql-stagger">
+                <div className="ql-process__card-header">
+                  <span className="ql-process__step-num">03</span>
+                  <span className="ql-process__step-badge">Schritt 3</span>
+                </div>
+                <h3 className="ql-process__card-title">Kennenlernen vor Ort</h3>
+                <p className="ql-process__card-text">
+                  Im ruhigen Praxisraum (1090 Wien) nehmen wir uns Zeit, besprechen alles in Ruhe und starten gemeinsam deine Begleitung.
+                </p>
+              </div>
+            </div>
+
+            {/* B2B & Kooperations-Hinweis */}
+            <div className="ql-process__b2b-note ql-stagger">
+              <div className="ql-process__b2b-icon">✦</div>
+              <div className="ql-process__b2b-content">
+                <strong className="ql-process__b2b-title">Unternehmen &amp; Kooperationen:</strong>
+                <p className="ql-process__b2b-text">
+                  Für Keynotes, Moderationen oder Corporate Health Workshops stimme ich Format, Inhalte und Rahmenbedingungen direkt im individuellen Vorgespräch mit dir ab.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ——————————————————————————————————————————————
+            ⑨ KONTAKT – Wie erreiche ich dich?
            —————————————————————————————————————————————— */}
         <section className="ql-section ql-section--centered ql-reveal" id="kontakt">
           <div className="ql-contact">
