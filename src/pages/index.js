@@ -161,74 +161,35 @@ export default function Home() {
            —————————————————————————————————————————————— */}
         <section className="ql-ansatz ql-reveal" id="mein-ansatz">
           <div className="ql-ansatz__container">
-            <div className="ql-ansatz__intro">
-              <span className="ql-kicker">MEIN ANSATZ</span>
-              <h2 className="ql-headline">
-                Ganzheitlich gedacht. Für dein starkes Fundament.
-              </h2>
-              <p className="ql-ansatz__p">
-                Fragst du dich manchmal, wo du selbst bei all den Terminen, Verpflichtungen und Erwartungen bleibst? Wünschst du dir Klarheit, wie du deinen anspruchsvollen Alltag meisterst, ohne deinen Körper, deine Nerven und dein Wohlbefinden hintanzustellen?
-              </p>
-              <p className="ql-ansatz__p">
-                Genau dafür habe ich <em>Business, Body &amp; Mind</em> geschaffen. Ein Ort für Frauen, die viel Verantwortung tragen und ihr Leben neu ausrichten wollen: Nicht durch ständiges Überlasten und Funktionieren-Müssen, sondern getragen von innerer Stärke und echter Vitalität.
-              </p>
-              <p className="ql-ansatz__p">
-                Mein Schwerpunkt liegt auf der gesundheitlichen und vitalen Ebene. Meine Methoden basieren auf sport- und gesundheitswissenschaftlichen Ansätzen, gezieltem Stressmanagement und Bewegung. Gemeinsam entwickeln wir alltagstaugliche Systeme, die deinen Körper stärken, deinen Geist beruhigen und dir die Energie zurückgeben, die du für alles brauchst, was dir wichtig ist.
-              </p>
-              <p className="ql-ansatz__closing">
-                Schaffe dir den Raum für deine eigene Kraft.
-              </p>
-            </div>
-
-            {/* 3 Säulen */}
-            <div className="ql-ansatz__grid">
-              <div className="ql-ansatz__pillar ql-stagger">
-                <div className="ql-ansatz__badge">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E1C1A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <path d="M3 9h18" />
-                    <path d="M9 21V9" />
-                  </svg>
-                </div>
-                <h3 className="ql-ansatz__pillar-title">STRATEGISCH &amp; KLAR</h3>
-                <p className="ql-ansatz__pillar-text">
-                  Alltagstaugliche Systeme und Strukturen, die dich im Alltag nachhaltig entlasten, statt neuen Druck aufzubauen.
+            <div className="ql-ansatz__editorial">
+              <div className="ql-ansatz__text-col">
+                <span className="ql-kicker">MEIN ANSATZ</span>
+                <h2 className="ql-headline">
+                  Ganzheitlich gedacht. Für dein starkes Fundament.
+                </h2>
+                <p className="ql-ansatz__p">
+                  Fragst du dich manchmal, wo du selbst bei all den Terminen, Verpflichtungen und Erwartungen bleibst? Wünschst du dir Klarheit, wie du deinen anspruchsvollen Alltag meisterst, ohne deinen Körper, deine Nerven und dein Wohlbefinden hintanzustellen?
+                </p>
+                <p className="ql-ansatz__p">
+                  Genau dafür habe ich <em>Business, Body &amp; Mind</em> geschaffen. Ein Ort für Frauen, die viel Verantwortung tragen und ihr Leben neu ausrichten wollen: Nicht durch ständiges Überlasten und Funktionieren-Müssen, sondern getragen von innerer Stärke und echter Vitalität.
+                </p>
+                <p className="ql-ansatz__p">
+                  Mein Schwerpunkt liegt auf der gesundheitlichen und vitalen Ebene. Meine Methoden basieren auf sport- und gesundheitswissenschaftlichen Ansätzen, gezieltem Stressmanagement und Bewegung. Gemeinsam entwickeln wir alltagstaugliche Systeme, die deinen Körper stärken, deinen Geist beruhigen und dir die Energie zurückgeben, die du für alles brauchst, was dir wichtig ist.
+                </p>
+                <p className="ql-ansatz__closing">
+                  Schaffe dir den Raum für deine eigene Kraft.
                 </p>
               </div>
 
-              <div className="ql-ansatz__pillar ql-stagger">
-                <div className="ql-ansatz__badge">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E1C1A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="5" />
-                    <path d="M12 2v2" />
-                    <path d="M12 20v2" />
-                    <path d="M4.93 4.93l1.41 1.41" />
-                    <path d="M17.66 17.66l1.41 1.41" />
-                    <path d="M2 12h2" />
-                    <path d="M20 12h2" />
-                    <path d="M4.93 19.07l1.41-1.41" />
-                    <path d="M17.66 6.34l1.41-1.41" />
-                  </svg>
+              <div className="ql-ansatz__media-col">
+                <div className="ql-ansatz__photo-frame">
+                  <img
+                    src="/img/A7R00276.jpg"
+                    alt="Stefanie Brand – Business, Body & Mind"
+                    className="ql-ansatz__photo-img"
+                    loading="lazy"
+                  />
                 </div>
-                <h3 className="ql-ansatz__pillar-title">WISSENSCHAFTLICH FUNDIERT</h3>
-                <p className="ql-ansatz__pillar-text">
-                  Methoden auf Basis von Sport- und Gesundheitswissenschaften sowie Bewegung – für echte, spürbare Vitalität.
-                </p>
-              </div>
-
-              <div className="ql-ansatz__pillar ql-stagger">
-                <div className="ql-ansatz__badge">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E1C1A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M12 3a9 9 0 0 1 0 18A9 9 0 0 0 12 3z" />
-                    <circle cx="12" cy="7.5" r="1.2" fill="#1E1C1A" stroke="none" />
-                    <circle cx="12" cy="16.5" r="1.2" fill="#FAF7F2" stroke="none" />
-                  </svg>
-                </div>
-                <h3 className="ql-ansatz__pillar-title">RESILIENT &amp; GELASSEN</h3>
-                <p className="ql-ansatz__pillar-text">
-                  Gezieltes Stressmanagement und mentale Klarheit, um auch in fordernden Phasen innerlich ruhig und handlungsfähig zu bleiben.
-                </p>
               </div>
             </div>
           </div>
@@ -241,7 +202,7 @@ export default function Home() {
           <div className="ql-atmospheric-banner__bg">
             <img
               src="/img/A7R00690.jpg"
-              alt="Atmosphäre & Raum für Entfaltung"
+              alt="Stefanie Brand – Atmosphäre & Raum für Entfaltung"
               className="ql-atmospheric-banner__img"
               loading="lazy"
             />
@@ -249,10 +210,10 @@ export default function Home() {
           </div>
           <div className="ql-atmospheric-banner__content">
             <p className="ql-atmospheric-banner__quote">
-              „Der Körper ist der Anker für alles, was du im Leben erschaffst.“
+              „Wahre Leistungsfähigkeit entsteht durch Gesundheit: Gemeinsam schaffen wir die Balance aus Bewegung, mentaler Klarheit und nachhaltiger Regeneration.“
             </p>
             <span className="ql-atmospheric-banner__sub">
-              Raum für Klarheit, Kraft &amp; Entfaltung
+              Business, Body &amp; Mind • Raum für nachhaltige Kraft &amp; Entfaltung
             </span>
           </div>
         </section>
@@ -270,73 +231,106 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="ql-offers__grid">
-              {/* Karte 1 */}
-              <div className="ql-offer-card ql-stagger">
-                <div className="ql-offer-card__body">
-                  <span className="ql-offer-card__kicker">1:1 VITALITÄT &amp; RESILIENZ</span>
-                  <h3 className="ql-offer-card__title">Holistic Health Mentoring</h3>
-                  <p className="ql-offer-card__desc">
-                    Ganzheitliche Wissensvermittlung und strukturierte Methoden für Frauen mit hoher Verantwortung. Erlerne alltagstaugliche Strategien für nachhaltige Energie, gesunde Routinen und mentale Klarheit.
-                  </p>
-                  <ul className="ql-offer-card__bullets">
-                    <li>Sport- &amp; gesundheitswissenschaftliche Vitalitätsanalyse</li>
-                    <li>Gezielte Methoden zur Stress- &amp; Nervensystemregulation</li>
-                    <li>Strukturierte Impulse für Erholung, Schlaf &amp; gesunde Routinen</li>
-                    <li>Persönliche Einheiten im ruhigen Praxisraum (1090 Wien)</li>
-                  </ul>
+            <div className="ql-offers__editorial-list">
+              {/* Reihe 1: Holistic Health Mentoring */}
+              <div className="ql-offer-row ql-stagger">
+                <div className="ql-offer-row__media">
+                  <img
+                    src="/img/A7R00199.jpg"
+                    alt="Holistic Health Mentoring – Stefanie Brand"
+                    className="ql-offer-row__img"
+                    style={{ objectPosition: 'center 25%' }}
+                    loading="lazy"
+                  />
                 </div>
-                <div className="ql-offer-card__action">
-                  <a href="#kontakt" className="ql-btn ql-btn--card">
-                    <span>Erstgespräch anfragen</span>
-                    <span className="ql-btn__arrow">→</span>
-                  </a>
-                </div>
-              </div>
-
-              {/* Karte 2 */}
-              <div className="ql-offer-card ql-stagger">
-                <div className="ql-offer-card__body">
-                  <span className="ql-offer-card__kicker">1:1 MOVEMENT &amp; VITALITÄT</span>
-                  <h3 className="ql-offer-card__title">Personal Movement &amp; Training</h3>
-                  <p className="ql-offer-card__desc">
-                    Individuell abgestimmter 1:1 Unterricht nach deinen Bedürfnissen. Ob eine reine Yoga-Einheit, gezieltes Pilates, funktionelle Kräftigung oder ein maßgeschneiderter Bewegungsmix – jede Einheit orientiert sich an deinem Körper.
-                  </p>
-                  <ul className="ql-offer-card__bullets">
-                    <li>Fokus nach Wahl: Reine Praxis (Yoga, Pilates, Barre) oder kombinierter Mix</li>
-                    <li>Vielseitiges Spektrum: Von Kraft &amp; Mobility über Faszien bis Lauftraining</li>
-                    <li>Gezielte Regeneration: Ausgleichende Dehn-, Atem- und Entspannungssequenzen</li>
-                    <li>Exklusiver Raum: Vor Ort in privater Atmosphäre (Nußdorfer Str., 1090 Wien)</li>
-                  </ul>
-                </div>
-                <div className="ql-offer-card__action">
-                  <a href="#kontakt" className="ql-btn ql-btn--card">
-                    <span>Private Session anfragen</span>
-                    <span className="ql-btn__arrow">→</span>
-                  </a>
+                <div className="ql-offer-row__card">
+                  <div className="ql-offer-card__body">
+                    <span className="ql-offer-card__kicker">1:1 VITALITÄT &amp; RESILIENZ</span>
+                    <h3 className="ql-offer-card__title">Holistic Health Mentoring</h3>
+                    <p className="ql-offer-card__desc">
+                      Ganzheitliche Wissensvermittlung und strukturierte Methoden für Frauen mit hoher Verantwortung. Erlerne alltagstaugliche Strategien für nachhaltige Energie, gesunde Routinen und mentale Klarheit.
+                    </p>
+                    <ul className="ql-offer-card__bullets">
+                      <li>Sport- &amp; gesundheitswissenschaftliche Vitalitätsanalyse</li>
+                      <li>Gezielte Methoden zur Stress- &amp; Nervensystemregulation</li>
+                      <li>Strukturierte Impulse für Erholung, Schlaf &amp; gesunde Routinen</li>
+                      <li>Persönliche Einheiten im ruhigen Praxisraum (1090 Wien)</li>
+                    </ul>
+                  </div>
+                  <div className="ql-offer-card__action">
+                    <a href="#kontakt" className="ql-btn ql-btn--card">
+                      <span>Erstgespräch anfragen</span>
+                      <span className="ql-btn__arrow">→</span>
+                    </a>
+                  </div>
                 </div>
               </div>
 
-              {/* Karte 3 */}
-              <div className="ql-offer-card ql-stagger">
-                <div className="ql-offer-card__body">
-                  <span className="ql-offer-card__kicker">EXKLUSIVE FORMATE</span>
-                  <h3 className="ql-offer-card__title">Workshops &amp; Retreats</h3>
-                  <p className="ql-offer-card__desc">
-                    Gemeinsam praktizieren, regenerieren und neues Wissen vertiefen. Raum für Bewegung, fundierte Impulse und echte Auszeiten in inspirierender Umgebung.
-                  </p>
-                  <ul className="ql-offer-card__bullets">
-                    <li>Ganzheitliche Verbindung aus Bewegung, Atmung &amp; mentaler Stärke</li>
-                    <li>Exklusiver Kleingruppenrahmen für persönliche Atmosphäre &amp; Austausch</li>
-                    <li>Nächster Workshop: „The Pre-Holiday Reset“ (22. November 2026, Wien)</li>
-                    <li>Retreats: Mehrtägige Auszeiten an besonderen Orten (Planung 2027)</li>
-                  </ul>
+              {/* Reihe 2: Personal Movement & Training (Invertiert) */}
+              <div className="ql-offer-row ql-offer-row--reverse ql-stagger">
+                <div className="ql-offer-row__media">
+                  <img
+                    src="/img/A7R00625.jpg"
+                    alt="Personal Movement & Training – Stefanie Brand"
+                    className="ql-offer-row__img"
+                    style={{ objectPosition: 'center 20%' }}
+                    loading="lazy"
+                  />
                 </div>
-                <div className="ql-offer-card__action">
-                  <a href="#kontakt" className="ql-btn ql-btn--card">
-                    <span>Infos &amp; Warteliste anfragen</span>
-                    <span className="ql-btn__arrow">→</span>
-                  </a>
+                <div className="ql-offer-row__card">
+                  <div className="ql-offer-card__body">
+                    <span className="ql-offer-card__kicker">1:1 MOVEMENT &amp; VITALITÄT</span>
+                    <h3 className="ql-offer-card__title">Personal Movement &amp; Training</h3>
+                    <p className="ql-offer-card__desc">
+                      Individuell abgestimmter 1:1 Unterricht nach deinen Bedürfnissen. Ob eine reine Yoga-Einheit, gezieltes Pilates, funktionelle Kräftigung oder ein maßgeschneiderter Bewegungsmix – jede Einheit orientiert sich an deinem Körper.
+                    </p>
+                    <ul className="ql-offer-card__bullets">
+                      <li>Fokus nach Wahl: Reine Praxis (Yoga, Pilates, Barre) oder kombinierter Mix</li>
+                      <li>Vielseitiges Spektrum: Von Kraft &amp; Mobility über Faszien bis Lauftraining</li>
+                      <li>Gezielte Regeneration: Ausgleichende Dehn-, Atem- und Entspannungssequenzen</li>
+                      <li>Exklusiver Raum: Vor Ort in privater Atmosphäre (Nußdorfer Str., 1090 Wien)</li>
+                    </ul>
+                  </div>
+                  <div className="ql-offer-card__action">
+                    <a href="#kontakt" className="ql-btn ql-btn--card">
+                      <span>Private Session anfragen</span>
+                      <span className="ql-btn__arrow">→</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Reihe 3: Workshops & Retreats */}
+              <div className="ql-offer-row ql-stagger">
+                <div className="ql-offer-row__media">
+                  <img
+                    src="/img/A7R00725.jpg"
+                    alt="Workshops & Retreats – Stefanie Brand"
+                    className="ql-offer-row__img"
+                    style={{ objectPosition: 'center 25%' }}
+                    loading="lazy"
+                  />
+                </div>
+                <div className="ql-offer-row__card">
+                  <div className="ql-offer-card__body">
+                    <span className="ql-offer-card__kicker">EXKLUSIVE FORMATE</span>
+                    <h3 className="ql-offer-card__title">Workshops &amp; Retreats</h3>
+                    <p className="ql-offer-card__desc">
+                      Gemeinsam praktizieren, regenerieren und neues Wissen vertiefen. Raum für Bewegung, fundierte Impulse und echte Auszeiten in inspirierender Umgebung.
+                    </p>
+                    <ul className="ql-offer-card__bullets">
+                      <li>Ganzheitliche Verbindung aus Bewegung, Atmung &amp; mentaler Stärke</li>
+                      <li>Exklusiver Kleingruppenrahmen für persönliche Atmosphäre &amp; Austausch</li>
+                      <li>Nächster Workshop: „The Pre-Holiday Reset“ (22. November 2026, Wien)</li>
+                      <li>Retreats: Mehrtägige Auszeiten an besonderen Orten (Planung 2027)</li>
+                    </ul>
+                  </div>
+                  <div className="ql-offer-card__action">
+                    <a href="#kontakt" className="ql-btn ql-btn--card">
+                      <span>Infos &amp; Warteliste anfragen</span>
+                      <span className="ql-btn__arrow">→</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
