@@ -122,7 +122,7 @@ export default function Home() {
           <div className="ql-hero__bg-visual">
             <div className="ql-hero__fade-mask">
               <img
-                src="/img/stefanie_00451_portrait.jpg"
+                src="/img/A7R01339.jpg"
                 alt="Dr. Stefanie Schinnerl – Holistic Mentoring & Health Coaching"
                 className="ql-hero__faded-img"
                 loading="eager"
@@ -243,7 +243,7 @@ export default function Home() {
         <section className="ql-atmospheric-banner ql-reveal">
           <div className="ql-atmospheric-banner__bg">
             <img
-              src="/img/A7R00657.jpg"
+              src="/img/A7R00690.jpg"
               alt="Atmosphäre & Raum für Entfaltung"
               className="ql-atmospheric-banner__img"
               loading="lazy"
@@ -338,78 +338,89 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 3. Gruppenstunden-Banner */}
-            <div className="ql-studio-banner ql-stagger">
-              <span className="ql-studio-banner__kicker">WÖCHENTLICHE GRUPPENSTUNDEN</span>
-              <p className="ql-studio-banner__text">
-                Du möchtest in der Gruppe praktizieren? Ich unterrichte wöchentliche Klassen in Yoga, Barre &amp; Pilates bei <strong>Turnsaal Women</strong> in Wien.
-              </p>
-              <div className="ql-studio-banner__links">
-                <a href="https://www.turnsaal.com" target="_blank" rel="noopener noreferrer" className="ql-studio-banner__link">
-                  Zum aktuellen Studio-Stundenplan ↗
+            {/* 3. Gruppenstunden & Instagram Live Schedule */}
+            <div className="ql-studio-card ql-stagger">
+              <div className="ql-studio-card__content">
+                <span className="ql-studio-card__kicker">GRUPPENKLASSEN &amp; SPECIALS</span>
+                <h3 className="ql-studio-card__title">Gemeinsam praktizieren &amp; Energie tanken</h3>
+                <p className="ql-studio-card__desc">
+                  Du möchtest die Dynamik einer gemeinsamen Praxis erleben? Ich unterrichte regelmäßig wechselnde Klassen und Specials in ausgewählten Studios in Wien. Da sich Zeiten, Locations und Formate flexibel gestalten, veröffentliche ich den aktuellen Stundenplan jede Woche direkt auf Instagram.
+                </p>
+              </div>
+              <div className="ql-studio-card__cta-box">
+                <a
+                  href="https://www.instagram.com/bystefanieschinnerl/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ql-studio-card__btn"
+                >
+                  <svg className="ql-studio-card__btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                  <span>Wochenplan auf Instagram</span>
+                  <span className="ql-studio-card__arrow">↗</span>
                 </a>
+                <span className="ql-studio-card__handle">@bystefanieschinnerl</span>
               </div>
             </div>
           </div>
         </section>
 
         {/* ——————————————————————————————————————————————
-            ④ ÜBER MICH – Personal Story
+            ④ ÜBER MICH – 50/50 Full-Bleed Editorial Layout
            —————————————————————————————————————————————— */}
-        <section className="ql-reveal" id="ueber-mich" style={{ borderBottom: '1px solid var(--color-accent)' }}>
-          <div className="ql-about">
-            <div className="ql-about__grid">
-              <div className="ql-about__photo">
-                <img src="/img/A7R01303.jpg" alt="Dr. Stefanie Schinnerl – Über mich" loading="lazy" />
-              </div>
-              <div className="ql-about__body">
-                <div className="ql-about__kicker">Über mich</div>
-                <h2 className="ql-about__title">High Performance von innen heraus.</h2>
-                <p className="ql-about__text">
-                  Als promovierte Steuerrechtsexpertin und Managerin im dynamischen Kanzleialltag kenne ich die Corporate-Welt und die Anforderungen der High-Performance-Gesellschaft in- und auswendig. Ich weiß aus eigener Praxis, wie es sich anfühlt, unter hohem Leistungsdruck zu stehen, Deadlines zu jonglieren und gleichzeitig den Anspruch an Perfektion, Karriere und Erfolg zu wahren.
+        <section className="ql-about-voyage ql-reveal" id="ueber-mich">
+          <div className="ql-about-voyage__stage">
+            
+            {/* Linke Hälfte: Vollflächiges Bild (Full-Bleed bis zum linken Bildschirmrand) */}
+            <div className="ql-about-voyage__photo-col ql-stagger">
+              <img
+                src="/img/stefanie_1303_portrait.jpg"
+                alt="Dr. Stefanie Schinnerl – Über mich"
+                className="ql-about-voyage__photo"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Rechte Hälfte: Weißer Hintergrund & Typografie */}
+            <div className="ql-about-voyage__content-col ql-stagger">
+              <div className="ql-about-voyage__inner">
+                
+                {/* Großer Serif-Titel rein im Textbereich */}
+                <h2 className="ql-about-voyage__headline">
+                  Schön, dass du da bist!
+                </h2>
+
+                <span className="ql-about-voyage__kicker">
+                  ÜBER MICH · DR. STEFANIE SCHINNERL
+                </span>
+                
+                <p className="ql-about-voyage__lead">
+                  Du verdienst beruflichen Erfolg und Erfüllung – ohne dass deine Gesundheit, deine Lebensfreude oder deine innere Ruhe auf der Strecke bleiben.
                 </p>
-                <p className="ql-about__text">
-                  Doch echter Erfolg darf nicht auf Kosten der eigenen Gesundheit gehen. Eine persönliche Lebenskrise hat mir vor Augen geführt, dass nachhaltige Leistungsfähigkeit ein starkes Fundament braucht: Resilienz, Vitalität und mentale Stärke.
-                </p>
-                <p className="ql-about__text">
-                  Aus dieser Erfahrung heraus habe ich meine Leidenschaft zum Beruf gemacht. Als akademisch zertifizierte Gesundheits- und Vitalcoach sowie ganzheitliche Mentorin zeige ich ambitionierten Frauen, wie sie die Werkzeuge moderner Struktur und mentaler Flexibilität nutzen, um ein erfülltes, gesundes und erfolgreiches Leben zu führen.
-                </p>
-                <p className="ql-about__text">
-                  Ich verbinde die strukturierte Denkweise der Business-Welt mit fundiertem Health-Coaching, um dir zu helfen, deine Energie zurückzugewinnen, deinen Fokus zu schärfen und deinen eigenen Weg mit Souveränität und Freude zu gehen.
-                </p>
+
+                <div className="ql-about-voyage__text">
+                  <p>
+                    Als promovierte Steuerrechtsexpertin und langjährige Managerin im dynamischen Kanzleialltag kenne ich die Corporate-Welt und die Anforderungen der High-Performance-Gesellschaft in- und auswendig. Ich weiß aus eigener Praxis, wie es sich anfühlt, unter hohem Leistungsdruck zu stehen, Deadlines zu jonglieren und gleichzeitig den Anspruch an Perfektion, Karriere und Erfolg zu wahren.
+                  </p>
+                  <p>
+                    Eine persönliche Lebenskrise hat mir vor Augen geführt, dass nachhaltige Spitzenleistung ein starkes inneres Fundament braucht: Resilienz, Vitalität und mentale Stärke sind die unverzichtbare Basis für alles, was wir schaffen.
+                  </p>
+                  <p>
+                    Als akademisch zertifizierte Gesundheits- und Vitalcoach verbinde ich die strukturierte Denkweise der Business-Welt mit fundiertem Health-Coaching – damit du deine Energie zurückgewinnst, deinen Fokus schärfst und deinen eigenen Weg mit Souveränität gehst.
+                  </p>
+                </div>
+
+                <div className="ql-about-voyage__action">
+                  <a href="#kontakt" className="ql-about-voyage__btn">
+                    Erstgespräch vereinbaren →
+                  </a>
+                </div>
               </div>
             </div>
-            <h3 className="ql-about__fundament-label">Mein Fundament:</h3>
-            <div className="ql-about__fundament">
-              <div className="ql-about__fundament-card">
-                <h4>
-                  <svg className="ql-about__card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M2 4c3-1 5-1 10 1v16c-5-2-7-2-10-1V4z" />
-                    <path d="M22 4c-3-1-5-1-10 1v16c5-2 7-2 10-1V4z" />
-                  </svg>
-                  Smart Professional
-                </h4>
-                <p>
-                  Promotion im Steuerrecht (WU Wien), Fachbuchautorin und jahrelange Management-Erfahrung in der strategischen Beratung.
-                </p>
-              </div>
-              <div className="ql-about__fundament-card">
-                <h4>
-                  <svg className="ql-about__card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M12 3v4" />
-                    <path d="M12 17v4" />
-                    <path d="M3 12h4" />
-                    <path d="M17 12h4" />
-                    <polygon points="12 8 14 12 12 16 10 12" fill="currentColor" opacity="0.25" />
-                  </svg>
-                  Vitality &amp; Resilience
-                </h4>
-                <p>
-                  Universitäre Ausbildung zur Gesundheits- und Vitalcoach, zertifizierte Yoga-, Barre- und Fitnesstrainerin.
-                </p>
-              </div>
-            </div>
+
           </div>
         </section>
 
@@ -667,7 +678,7 @@ export default function Home() {
           <li><a href="/impressum">Impressum</a></li>
           <li><a href="/datenschutz">Datenschutz</a></li>
           <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.instagram.com/bystefanieschinnerl/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
         <span className="ql-footer__copy">
           © {new Date().getFullYear()} Dr. Stefanie Schinnerl — Alle Rechte vorbehalten.

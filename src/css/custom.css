@@ -375,8 +375,8 @@ footer.footer {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 72%;
-  max-width: 1240px;
+  width: 65%;
+  max-width: 1160px;
   height: 100%;
   pointer-events: none;
   z-index: 1;
@@ -386,21 +386,22 @@ footer.footer {
   position: relative;
   width: 100%;
   height: 100%;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.3) 6%, rgba(0, 0, 0, 0.85) 15%, #000 26%);
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.3) 6%, rgba(0, 0, 0, 0.85) 15%, #000 26%);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 5%, rgba(0, 0, 0, 0.85) 14%, #000 22%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 5%, rgba(0, 0, 0, 0.85) 14%, #000 22%);
 }
 
 .ql-hero__faded-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 16%;
+  object-position: center 22%;
   display: block;
   transition: transform 1.2s var(--ease-elegant);
 }
 
 .ql-hero--overlap:hover .ql-hero__faded-img {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .ql-hero__soft-overlay {
@@ -409,7 +410,7 @@ footer.footer {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to right, rgba(250, 247, 242, 0.92) 0%, rgba(250, 247, 242, 0.25) 8%, rgba(250, 247, 242, 0) 20%);
+  background: linear-gradient(to right, rgba(250, 247, 242, 0.85) 0%, rgba(250, 247, 242, 0.2) 6%, rgba(250, 247, 242, 0) 16%);
   pointer-events: none;
 }
 
@@ -649,7 +650,7 @@ footer.footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 38%;
+  object-position: center 58%;
   filter: contrast(1.04) brightness(0.95);
   transform: scale(1.02);
   transition: transform 1.2s var(--ease-elegant);
@@ -830,196 +831,247 @@ footer.footer {
   box-shadow: 0 6px 18px rgba(31, 30, 29, 0.18);
 }
 
-/* Gruppenstunden-Banner */
-.ql-studio-banner {
-  background-color: #F8F6F2;
-  border-radius: 12px;
-  padding: 24px 32px;
-  margin-top: 36px;
-  border: 1px solid #EAE5DE;
-  text-align: center;
-  transition: border-color 0.3s ease;
+/* Gruppenstunden & Instagram Live Schedule Card */
+.ql-studio-card {
+  background: linear-gradient(135deg, #FAF8F5 0%, #F5F1EB 100%);
+  border-radius: 14px;
+  padding: 34px 40px;
+  margin-top: 40px;
+  border: 1px solid #E6DFD5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  box-shadow: 0 4px 20px rgba(44, 41, 39, 0.03);
+  transition: all 0.35s var(--ease-elegant);
 }
 
-.ql-studio-banner:hover {
-  border-color: #D8D2C7;
+.ql-studio-card:hover {
+  border-color: #D3C9BC;
+  box-shadow: 0 8px 30px rgba(44, 41, 39, 0.06);
+  transform: translateY(-2px);
 }
 
-.ql-studio-banner__kicker {
+.ql-studio-card__content {
+  flex: 1;
+}
+
+.ql-studio-card__kicker {
   font-family: var(--font-sans);
   font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #8C827A;
+  color: #8A8480;
   font-weight: 600;
-  margin-bottom: 8px;
   display: block;
+  margin-bottom: 8px;
 }
 
-.ql-studio-banner__text {
-  font-family: var(--font-sans);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #524D47;
-  margin: 0 0 12px 0;
-}
-
-.ql-studio-banner__text strong {
+.ql-studio-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
   color: #1F1E1D;
-  font-weight: 600;
+  margin: 0 0 10px 0;
+  line-height: 1.25;
 }
 
-.ql-studio-banner__links {
+.ql-studio-card__desc {
+  font-family: var(--font-sans);
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: #5C5650;
+  margin: 0;
+  max-width: 680px;
+}
+
+.ql-studio-card__cta-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  min-width: 255px;
+  text-align: center;
+}
+
+.ql-studio-card__btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.ql-studio-banner__link {
+  gap: 10px;
+  background-color: #1F1E1D;
+  color: #FAF8F5 !important;
+  padding: 13px 22px;
+  border-radius: 8px;
   font-family: var(--font-sans);
   font-size: 0.88rem;
   font-weight: 500;
-  color: #1F1E1D !important;
   text-decoration: none;
-  transition: all 0.25s ease;
-  position: relative;
-}
-
-.ql-studio-banner__link:hover {
-  color: #8C827A !important;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-/* =============================================
-   ④ ÜBER MICH SECTION
-   ============================================= */
-.ql-about {
-  padding: 100px 40px;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.ql-about__grid {
-  display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 3.5rem;
-  align-items: start;
-  margin-bottom: 1rem;
-}
-
-.ql-about__photo {
-  position: sticky;
-  top: 120px;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-}
-
-.ql-about__photo img {
-  display: block;
+  transition: all 0.3s var(--ease-elegant);
+  box-shadow: 0 4px 14px rgba(31, 30, 29, 0.12);
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  filter: grayscale(10%) contrast(1.02);
-  transition: filter 0.6s var(--ease-elegant), transform 0.8s var(--ease-elegant);
+  white-space: nowrap;
 }
 
-.ql-about__photo:hover img {
-  filter: grayscale(0%) contrast(1.05);
-  transform: scale(1.015);
+.ql-studio-card__btn:hover {
+  background-color: #3A3531;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(31, 30, 29, 0.2);
 }
 
-.ql-about__body {
-  padding-top: 0.5rem;
+.ql-studio-card__btn:hover .ql-studio-card__arrow {
+  transform: translate(2px, -2px);
 }
 
-.ql-about__kicker {
+.ql-studio-card__arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.ql-studio-card__btn-icon {
+  flex-shrink: 0;
+}
+
+.ql-studio-card__handle {
   font-family: var(--font-sans);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--color-accent);
-  text-transform: uppercase;
-  margin: 0 0 14px;
-}
-
-.ql-about__title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 400;
-  color: var(--color-text);
-  margin: 0 0 2.5rem;
-  line-height: 1.15;
-}
-
-.ql-about__text {
-  font-family: var(--font-sans);
-  font-size: 0.96rem;
-  line-height: 1.8;
-  color: var(--color-text);
-  opacity: 0.82;
-  max-width: 760px;
-  margin: 0 0 1.6rem;
-}
-
-.ql-about__fundament-label {
-  font-family: var(--font-serif);
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  font-weight: 400;
-  color: var(--color-text);
-  margin: 3rem 0 1.5rem;
-}
-
-.ql-about__fundament {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  max-width: 760px;
-}
-
-.ql-about__fundament-card {
-  background: var(--color-surface);
-  border: 1px solid rgba(179, 159, 136, 0.18);
-  border-radius: 3px;
-  padding: 2.2rem 2rem;
-  transition: all 0.5s var(--ease-elegant);
-}
-
-.ql-about__fundament-card:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-  transform: translateY(-4px);
-  border-color: rgba(179, 159, 136, 0.35);
-}
-
-.ql-about__fundament-card h4 {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: var(--color-dark);
-  margin: 0 0 0.6rem;
+  font-size: 0.8rem;
+  color: #8A8480;
   letter-spacing: 0.02em;
 }
 
-.ql-about__fundament-card h4 .ql-about__card-icon {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 0.5rem;
-  vertical-align: -2px;
-  color: var(--color-accent);
-  opacity: 0.75;
+/* =============================================
+   ④ ÜBER MICH SECTION (50/50 Full-Bleed Editorial Layout)
+   ============================================= */
+.ql-about-voyage {
+  padding: 0;
+  background: #FFFFFF;
+  border-bottom: 1px solid #EAE5DE;
+  position: relative;
+  overflow: hidden;
 }
 
-.ql-about__fundament-card p {
+.ql-about-voyage__stage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 720px;
+  position: relative;
+  width: 100%;
+}
+
+/* Linke Hälfte: Vollflächiges Bild (Full Bleed bis zum linken Rand) */
+.ql-about-voyage__photo-col {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 640px;
+  background-color: #EFECE6;
+  overflow: hidden;
+}
+
+.ql-about-voyage__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transition: transform 0.8s var(--ease-elegant);
+}
+
+.ql-about-voyage:hover .ql-about-voyage__photo {
+  transform: scale(1.02);
+}
+
+/* Rechte Hälfte: Weißer Hintergrund mit edler Typografie */
+.ql-about-voyage__content-col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 100px 8% 90px 70px;
+  background-color: #FFFFFF;
+}
+
+.ql-about-voyage__inner {
+  max-width: 540px;
+  width: 100%;
+}
+
+/* Großer Serif-Titel rein im Textbereich */
+.ql-about-voyage__headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 3.8vw, 3.4rem);
+  font-style: italic;
+  font-weight: 400;
+  color: #1F1E1D;
+  line-height: 1.12;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.01em;
+}
+
+.ql-about-voyage__kicker {
   font-family: var(--font-sans);
-  font-size: 0.9rem;
-  line-height: 1.7;
-  color: var(--color-text);
-  opacity: 0.78;
-  margin: 0;
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #B39F88;
+  margin-bottom: 18px;
+  display: block;
+  font-weight: 600;
+}
+
+.ql-about-voyage__lead {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.72;
+  color: #2C2927;
+  margin-bottom: 18px;
+}
+
+.ql-about-voyage__text p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #524D47;
+  margin: 0 0 14px 0;
+}
+
+.ql-about-voyage__text p:last-child {
+  margin-bottom: 0;
+}
+
+.ql-about-voyage__action {
+  margin-top: 24px;
+}
+
+.ql-about-voyage__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FAF8F5;
+  border: 1px solid #E2DDD5;
+  color: #1F1E1D;
+  padding: 13px 30px;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: all 0.3s var(--ease-elegant);
+  box-shadow: 0 2px 8px rgba(44, 41, 39, 0.04);
+}
+
+.ql-about-voyage__btn:hover {
+  background-color: #1F1E1D;
+  color: #FFFFFF !important;
+  border-color: #1F1E1D;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(31, 30, 29, 0.15);
 }
 
 /* =============================================
@@ -1565,6 +1617,18 @@ footer.footer {
    RESPONSIVE · ≤ 1024px
    ============================================= */
 @media (max-width: 1024px) {
+  .ql-hero--overlap {
+    padding: 10rem 2.5rem 6.5rem;
+  }
+
+  .ql-hero__bg-visual {
+    width: 56%;
+  }
+
+  .ql-hero__headline {
+    font-size: clamp(2rem, 3.2vw, 2.5rem);
+  }
+
   .ql-offers__grid {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -1574,13 +1638,13 @@ footer.footer {
     grid-template-columns: 1fr 1fr;
   }
 
-  .ql-about__grid {
-    grid-template-columns: 320px 1fr;
-    gap: 2.5rem;
+  .ql-about-voyage__stage {
+    grid-template-columns: 48% 52%;
+    min-height: 600px;
   }
 
-  .ql-about__fundament {
-    grid-template-columns: 1fr 1fr;
+  .ql-about-voyage__content-col {
+    padding: 80px 5% 70px 40px;
   }
 }
 
@@ -1705,14 +1769,21 @@ footer.footer {
     padding: 30px 22px;
   }
 
-  .ql-studio-banner {
-    padding: 22px 18px;
+  .ql-studio-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 22px;
     margin-top: 28px;
+    gap: 24px;
   }
 
-  .ql-studio-banner__links {
-    flex-direction: column;
-    gap: 8px;
+  .ql-studio-card__cta-box {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .ql-studio-card__btn {
+    width: 100%;
   }
 
   /* Sections */
@@ -1731,34 +1802,24 @@ footer.footer {
     padding: 2rem 1.5rem;
   }
 
-  /* About */
-  .ql-about {
-    padding: 50px 20px;
-  }
-
-  .ql-about__grid {
+  /* About Voyage Mobile */
+  .ql-about-voyage__stage {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    min-height: auto;
   }
 
-  .ql-about__photo {
-    position: relative;
-    top: auto;
-    max-height: 500px;
+  .ql-about-voyage__photo-col {
+    height: 460px;
+    min-height: auto;
   }
 
-  .ql-about__photo img {
-    max-height: 500px;
-    object-fit: cover;
+  .ql-about-voyage__content-col {
+    padding: 36px 20px 70px;
   }
 
-  .ql-about__fundament {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .ql-about__fundament-card {
-    padding: 1.8rem 1.5rem;
+  .ql-about-voyage__headline {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
   }
 
   /* B2B */
