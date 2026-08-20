@@ -3,10 +3,11 @@ import Layout from '@theme/Layout';
 import ImageCarousel from '../components/ImageCarousel';
 
 const EDITORIAL_IMAGES = [
-  '/img/steffi_professionell.jpg',
-  '/img/IMG_3690.jpg',
-  '/img/IMG_5878.JPG',
-  '/img/unnamed.jpg',
+  '/img/A7R01304.jpg',
+  '/img/A7R00276.jpg',
+  '/img/A7R01182.jpg',
+  '/img/A7R01328.jpg',
+  '/img/A7R00105.jpg',
 ];
 
 export default function Home() {
@@ -62,10 +63,10 @@ export default function Home() {
       title="Holistic Mentoring & Health Coaching"
       description="Dr. Stefanie Schinnerl – Holistic Mentoring, Health Coaching & Keynote Speaking für ambitionierte Frauen."
     >
-      {/* ——— NAVBAR (Split Navigation: Links - Center Brand - Rights) ——— */}
+      {/* ——— NAVBAR (Split Navigation: Left - Brand Center - Right) ——— */}
       <header className={`ql-navbar ${isScrolled ? 'ql-navbar--scrolled' : ''}`}>
         <div className="ql-navbar__inner">
-          <nav className="ql-navbar__nav ql-navbar__nav--left" aria-label="Hauptnavigation links">
+          <nav className="ql-navbar__nav--left" aria-label="Hauptnavigation links">
             <ul className="ql-navbar__links">
               <li><a href="#home" onClick={closeMenu}>Home</a></li>
               <li><a href="#mein-ansatz" onClick={closeMenu}>Mein Ansatz</a></li>
@@ -79,8 +80,9 @@ export default function Home() {
             <span className="ql-navbar__brand-sub">Business, Body &amp; Mind</span>
           </a>
 
-          <nav className="ql-navbar__nav ql-navbar__nav--right" aria-label="Hauptnavigation rechts">
+          <nav className="ql-navbar__nav--right" aria-label="Hauptnavigation rechts">
             <ul className="ql-navbar__links">
+              <li><a href="#qualifikationen" onClick={closeMenu}>Expertise</a></li>
               <li><a href="#b2b" onClick={closeMenu}>B2B &amp; Keynotes</a></li>
               <li><a href="#einblicke" onClick={closeMenu}>Einblicke</a></li>
               <li><a href="#kontakt" className="ql-navbar__link-cta" onClick={closeMenu}>Kontakt</a></li>
@@ -99,14 +101,15 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Mobile Fullscreen / Dropdown Menu */}
+        {/* Mobile Drawer */}
         <div className={`ql-navbar__mobile-drawer ${isMobileMenuOpen ? 'ql-navbar__mobile-drawer--open' : ''}`}>
           <ul className="ql-navbar__mobile-links">
             <li><a href="#home" onClick={closeMenu}>Home</a></li>
             <li><a href="#mein-ansatz" onClick={closeMenu}>Mein Ansatz</a></li>
             <li><a href="#angebote" onClick={closeMenu}>Angebote &amp; Coaching</a></li>
-            <li><a href="#b2b" onClick={closeMenu}>B2B &amp; Corporate Health</a></li>
             <li><a href="#ueber-mich" onClick={closeMenu}>Über mich</a></li>
+            <li><a href="#qualifikationen" onClick={closeMenu}>Expertise</a></li>
+            <li><a href="#b2b" onClick={closeMenu}>B2B &amp; Corporate Health</a></li>
             <li><a href="#einblicke" onClick={closeMenu}>Einblicke</a></li>
             <li><a href="#kontakt" onClick={closeMenu} className="ql-navbar__mobile-cta">Erstgespräch anfragen</a></li>
           </ul>
@@ -115,10 +118,9 @@ export default function Home() {
 
       <main>
         {/* ——————————————————————————————————————————————
-            ① HERO – Editorial Overlap with Soft Feathered Fade (A7R01303)
+            ① HERO SECTION
            —————————————————————————————————————————————— */}
-        <section className="ql-hero ql-hero--overlap" id="home">
-          {/* Expansive Background Image with Feathered Left Fade */}
+        <section className="ql-hero" id="home">
           <div className="ql-hero__bg-visual">
             <div className="ql-hero__fade-mask">
               <img
@@ -132,11 +134,10 @@ export default function Home() {
           </div>
 
           <div className="ql-hero__container">
-            {/* Left/Overlapping Content: Editorial Typography */}
             <div className="ql-hero__content-box">
-              <div className="ql-hero__kicker">
+              <span className="ql-hero__kicker">
                 HOLISTIC MENTORING &amp; HEALTH COACHING
-              </div>
+              </span>
               <h1 className="ql-hero__headline">
                 Erfolg neu definieren.<br />Mit innerer Stärke und echter Vitalität.
               </h1>
@@ -144,10 +145,10 @@ export default function Home() {
                 Ganzheitliches Mentoring &amp; Health Coaching für Frauen, die ihr Wohlbefinden, innere Ruhe und echte Vitalität wieder in den Mittelpunkt ihres Lebens stellen möchten.
               </p>
               <div className="ql-hero__cta-group">
-                <a href="#kontakt" className="ql-hero__btn-luxury">
+                <a href="#kontakt" className="ql-btn ql-btn--primary">
                   Erstgespräch vereinbaren
                 </a>
-                <a href="#angebote" className="ql-hero__btn-outline">
+                <a href="#angebote" className="ql-btn ql-btn--outline">
                   Angebote entdecken
                 </a>
               </div>
@@ -156,21 +157,20 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ② MEIN ANSATZ – Storytelling Intro & 3 Säulen
+            ② MEIN ANSATZ – Storytelling & 3 Säulen
            —————————————————————————————————————————————— */}
         <section className="ql-ansatz ql-reveal" id="mein-ansatz">
           <div className="ql-ansatz__container">
-            {/* Oberer Textblock: Intro & Storytelling */}
             <div className="ql-ansatz__intro">
-              <span className="ql-ansatz__kicker">MEIN ANSATZ</span>
-              <h2 className="ql-ansatz__headline">
+              <span className="ql-kicker">MEIN ANSATZ</span>
+              <h2 className="ql-headline">
                 Ganzheitlich gedacht. Für dein starkes Fundament.
               </h2>
               <p className="ql-ansatz__p">
                 Fragst du dich manchmal, wo du selbst bei all den Terminen, Verpflichtungen und Erwartungen bleibst? Wünschst du dir Klarheit, wie du deinen anspruchsvollen Alltag meisterst, ohne deinen Körper, deine Nerven und dein Wohlbefinden hintanzustellen?
               </p>
               <p className="ql-ansatz__p">
-                Genau dafür habe ich Business, Body &amp; Mind geschaffen. Ein Ort für Frauen, die viel Verantwortung tragen und ihr Leben neu ausrichten wollen: Nicht durch ständiges Überlasten und Funktionieren-Müssen, sondern getragen von innerer Stärke und echter Vitalität.
+                Genau dafür habe ich <em>Business, Body &amp; Mind</em> geschaffen. Ein Ort für Frauen, die viel Verantwortung tragen und ihr Leben neu ausrichten wollen: Nicht durch ständiges Überlasten und Funktionieren-Müssen, sondern getragen von innerer Stärke und echter Vitalität.
               </p>
               <p className="ql-ansatz__p">
                 Mein Schwerpunkt liegt auf der gesundheitlichen und vitalen Ebene. Meine Methoden basieren auf sport- und gesundheitswissenschaftlichen Ansätzen, gezieltem Stressmanagement und Bewegung. Gemeinsam entwickeln wir alltagstaugliche Systeme, die deinen Körper stärken, deinen Geist beruhigen und dir die Energie zurückgeben, die du für alles brauchst, was dir wichtig ist.
@@ -180,12 +180,11 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Unterer Block: Die 3 Säulen im Grid */}
+            {/* 3 Säulen */}
             <div className="ql-ansatz__grid">
-              {/* Säule 1 (Business & Struktur) */}
               <div className="ql-ansatz__pillar ql-stagger">
                 <div className="ql-ansatz__badge">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D3935" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E1C1A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="3" y="3" width="18" height="18" rx="2" />
                     <path d="M3 9h18" />
                     <path d="M9 21V9" />
@@ -197,10 +196,9 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Säule 2 (Body & Vitalität) */}
               <div className="ql-ansatz__pillar ql-stagger">
                 <div className="ql-ansatz__badge">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D3935" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E1C1A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="5" />
                     <path d="M12 2v2" />
                     <path d="M12 20v2" />
@@ -218,13 +216,12 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Säule 3 (Mind & Balance) */}
               <div className="ql-ansatz__pillar ql-stagger">
                 <div className="ql-ansatz__badge">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D3935" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E1C1A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="9" />
                     <path d="M12 3a9 9 0 0 1 0 18A9 9 0 0 0 12 3z" />
-                    <circle cx="12" cy="7.5" r="1.2" fill="#3D3935" stroke="none" />
+                    <circle cx="12" cy="7.5" r="1.2" fill="#1E1C1A" stroke="none" />
                     <circle cx="12" cy="16.5" r="1.2" fill="#FAF7F2" stroke="none" />
                   </svg>
                 </div>
@@ -238,7 +235,7 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ATMOSPHERIC BANNER – Visueller Ruhepol
+            TRANSITION: ATMOSPHERIC BANNER
            —————————————————————————————————————————————— */}
         <section className="ql-atmospheric-banner ql-reveal">
           <div className="ql-atmospheric-banner__bg">
@@ -261,84 +258,90 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ③ ANGEBOT & FORMATE – 3 Säulen
+            ③ ANGEBOTE & FORMATE
            —————————————————————————————————————————————— */}
         <section className="ql-offers ql-reveal" id="angebote">
           <div className="ql-offers__container">
-            <h2 className="ql-offers__headline">Angebote &amp; Formate</h2>
-            <p className="ql-offers__subtext">
-              Individuell und ganzheitlich: wähle das Format, das am Besten zu deinen Zielen und deiner aktuellen Lebensphase passt
-            </p>
+            <div className="ql-section-header">
+              <span className="ql-kicker">ANGEBOTE &amp; FORMATE</span>
+              <h2 className="ql-headline">Gezielte Begleitung nach deinen Bedürfnissen</h2>
+              <p className="ql-subtext">
+                Individuell und ganzheitlich: Wähle das Format, das am besten zu deinen Zielen und deiner aktuellen Lebensphase passt.
+              </p>
+            </div>
 
             <div className="ql-offers__grid">
-              {/* Karte 1: 1:1 Vitalität & Resilienz */}
+              {/* Karte 1 */}
               <div className="ql-offer-card ql-stagger">
                 <div className="ql-offer-card__body">
-                  <div className="ql-offer-card__kicker">1:1 VITALITÄT &amp; RESILIENZ</div>
+                  <span className="ql-offer-card__kicker">1:1 VITALITÄT &amp; RESILIENZ</span>
                   <h3 className="ql-offer-card__title">Holistic Health Mentoring</h3>
                   <p className="ql-offer-card__desc">
                     Ganzheitliche Wissensvermittlung und strukturierte Methoden für Frauen mit hoher Verantwortung. Erlerne alltagstaugliche Strategien für nachhaltige Energie, gesunde Routinen und mentale Klarheit.
                   </p>
                   <ul className="ql-offer-card__bullets">
-                    <li>✦ Sport- &amp; gesundheitswissenschaftliche Vitalitätsanalyse</li>
-                    <li>✦ Gezielte Methoden zur Stress- &amp; Nervensystemregulation</li>
-                    <li>✦ Strukturierte Impulse für Erholung, Schlaf &amp; gesunde Routinen</li>
-                    <li>✦ Persönliche Einheiten im ruhigen Praxisraum (1090 Wien)</li>
+                    <li>Sport- &amp; gesundheitswissenschaftliche Vitalitätsanalyse</li>
+                    <li>Gezielte Methoden zur Stress- &amp; Nervensystemregulation</li>
+                    <li>Strukturierte Impulse für Erholung, Schlaf &amp; gesunde Routinen</li>
+                    <li>Persönliche Einheiten im ruhigen Praxisraum (1090 Wien)</li>
                   </ul>
                 </div>
                 <div className="ql-offer-card__action">
-                  <a href="#kontakt" className="ql-offer-card__btn">
-                    Erstgespräch anfragen →
+                  <a href="#kontakt" className="ql-btn ql-btn--card">
+                    <span>Erstgespräch anfragen</span>
+                    <span className="ql-btn__arrow">→</span>
                   </a>
                 </div>
               </div>
 
-              {/* Karte 2: 1:1 Movement & Vitalität */}
+              {/* Karte 2 */}
               <div className="ql-offer-card ql-stagger">
                 <div className="ql-offer-card__body">
-                  <div className="ql-offer-card__kicker">1:1 MOVEMENT &amp; VITALITÄT</div>
+                  <span className="ql-offer-card__kicker">1:1 MOVEMENT &amp; VITALITÄT</span>
                   <h3 className="ql-offer-card__title">Personal Movement &amp; Training</h3>
                   <p className="ql-offer-card__desc">
-                    Individuell abgestimmter 1:1 Unterricht nach deinen Bedürfnissen. Ob eine reine Yoga-Einheit, gezieltes Pilates, funktionelle Kräftigung oder ein maßgeschneiderter Bewegungsmix – jede Einheit orientiert sich an deinem Körper und deiner Tagesform.
+                    Individuell abgestimmter 1:1 Unterricht nach deinen Bedürfnissen. Ob eine reine Yoga-Einheit, gezieltes Pilates, funktionelle Kräftigung oder ein maßgeschneiderter Bewegungsmix – jede Einheit orientiert sich an deinem Körper.
                   </p>
                   <ul className="ql-offer-card__bullets">
-                    <li>✦ Fokus nach Wahl: Reine Praxis (Yoga, Pilates, Barre) oder kombinierter Mix</li>
-                    <li>✦ Vielseitiges Spektrum: Von Kraft &amp; Mobility über Faszien bis Lauftraining</li>
-                    <li>✦ Gezielte Regeneration: Ausgleichende Dehn-, Atem- und Entspannungssequenzen</li>
-                    <li>✦ Exklusiver Raum: Vor Ort in privater Atmosphäre (Nußdorfer Str., 1090 Wien)</li>
+                    <li>Fokus nach Wahl: Reine Praxis (Yoga, Pilates, Barre) oder kombinierter Mix</li>
+                    <li>Vielseitiges Spektrum: Von Kraft &amp; Mobility über Faszien bis Lauftraining</li>
+                    <li>Gezielte Regeneration: Ausgleichende Dehn-, Atem- und Entspannungssequenzen</li>
+                    <li>Exklusiver Raum: Vor Ort in privater Atmosphäre (Nußdorfer Str., 1090 Wien)</li>
                   </ul>
                 </div>
                 <div className="ql-offer-card__action">
-                  <a href="#kontakt" className="ql-offer-card__btn">
-                    Private Session anfragen →
+                  <a href="#kontakt" className="ql-btn ql-btn--card">
+                    <span>Private Session anfragen</span>
+                    <span className="ql-btn__arrow">→</span>
                   </a>
                 </div>
               </div>
 
-              {/* Karte 3: Exklusive Formate */}
+              {/* Karte 3 */}
               <div className="ql-offer-card ql-stagger">
                 <div className="ql-offer-card__body">
-                  <div className="ql-offer-card__kicker">EXKLUSIVE FORMATE</div>
+                  <span className="ql-offer-card__kicker">EXKLUSIVE FORMATE</span>
                   <h3 className="ql-offer-card__title">Workshops &amp; Retreats</h3>
                   <p className="ql-offer-card__desc">
                     Gemeinsam praktizieren, regenerieren und neues Wissen vertiefen. Raum für Bewegung, fundierte Impulse und echte Auszeiten in inspirierender Umgebung.
                   </p>
                   <ul className="ql-offer-card__bullets">
-                    <li>✦ Ganzheitliche Verbindung aus Bewegung, Atmung &amp; mentaler Stärke</li>
-                    <li>✦ Exklusiver Kleingruppenrahmen für persönliche Atmosphäre &amp; Austausch</li>
-                    <li>✦ Nächster Workshop: „The Pre-Holiday Reset“ (22. November 2026, Wien)</li>
-                    <li>✦ Retreats: Mehrtägige Auszeiten an besonderen Orten (Planung 2027)</li>
+                    <li>Ganzheitliche Verbindung aus Bewegung, Atmung &amp; mentaler Stärke</li>
+                    <li>Exklusiver Kleingruppenrahmen für persönliche Atmosphäre &amp; Austausch</li>
+                    <li>Nächster Workshop: „The Pre-Holiday Reset“ (22. November 2026, Wien)</li>
+                    <li>Retreats: Mehrtägige Auszeiten an besonderen Orten (Planung 2027)</li>
                   </ul>
                 </div>
                 <div className="ql-offer-card__action">
-                  <a href="#kontakt" className="ql-offer-card__btn">
-                    Infos &amp; Warteliste anfragen →
+                  <a href="#kontakt" className="ql-btn ql-btn--card">
+                    <span>Infos &amp; Warteliste anfragen</span>
+                    <span className="ql-btn__arrow">→</span>
                   </a>
                 </div>
               </div>
             </div>
 
-            {/* 3. Gruppenstunden & Instagram Live Schedule */}
+            {/* Instagram Live Schedule Card */}
             <div className="ql-studio-card ql-stagger">
               <div className="ql-studio-card__content">
                 <span className="ql-studio-card__kicker">GRUPPENKLASSEN &amp; SPECIALS</span>
@@ -352,15 +355,15 @@ export default function Home() {
                   href="https://www.instagram.com/bystefanieschinnerl/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ql-studio-card__btn"
+                  className="ql-btn ql-btn--primary"
                 >
-                  <svg className="ql-studio-card__btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                   </svg>
                   <span>Wochenplan auf Instagram</span>
-                  <span className="ql-studio-card__arrow">↗</span>
+                  <span>↗</span>
                 </a>
                 <span className="ql-studio-card__handle">@bystefanieschinnerl</span>
               </div>
@@ -369,30 +372,26 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ④ ÜBER MICH – 50/50 Full-Bleed Editorial Layout
+            ④ ÜBER MICH – 50/50 Editorial Split
            —————————————————————————————————————————————— */}
         <section className="ql-about-voyage ql-reveal" id="ueber-mich">
           <div className="ql-about-voyage__stage">
-            
-            {/* Linke Hälfte: Vollflächiges Bild (Full-Bleed bis zum linken Bildschirmrand) */}
             <div className="ql-about-voyage__photo-col ql-stagger">
               <img
-                src="/img/stefanie_1303_portrait.jpg"
+                src="/img/A7R01304.jpg"
                 alt="Dr. Stefanie Schinnerl – Über mich"
                 className="ql-about-voyage__photo"
                 loading="lazy"
               />
             </div>
 
-            {/* Rechte Hälfte: Weißer Hintergrund & Typografie */}
             <div className="ql-about-voyage__content-col ql-stagger">
               <div className="ql-about-voyage__inner">
-                
-                <p className="ql-about-voyage__kicker">
-                  Über mich · Dr. Stefanie Schinnerl
-                </p>
+                <span className="ql-kicker">
+                  ÜBER MICH · DR. STEFANIE SCHINNERL
+                </span>
 
-                <h2 className="ql-about-voyage__headline">
+                <h2 className="ql-headline">
                   Schön, dass du da bist.
                 </h2>
                 
@@ -413,32 +412,30 @@ export default function Home() {
                 </div>
 
                 <div className="ql-about-voyage__action">
-                  <a href="#kontakt" className="ql-about-voyage__btn">
-                    Erstgespräch vereinbaren →
+                  <a href="#kontakt" className="ql-btn ql-btn--primary">
+                    <span>Erstgespräch vereinbaren</span>
+                    <span className="ql-btn__arrow">→</span>
                   </a>
                 </div>
               </div>
             </div>
-
           </div>
         </section>
 
         {/* ——————————————————————————————————————————————
-            ④.b QUALIFIKATIONEN & FUNDAMENT (Variant 1)
+            ⑤ FUNDAMENT & EXPERTISE
            —————————————————————————————————————————————— */}
         <section className="ql-credentials ql-reveal" id="qualifikationen">
           <div className="ql-credentials__container">
-            
-            <div className="ql-credentials__header">
-              <p className="ql-credentials__label">Fundament &amp; Qualifikationen</p>
-              <h2 className="ql-credentials__title">Fundierte Expertise. Aus der Praxis für deine Praxis.</h2>
-              <p className="ql-credentials__intro">
+            <div className="ql-section-header">
+              <span className="ql-kicker">FUNDAMENT &amp; EXPERTISE</span>
+              <h2 className="ql-headline">Fundierte Expertise. Aus der Praxis für deine Praxis.</h2>
+              <p className="ql-subtext">
                 Die seltene Synthese aus universitärer Spitzenforschung, langjähriger Kanzleipraxis und zertifizierter Gesundheits-, Bewegungs- und Mentallehre.
               </p>
             </div>
 
             <div className="ql-credentials__grid">
-              
               {/* Säule 1: Recht & Steuern */}
               <div className="ql-credentials__card ql-stagger">
                 <div className="ql-credentials__card-top">
@@ -497,7 +494,7 @@ export default function Home() {
                 </ul>
               </div>
 
-              {/* Säule 3: Führung, Gremien & Mandate */}
+              {/* Säule 3: Führung & Gremien */}
               <div className="ql-credentials__card ql-stagger">
                 <div className="ql-credentials__card-top">
                   <span className="ql-credentials__num">03</span>
@@ -525,22 +522,19 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-
             </div>
-
           </div>
         </section>
 
         {/* ——————————————————————————————————————————————
-            ⑥ EDITORIAL GALLERY – Emotionaler Anker
+            ⑥ EDITORIAL GALLERY & ZITATE
            —————————————————————————————————————————————— */}
         <section className="ql-editorial-gallery" id="einblicke">
           <div className="ql-editorial-gallery__quotes">
             <div className="ql-editorial-gallery__quote">
               <span className="ql-quote-mark">"</span>
               <p>
-                Wahre Stärke zeigt sich nicht darin, nie zu fallen – sondern
-                darin, jedes Mal bewusster aufzustehen.
+                Wahre Stärke zeigt sich nicht darin, nie zu fallen – sondern darin, jedes Mal bewusster aufzustehen.
               </p>
             </div>
 
@@ -564,21 +558,22 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ⑦ B2B & KEYNOTES – Vorträge & Moderation mit Referenzen
+            ⑦ B2B & KEYNOTES
            —————————————————————————————————————————————— */}
         <section className="ql-b2b ql-reveal" id="b2b">
           <div className="ql-b2b__container">
-            <span className="ql-b2b__kicker">B2B &amp; KEYNOTES</span>
-            <h2 className="ql-b2b__headline">Vorträge &amp; Moderation</h2>
-            <p className="ql-b2b__subtext">
-              Buchbar für Unternehmen, Konferenzen und Verbände. Meine Themen: Resilienz &amp; Vitalität, Female Leadership, High Performance &amp; Wellbeing – authentisch, fundiert und inspirierend.
-            </p>
+            <div className="ql-section-header">
+              <span className="ql-kicker">B2B &amp; KEYNOTES</span>
+              <h2 className="ql-headline">Vorträge, Moderation &amp; Corporate Health</h2>
+              <p className="ql-subtext">
+                Buchbar für Unternehmen, Konferenzen und Verbände. Meine Themen: Resilienz &amp; Vitalität, Female Leadership, High Performance &amp; Wellbeing – authentisch, fundiert und inspirierend.
+              </p>
+            </div>
 
             <div className="ql-b2b__grid">
-              {/* Säule 1 (Keynotes & Vorträge) */}
               <div className="ql-b2b__pillar ql-stagger">
                 <div className="ql-b2b__badge">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D3935" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E1C1A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
                     <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
                     <line x1="12" y1="19" x2="12" y2="22" />
@@ -591,10 +586,9 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Säule 2 (Moderation & Panels) */}
               <div className="ql-b2b__pillar ql-stagger">
                 <div className="ql-b2b__badge">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D3935" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E1C1A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                     <line x1="8" y1="9" x2="16" y2="9" />
                     <line x1="8" y1="13" x2="13" y2="13" />
@@ -606,10 +600,9 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Säule 3 (Corporate Workshops) */}
               <div className="ql-b2b__pillar ql-stagger">
                 <div className="ql-b2b__badge">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D3935" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E1C1A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="3" y="3" width="18" height="18" rx="2" />
                     <path d="M3 9h18" />
                     <path d="M9 21V9" />
@@ -624,12 +617,13 @@ export default function Home() {
             </div>
 
             <div className="ql-b2b__action-wrap">
-              <a href="#kontakt" className="ql-b2b__cta-btn">
-                Vortrag oder B2B anfragen →
+              <a href="#kontakt" className="ql-btn ql-btn--primary">
+                <span>Vortrag oder B2B anfragen</span>
+                <span className="ql-btn__arrow">→</span>
               </a>
             </div>
 
-            {/* Dezent & horizontal formatierte Referenzen-Leiste (Social-Proof Badges) */}
+            {/* Social Proof Badges */}
             <div className="ql-b2b__refs ql-stagger">
               <span className="ql-b2b__refs-label">Referenzen &amp; Auftritte:</span>
               <div className="ql-b2b__refs-list">
@@ -639,7 +633,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="ql-b2b__ref-badge"
                 >
-                  <span className="ql-b2b__ref-icon">🎙️</span>
+                  <span>🎙️</span>
                   <span>Der Standard Podcast — Frauen in Führung</span>
                   <span className="ql-b2b__ref-arrow">↗</span>
                 </a>
@@ -649,7 +643,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="ql-b2b__ref-badge"
                 >
-                  <span className="ql-b2b__ref-icon">⚖️</span>
+                  <span>⚖️</span>
                   <span>Women in Law — Jubiläumsinterview</span>
                   <span className="ql-b2b__ref-arrow">↗</span>
                 </a>
@@ -659,7 +653,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="ql-b2b__ref-badge"
                 >
-                  <span className="ql-b2b__ref-icon">🎤</span>
+                  <span>🎤</span>
                   <span>Tax Tech Konferenz 2026 — Speakerin</span>
                   <span className="ql-b2b__ref-arrow">↗</span>
                 </a>
@@ -669,18 +663,19 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ⑧ ABLAUF – In 3 Schritten zur Zusammenarbeit
+            ⑧ ABLAUF – In 3 Schritten
            —————————————————————————————————————————————— */}
         <section className="ql-process ql-reveal" id="ablauf">
           <div className="ql-process__container">
-            <span className="ql-process__kicker">ZUSAMMENARBEIT &amp; ABLAUF</span>
-            <h2 className="ql-process__headline">In 3 Schritten zu deiner Begleitung</h2>
-            <p className="ql-process__subtext">
-              Persönlich, unkompliziert und mit Raum für deine individuellen Anliegen.
-            </p>
+            <div className="ql-section-header">
+              <span className="ql-kicker">ZUSAMMENARBEIT &amp; ABLAUF</span>
+              <h2 className="ql-headline">In 3 Schritten zu deiner Begleitung</h2>
+              <p className="ql-subtext">
+                Persönlich, unkompliziert und mit Raum für deine individuellen Anliegen.
+              </p>
+            </div>
 
             <div className="ql-process__grid">
-              {/* Schritt 1 */}
               <div className="ql-process__card ql-stagger">
                 <div className="ql-process__card-header">
                   <span className="ql-process__step-num">01</span>
@@ -692,7 +687,6 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Schritt 2 */}
               <div className="ql-process__card ql-stagger">
                 <div className="ql-process__card-header">
                   <span className="ql-process__step-num">02</span>
@@ -700,11 +694,10 @@ export default function Home() {
                 </div>
                 <h3 className="ql-process__card-title">Kurzes Telefonat</h3>
                 <p className="ql-process__card-text">
-                  Wir telefonieren kurz, um dein Thema kurz abzustimmen und direkt einen Termin für unser persönliches Treffen zu vereinbaren.
+                  Wir telefonieren kurz, um dein Thema abzustimmen und direkt einen passenden Termin für unser Treffen zu finden.
                 </p>
               </div>
 
-              {/* Schritt 3 */}
               <div className="ql-process__card ql-stagger">
                 <div className="ql-process__card-header">
                   <span className="ql-process__step-num">03</span>
@@ -717,7 +710,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* B2B & Kooperations-Hinweis */}
+            {/* B2B Note */}
             <div className="ql-process__b2b-note ql-stagger">
               <div className="ql-process__b2b-icon">✦</div>
               <div className="ql-process__b2b-content">
@@ -731,19 +724,21 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ⑨ KONTAKT – Wie erreiche ich dich?
+            ⑨ KONTAKT
            —————————————————————————————————————————————— */}
-        <section className="ql-section ql-section--centered ql-reveal" id="kontakt">
+        <section className="ql-contact-section ql-reveal" id="kontakt">
           <div className="ql-contact">
-            <p className="ql-section__label">Kontakt</p>
-            <h2 className="ql-section__title">Lass uns sprechen.</h2>
-            <p className="ql-section__text">
-              Ob Coaching, Keynote Speaking oder ein gemeinsames Projekt –
-              ich freue mich auf deine Anfrage.
-            </p>
+            <div className="ql-section-header">
+              <span className="ql-kicker">KONTAKT</span>
+              <h2 className="ql-headline">Lass uns sprechen.</h2>
+              <p className="ql-subtext">
+                Ob Coaching, Keynote Speaking oder ein gemeinsames Projekt – ich freue mich auf deine Anfrage.
+              </p>
+            </div>
+
             <form className="ql-contact__form" onSubmit={(e) => e.preventDefault()}>
-              <input type="text" name="name" placeholder="Name" required />
-              <input type="email" name="email" placeholder="E-Mail" required />
+              <input type="text" name="name" placeholder="Dein Name" required />
+              <input type="email" name="email" placeholder="Deine E-Mail-Adresse" required />
               <input type="tel" name="phone" placeholder="Telefonnummer (optional)" />
               <select name="inquiry" defaultValue="" required>
                 <option value="" disabled>
@@ -756,7 +751,7 @@ export default function Home() {
                 <option value="sonstiges">Sonstiges</option>
               </select>
               <textarea name="message" placeholder="Deine Nachricht – worum geht es?" rows="5" required></textarea>
-              <button type="submit" className="ql-btn">
+              <button type="submit" className="ql-btn ql-btn--primary ql-btn--full">
                 Anfrage senden
               </button>
             </form>
@@ -769,9 +764,12 @@ export default function Home() {
         <span className="ql-footer__brand">Dr. Stefanie Schinnerl</span>
         <span className="ql-footer__tagline">High Performance von innen heraus</span>
         <ul className="ql-footer__links">
-          <li><a href="/impressum">Impressum</a></li>
-          <li><a href="/datenschutz">Datenschutz</a></li>
-          <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#mein-ansatz">Mein Ansatz</a></li>
+          <li><a href="#angebote">Angebote</a></li>
+          <li><a href="#ueber-mich">Über mich</a></li>
+          <li><a href="#b2b">B2B &amp; Keynotes</a></li>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="https://www.instagram.com/bystefanieschinnerl/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
         <span className="ql-footer__copy">
