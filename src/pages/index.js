@@ -6,7 +6,7 @@ const EDITORIAL_IMAGES = [
   '/img/A7R01304.jpg',
   '/img/A7R00276.jpg',
   '/img/A7R01182.jpg',
-  '/img/A7R01328.jpg',
+  '/img/A7R01377.jpg',
   '/img/A7R00105.jpg',
 ];
 
@@ -231,32 +231,30 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="ql-offers__editorial-list">
-              {/* Reihe 1: Holistic Health Mentoring */}
-              <div className="ql-offer-row ql-stagger">
-                <div className="ql-offer-row__media">
+            <div className="ql-offers__grid">
+              {/* Karte 1: Holistic Health Mentoring */}
+              <div className="ql-offer-card ql-stagger">
+                <div className="ql-offer-card__media">
                   <img
                     src="/img/A7R00199.jpg"
                     alt="Holistic Health Mentoring – Stefanie Brand"
-                    className="ql-offer-row__img"
-                    style={{ objectPosition: 'center 25%' }}
+                    className="ql-offer-card__img"
+                    style={{ objectPosition: 'center 35%' }}
                     loading="lazy"
                   />
                 </div>
-                <div className="ql-offer-row__card">
-                  <div className="ql-offer-card__body">
-                    <span className="ql-offer-card__kicker">1:1 VITALITÄT &amp; RESILIENZ</span>
-                    <h3 className="ql-offer-card__title">Holistic Health Mentoring</h3>
-                    <p className="ql-offer-card__desc">
-                      Ganzheitliche Wissensvermittlung und strukturierte Methoden für Frauen mit hoher Verantwortung. Erlerne alltagstaugliche Strategien für nachhaltige Energie, gesunde Routinen und mentale Klarheit.
-                    </p>
-                    <ul className="ql-offer-card__bullets">
-                      <li>Sport- &amp; gesundheitswissenschaftliche Vitalitätsanalyse</li>
-                      <li>Gezielte Methoden zur Stress- &amp; Nervensystemregulation</li>
-                      <li>Strukturierte Impulse für Erholung, Schlaf &amp; gesunde Routinen</li>
-                      <li>Persönliche Einheiten im ruhigen Praxisraum (1090 Wien)</li>
-                    </ul>
-                  </div>
+                <div className="ql-offer-card__body">
+                  <span className="ql-offer-card__kicker">1:1 VITALITÄT &amp; RESILIENZ</span>
+                  <h3 className="ql-offer-card__title">Holistic Health Mentoring</h3>
+                  <p className="ql-offer-card__desc">
+                    Ganzheitliche Wissensvermittlung und strukturierte Methoden für Frauen mit hoher Verantwortung. Erlerne alltagstaugliche Strategien für nachhaltige Energie, gesunde Routinen und mentale Klarheit.
+                  </p>
+                  <ul className="ql-offer-card__bullets">
+                    <li>Sport- &amp; gesundheitswissenschaftliche Vitalitätsanalyse</li>
+                    <li>Gezielte Methoden zur Stress- &amp; Nervensystemregulation</li>
+                    <li>Strukturierte Impulse für Erholung, Schlaf &amp; gesunde Routinen</li>
+                    <li>Persönliche Einheiten im ruhigen Praxisraum (1090 Wien)</li>
+                  </ul>
                   <div className="ql-offer-card__action">
                     <a href="#kontakt" className="ql-btn ql-btn--card">
                       <span>Erstgespräch anfragen</span>
@@ -266,31 +264,29 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Reihe 2: Personal Movement & Training (Invertiert) */}
-              <div className="ql-offer-row ql-offer-row--reverse ql-stagger">
-                <div className="ql-offer-row__media">
+              {/* Karte 2: Personal Movement & Training */}
+              <div className="ql-offer-card ql-stagger">
+                <div className="ql-offer-card__media">
                   <img
-                    src="/img/A7R00625.jpg"
+                    src="/img/A7R00636.jpg"
                     alt="Personal Movement & Training – Stefanie Brand"
-                    className="ql-offer-row__img"
-                    style={{ objectPosition: 'center 20%' }}
+                    className="ql-offer-card__img"
+                    style={{ objectPosition: 'center 25%' }}
                     loading="lazy"
                   />
                 </div>
-                <div className="ql-offer-row__card">
-                  <div className="ql-offer-card__body">
-                    <span className="ql-offer-card__kicker">1:1 MOVEMENT &amp; VITALITÄT</span>
-                    <h3 className="ql-offer-card__title">Personal Movement &amp; Training</h3>
-                    <p className="ql-offer-card__desc">
-                      Individuell abgestimmter 1:1 Unterricht nach deinen Bedürfnissen. Ob eine reine Yoga-Einheit, gezieltes Pilates, funktionelle Kräftigung oder ein maßgeschneiderter Bewegungsmix – jede Einheit orientiert sich an deinem Körper.
-                    </p>
-                    <ul className="ql-offer-card__bullets">
-                      <li>Fokus nach Wahl: Reine Praxis (Yoga, Pilates, Barre) oder kombinierter Mix</li>
-                      <li>Vielseitiges Spektrum: Von Kraft &amp; Mobility über Faszien bis Lauftraining</li>
-                      <li>Gezielte Regeneration: Ausgleichende Dehn-, Atem- und Entspannungssequenzen</li>
-                      <li>Exklusiver Raum: Vor Ort in privater Atmosphäre (Nußdorfer Str., 1090 Wien)</li>
-                    </ul>
-                  </div>
+                <div className="ql-offer-card__body">
+                  <span className="ql-offer-card__kicker">1:1 MOVEMENT &amp; VITALITÄT</span>
+                  <h3 className="ql-offer-card__title">Personal Movement &amp; Training</h3>
+                  <p className="ql-offer-card__desc">
+                    Individuell abgestimmter 1:1 Unterricht nach deinen Bedürfnissen. Ob eine reine Yoga-Einheit, gezieltes Pilates, funktionelle Kräftigung oder ein maßgeschneiderter Bewegungsmix – jede Einheit orientiert sich an deinem Körper.
+                  </p>
+                  <ul className="ql-offer-card__bullets">
+                    <li>Fokus nach Wahl: Reine Praxis (Yoga, Pilates, Barre) oder kombinierter Mix</li>
+                    <li>Vielseitiges Spektrum: Von Kraft &amp; Mobility über Faszien bis Lauftraining</li>
+                    <li>Gezielte Regeneration: Ausgleichende Dehn-, Atem- und Entspannungssequenzen</li>
+                    <li>Exklusiver Raum: Vor Ort in privater Atmosphäre (Nußdorfer Str., 1090 Wien)</li>
+                  </ul>
                   <div className="ql-offer-card__action">
                     <a href="#kontakt" className="ql-btn ql-btn--card">
                       <span>Private Session anfragen</span>
@@ -300,31 +296,29 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Reihe 3: Workshops & Retreats */}
-              <div className="ql-offer-row ql-stagger">
-                <div className="ql-offer-row__media">
+              {/* Karte 3: Workshops & Retreats */}
+              <div className="ql-offer-card ql-stagger">
+                <div className="ql-offer-card__media">
                   <img
-                    src="/img/A7R00725.jpg"
+                    src="/img/A7R00474.jpg"
                     alt="Workshops & Retreats – Stefanie Brand"
-                    className="ql-offer-row__img"
-                    style={{ objectPosition: 'center 25%' }}
+                    className="ql-offer-card__img"
+                    style={{ objectPosition: 'center 35%' }}
                     loading="lazy"
                   />
                 </div>
-                <div className="ql-offer-row__card">
-                  <div className="ql-offer-card__body">
-                    <span className="ql-offer-card__kicker">EXKLUSIVE FORMATE</span>
-                    <h3 className="ql-offer-card__title">Workshops &amp; Retreats</h3>
-                    <p className="ql-offer-card__desc">
-                      Gemeinsam praktizieren, regenerieren und neues Wissen vertiefen. Raum für Bewegung, fundierte Impulse und echte Auszeiten in inspirierender Umgebung.
-                    </p>
-                    <ul className="ql-offer-card__bullets">
-                      <li>Ganzheitliche Verbindung aus Bewegung, Atmung &amp; mentaler Stärke</li>
-                      <li>Exklusiver Kleingruppenrahmen für persönliche Atmosphäre &amp; Austausch</li>
-                      <li>Nächster Workshop: „The Pre-Holiday Reset“ (22. November 2026, Wien)</li>
-                      <li>Retreats: Mehrtägige Auszeiten an besonderen Orten (Planung 2027)</li>
-                    </ul>
-                  </div>
+                <div className="ql-offer-card__body">
+                  <span className="ql-offer-card__kicker">EXKLUSIVE FORMATE</span>
+                  <h3 className="ql-offer-card__title">Workshops &amp; Retreats</h3>
+                  <p className="ql-offer-card__desc">
+                    Gemeinsam praktizieren, regenerieren und neues Wissen vertiefen. Raum für Bewegung, fundierte Impulse und echte Auszeiten in inspirierender Umgebung.
+                  </p>
+                  <ul className="ql-offer-card__bullets">
+                    <li>Ganzheitliche Verbindung aus Bewegung, Atmung &amp; mentaler Stärke</li>
+                    <li>Exklusiver Kleingruppenrahmen für persönliche Atmosphäre &amp; Austausch</li>
+                    <li>Nächster Workshop: „The Pre-Holiday Reset“ (22. November 2026, Wien)</li>
+                    <li>Retreats: Mehrtägige Auszeiten an besonderen Orten (Planung 2027)</li>
+                  </ul>
                   <div className="ql-offer-card__action">
                     <a href="#kontakt" className="ql-btn ql-btn--card">
                       <span>Infos &amp; Warteliste anfragen</span>
@@ -337,29 +331,39 @@ export default function Home() {
 
             {/* Instagram Live Schedule Card */}
             <div className="ql-studio-card ql-stagger">
-              <div className="ql-studio-card__content">
-                <span className="ql-studio-card__kicker">GRUPPENKLASSEN &amp; SPECIALS</span>
-                <h3 className="ql-studio-card__title">Gemeinsam praktizieren &amp; Energie tanken</h3>
-                <p className="ql-studio-card__desc">
-                  Du möchtest die Dynamik einer gemeinsamen Praxis erleben? Ich unterrichte regelmäßig wechselnde Klassen und Specials in ausgewählten Studios in Wien. Da sich Zeiten, Locations und Formate flexibel gestalten, veröffentliche ich den aktuellen Stundenplan jede Woche direkt auf Instagram.
-                </p>
+              <div className="ql-studio-card__media">
+                <img
+                  src="/img/A7R00573.jpg"
+                  alt="Gruppenklassen &amp; Specials in Wien – Stefanie Brand"
+                  className="ql-studio-card__img"
+                  loading="lazy"
+                />
               </div>
-              <div className="ql-studio-card__cta-box">
-                <a
-                  href="https://www.instagram.com/bystefanieschinnerl/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ql-btn ql-btn--primary"
-                >
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                  </svg>
-                  <span>Wochenplan auf Instagram</span>
-                  <span>↗</span>
-                </a>
-                <span className="ql-studio-card__handle">@bystefanieschinnerl</span>
+              <div className="ql-studio-card__body">
+                <div className="ql-studio-card__content">
+                  <span className="ql-studio-card__kicker">GRUPPENKLASSEN &amp; SPECIALS</span>
+                  <h3 className="ql-studio-card__title">Gemeinsam praktizieren &amp; Energie tanken</h3>
+                  <p className="ql-studio-card__desc">
+                    Du möchtest die Dynamik einer gemeinsamen Praxis erleben? Ich unterrichte regelmäßig wechselnde Klassen und Specials in ausgewählten Studios in Wien. Da sich Zeiten, Locations und Formate flexibel gestalten, veröffentliche ich den aktuellen Stundenplan jede Woche direkt auf Instagram.
+                  </p>
+                </div>
+                <div className="ql-studio-card__cta-box">
+                  <a
+                    href="https://www.instagram.com/bystefanieschinnerl/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ql-btn ql-btn--primary"
+                  >
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    <span>Wochenplan auf Instagram</span>
+                    <span>↗</span>
+                  </a>
+                  <span className="ql-studio-card__handle">@bystefanieschinnerl</span>
+                </div>
               </div>
             </div>
           </div>
@@ -372,7 +376,7 @@ export default function Home() {
           <div className="ql-about-voyage__stage">
             <div className="ql-about-voyage__photo-col ql-stagger">
               <img
-                src="/img/A7R01304.jpg"
+                src="/img/A7R01328.jpg"
                 alt="Dr. Stefanie Schinnerl – Über mich"
                 className="ql-about-voyage__photo"
                 loading="lazy"

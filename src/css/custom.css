@@ -742,96 +742,57 @@ footer.footer {
   margin: 0 auto;
 }
 
-.ql-offers__editorial-list {
-  display: flex;
-  flex-direction: column;
-  gap: 3.5rem;
-  margin-bottom: 3.5rem;
-}
-
-.ql-offer-row {
-  display: grid;
-  grid-template-columns: 1fr 1.08fr;
-  gap: 3.5rem;
-  align-items: center;
-}
-
-.ql-offer-row--reverse {
-  grid-template-columns: 1.08fr 1fr;
-}
-
-.ql-offer-row--reverse .ql-offer-row__media {
-  order: 2;
-}
-
-.ql-offer-row--reverse .ql-offer-row__card {
-  order: 1;
-}
-
-.ql-offer-row__media {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3.1;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: 0 16px 40px rgba(30, 28, 26, 0.08);
-  border: 1px solid rgba(44, 41, 39, 0.08);
-  background: var(--color-surface);
-}
-
-.ql-offer-row__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.8s var(--ease-elegant);
-}
-
-.ql-offer-row:hover .ql-offer-row__img {
-  transform: scale(1.025);
-}
-
-.ql-offer-row__card {
-  background: var(--color-surface);
-  border: 1px solid rgba(44, 41, 39, 0.07);
-  border-radius: var(--radius-md);
-  padding: 2.8rem 2.4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.4s var(--ease-elegant), box-shadow 0.4s var(--ease-elegant), border-color 0.4s ease;
-}
-
-.ql-offer-row__card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-hover);
-  border-color: var(--color-accent-border);
-}
-
 .ql-offers__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 2.5rem;
+  align-items: stretch;
 }
 
 .ql-offer-card {
   background: var(--color-surface);
-  border: 1px solid rgba(44, 41, 39, 0.07);
-  border-radius: var(--radius-sm);
-  padding: 2.4rem 2rem 2rem;
+  border: 1px solid rgba(44, 41, 39, 0.08);
+  border-radius: var(--radius-md);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 10px 30px rgba(30, 28, 26, 0.04);
   transition: transform 0.4s var(--ease-elegant), box-shadow 0.4s var(--ease-elegant), border-color 0.4s ease;
+  height: 100%;
 }
 
 .ql-offer-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(30, 28, 26, 0.08);
   border-color: var(--color-accent-border);
+}
+
+.ql-offer-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background: #EAE5DF;
+}
+
+.ql-offer-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s var(--ease-elegant);
+}
+
+.ql-offer-card:hover .ql-offer-card__img {
+  transform: scale(1.04);
+}
+
+.ql-offer-card__body {
+  padding: 2.2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .ql-offer-card__kicker {
@@ -846,7 +807,7 @@ footer.footer {
 
 .ql-offer-card__title {
   font-family: var(--font-serif);
-  font-size: 1.55rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: var(--color-dark);
   margin: 0 0 1rem 0;
@@ -894,18 +855,55 @@ footer.footer {
   margin-top: auto;
 }
 
-/* Instagram Schedule Card */
+/* Instagram / Group Classes Schedule Card */
 .ql-studio-card {
   background: var(--color-surface);
   border: 1px solid rgba(179, 159, 136, 0.35);
   border-radius: var(--radius-sm);
-  padding: 2.2rem 2.5rem;
+  overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 340px 1fr;
+  align-items: stretch;
+  box-shadow: 0 10px 30px rgba(30, 28, 26, 0.04);
+  margin-top: 2.5rem;
+  transition: transform 0.4s var(--ease-elegant), box-shadow 0.4s var(--ease-elegant);
+}
+
+.ql-studio-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(30, 28, 26, 0.07);
+}
+
+.ql-studio-card__media {
+  position: relative;
+  overflow: hidden;
+  background: #EAE5DF;
+  min-height: 220px;
+}
+
+.ql-studio-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transition: transform 0.7s var(--ease-elegant);
+}
+
+.ql-studio-card:hover .ql-studio-card__img {
+  transform: scale(1.03);
+}
+
+.ql-studio-card__body {
+  padding: 2.2rem 2.5rem;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 2.5rem;
-  box-shadow: var(--shadow-soft);
-  margin-top: 2rem;
+}
+
+.ql-studio-card__content {
+  flex: 1;
 }
 
 .ql-studio-card__kicker {
@@ -921,17 +919,18 @@ footer.footer {
 
 .ql-studio-card__title {
   font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   font-weight: 500;
   color: var(--color-dark);
-  margin: 0 0 0.6rem 0;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.3;
 }
 
 .ql-studio-card__desc {
   font-family: var(--font-sans);
   font-size: 0.92rem;
-  line-height: 1.65;
-  color: var(--color-muted);
+  line-height: 1.7;
+  color: var(--color-text-body);
   margin: 0;
   font-weight: 300;
 }
@@ -948,6 +947,26 @@ footer.footer {
   font-family: var(--font-sans);
   font-size: 0.75rem;
   color: var(--color-muted);
+}
+
+@media (max-width: 991px) {
+  .ql-studio-card {
+    grid-template-columns: 1fr;
+  }
+  .ql-studio-card__media {
+    aspect-ratio: 16 / 9;
+    min-height: auto;
+  }
+  .ql-studio-card__body {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+  .ql-studio-card__cta-box {
+    align-items: flex-start;
+    width: 100%;
+  }
 }
 
 /* ==========================================================================
