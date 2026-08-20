@@ -388,14 +388,13 @@ export default function Home() {
             <div className="ql-about-voyage__content-col ql-stagger">
               <div className="ql-about-voyage__inner">
                 
-                {/* Großer Serif-Titel rein im Textbereich */}
-                <h2 className="ql-about-voyage__headline">
-                  Schön, dass du da bist!
-                </h2>
+                <p className="ql-about-voyage__kicker">
+                  Über mich · Dr. Stefanie Schinnerl
+                </p>
 
-                <span className="ql-about-voyage__kicker">
-                  ÜBER MICH · DR. STEFANIE SCHINNERL
-                </span>
+                <h2 className="ql-about-voyage__headline">
+                  Schön, dass du da bist.
+                </h2>
                 
                 <p className="ql-about-voyage__lead">
                   Du verdienst beruflichen Erfolg und Erfüllung – ohne dass deine Gesundheit, deine Lebensfreude oder deine innere Ruhe auf der Strecke bleiben.
@@ -425,77 +424,110 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ⑤ ENGAGEMENT – Wo bist du sichtbar?
+            ④.b QUALIFIKATIONEN & FUNDAMENT (Variant 1)
            —————————————————————————————————————————————— */}
-        <section className="ql-section ql-section--centered ql-reveal" id="engagement">
-          <div className="ql-section__inner">
-            <p className="ql-section__label">Mein Engagement</p>
-            <h2 className="ql-section__title ql-section__title--mb">Sichtbar &amp; Engagiert</h2>
-            <p className="ql-section__text ql-section__text--intro-wide">
-              Meine Arbeit endet nicht am Schreibtisch. Ob als Keynote-Speakerin, in Podcast-Interviews, durch Fachpublikationen oder im Rahmen gezielter Initiativen: Die Verbindung aus strategischer Exzellenz und ganzheitlicher Vitalität ist für mich gelebte Praxis.
-            </p>
-            <div className="ql-engagement">
-              <article className="ql-engagement__card ql-stagger">
-                <div className="ql-engagement__icon">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="2" />
-                    <path d="M12 2a10 10 0 0 1 0 20" />
-                    <path d="M12 5a7 7 0 0 1 0 14" />
-                    <path d="M12 8a4 4 0 0 1 0 8" />
-                  </svg>
-                </div>
-                <h3>Media</h3>
-                <p><a href="https://www.derstandard.at/story/3000000208394/frauen-in-fuehrungspositionen" target="_blank" rel="noopener noreferrer">Der Standard Podcast: Frauen in Führung →</a></p>
-                <p><a href="https://women-in-law.org/2025/02/16/10-jahre-women-in-law-jubilaeum-stefanie-schinnerl-im-interview/" target="_blank" rel="noopener noreferrer">Women in Law: 10-Jahres-Jubiläumsinterview →</a></p>
-                <p><a href="https://taxtech.at/3-fragen-an-unsere-ttk26-speakerinnen-stefanie-schinnerl/" target="_blank" rel="noopener noreferrer">Tax Tech Konferenz 2026: Speaker-Interview →</a></p>
-                <span className="ql-engagement__sub">Expertise teilen &amp; Sichtbarkeit schaffen</span>
-              </article>
-
-              <article className="ql-engagement__card ql-stagger">
-                <div className="ql-engagement__icon">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="8" cy="10" r="5" />
-                    <circle cx="16" cy="10" r="5" />
-                    <circle cx="12" cy="16" r="5" />
-                  </svg>
-                </div>
-                <h3>Networks</h3>
-                <p><a href="https://www.youtube.com/watch?v=1vVHKa60oHY" target="_blank" rel="noopener noreferrer">Austrian Experts: Ehem. Board Member &amp; Video →</a></p>
-                <p><a href="https://www.freie-berufe.at/hosting-ceplis-2024/" target="_blank" rel="noopener noreferrer">CEPLIS: Ehem. Committee-Mitglied →</a></p>
-                <span className="ql-engagement__sub">Fokus auf Young Professionals &amp; Innovation</span>
-              </article>
-
-              <article className="ql-engagement__card ql-stagger">
-                <div className="ql-engagement__icon">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M12 3v4" />
-                    <path d="M12 17v4" />
-                    <path d="M3 12h4" />
-                    <path d="M17 12h4" />
-                    <polygon points="12 8 14 12 12 16 10 12" fill="currentColor" opacity="0.25" />
-                  </svg>
-                </div>
-                <h3>Diversity &amp; Mentoring</h3>
-                <p><a href="https://women-in-law.org/2024/02/26/women-in-law-the-future-of-ai-in-tax/" target="_blank" rel="noopener noreferrer">Women in Tax &amp; AI: Panel / Mentoring →</a></p>
-                <p><a href="https://women-in-law.org/2024/01/22/unser-jahrespartner-bdo-austria-hat-ein-eigenes-frauennetzwerk-etabliert/" target="_blank" rel="noopener noreferrer">BDO Frauennetzwerk: Kooperations-Lead →</a></p>
-                <p><span style={{ color: 'var(--color-muted)', fontSize: '0.85rem' }}>KSW Arbeitskreis: Ehem. Mitglied (Diversity &amp; Gleichstellung)</span></p>
-                <span className="ql-engagement__sub">Zukunft gestalten &amp; Potenziale fördern</span>
-              </article>
-
-              <article className="ql-engagement__card ql-stagger">
-                <div className="ql-engagement__icon">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M2 4c3-1 5-1 10 1v16c-5-2-7-2-10-1V4z" />
-                    <path d="M22 4c-3-1-5-1-10 1v16c5-2 7-2 10-1V4z" />
-                  </svg>
-                </div>
-                <h3>Research</h3>
-                <p><a href="https://www.diepresse.com/5197618/erneut-ein-wu-team-an-der-weltspitze" target="_blank" rel="noopener noreferrer">Tax Moot Court: Weltspitze mit dem WU-Team →</a></p>
-                <p><a href="https://www.wu.ac.at/am/ehemalige-mitarbeiterinnen/stefanie-schinnerl" target="_blank" rel="noopener noreferrer">WU Wien: Ehemalige Mitarbeiterin →</a></p>
-                <span className="ql-engagement__sub">Wissen vertiefen &amp; Fundamente setzen</span>
-              </article>
+        <section className="ql-credentials ql-reveal" id="qualifikationen">
+          <div className="ql-credentials__container">
+            
+            <div className="ql-credentials__header">
+              <p className="ql-credentials__label">Fundament &amp; Qualifikationen</p>
+              <h2 className="ql-credentials__title">Fundierte Expertise. Aus der Praxis für deine Praxis.</h2>
+              <p className="ql-credentials__intro">
+                Die seltene Synthese aus universitärer Spitzenforschung, langjähriger Kanzleipraxis und zertifizierter Gesundheits-, Bewegungs- und Mentallehre.
+              </p>
             </div>
+
+            <div className="ql-credentials__grid">
+              
+              {/* Säule 1: Recht & Steuern */}
+              <div className="ql-credentials__card ql-stagger">
+                <div className="ql-credentials__card-top">
+                  <span className="ql-credentials__num">01</span>
+                  <span className="ql-credentials__pill">Wirtschaft &amp; Recht</span>
+                </div>
+                <h3 className="ql-credentials__card-title">
+                  Steuerberaterin &amp; Dr. rer. soc. oec.
+                </h3>
+                <ul className="ql-credentials__list">
+                  <li>
+                    <strong>Steuerberaterin</strong>
+                    <span>Kammer der Steuerberater:innen und Wirtschaftsprüfer:innen (KSW)</span>
+                  </li>
+                  <li>
+                    <strong>Doktorat (Dr. rer. soc. oec.)</strong>
+                    <span>Wirtschaftsuniversität Wien (WU) · Promotion mit Auszeichnung</span>
+                  </li>
+                  <li>
+                    <strong>Master (MSc WU) &amp; Bachelor (BSc WU)</strong>
+                    <span>Steuern &amp; Rechnungslegung · Gewinnerteam International Tax Moot Court</span>
+                  </li>
+                  <li>
+                    <strong>Kanzlei- &amp; Universitätserfahrung</strong>
+                    <span>Ehem. Managerin Corporate Tax bei BDO Austria &amp; Universitätsassistentin an der WU Wien</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Säule 2: Gesundheit & Vitalität */}
+              <div className="ql-credentials__card ql-stagger">
+                <div className="ql-credentials__card-top">
+                  <span className="ql-credentials__num">02</span>
+                  <span className="ql-credentials__pill">Gesundheit &amp; Vitalität</span>
+                </div>
+                <h3 className="ql-credentials__card-title">
+                  Zertifizierte Health- &amp; Vitalcoach
+                </h3>
+                <ul className="ql-credentials__list">
+                  <li>
+                    <strong>Akad. geprüfte Gesundheits- &amp; Vitalcoach</strong>
+                    <span>Universitätslehrgang an der Universität Wien (USI)</span>
+                  </li>
+                  <li>
+                    <strong>Yoga für Frauen mit Krebserfahrung</strong>
+                    <span>Spezialisierte Fachfortbildung</span>
+                  </li>
+                  <li>
+                    <strong>Zertifizierte Yoga-Lehrerin (200h)</strong>
+                    <span>Anerkannter Standard der internationalen Yoga Alliance</span>
+                  </li>
+                  <li>
+                    <strong>Barre, Group Fitness &amp; Piloxing</strong>
+                    <span>Fundierte Trainerausbildungen mit Praxiserfahrung in Wiener Studios</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Säule 3: Führung, Gremien & Mandate */}
+              <div className="ql-credentials__card ql-stagger">
+                <div className="ql-credentials__card-top">
+                  <span className="ql-credentials__num">03</span>
+                  <span className="ql-credentials__pill">Gremien &amp; Leadership</span>
+                </div>
+                <h3 className="ql-credentials__card-title">
+                  Gremien, Fachautorin &amp; Speakerin
+                </h3>
+                <ul className="ql-credentials__list">
+                  <li>
+                    <strong>Interessensvertretung &amp; Gremien</strong>
+                    <span>Ehem. Board Member bei Austrian Experts &amp; Young CEPLIS (Brüssel)</span>
+                  </li>
+                  <li>
+                    <strong>Frauenförderung &amp; Diversity</strong>
+                    <span>Ehem. Arbeitsgruppe 'Diversity' (KSW) &amp; Leitung von Frauennetzwerk-Initiativen</span>
+                  </li>
+                  <li>
+                    <strong>Fachautorin</strong>
+                    <span>Zahlreiche Fachpublikationen im Steuer- und Wirtschaftsrecht</span>
+                  </li>
+                  <li>
+                    <strong>Speakerin &amp; Medienpräsenz</strong>
+                    <span>Keynotes &amp; Podcasts, u.a. Der Standard („Frauen in Führung“) &amp; Tax Tech Konferenz</span>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+
           </div>
         </section>
 
