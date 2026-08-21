@@ -1214,12 +1214,24 @@ footer.footer {
   font-weight: 350;
 }
 
+.ql-about-voyage__inline-link {
+  color: var(--color-dark);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgba(179, 159, 136, 0.55);
+  text-underline-offset: 3px;
+  transition: all 0.25s ease;
+}
+
+.ql-about-voyage__inline-link:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
 @keyframes qlFadeIn {
   from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-
 
 .ql-b2b {
   background-color: var(--color-bg-alt);
@@ -1232,92 +1244,6 @@ footer.footer {
 .ql-b2b__container {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-/* Editorial Media & Press Strip */
-.ql-b2b__media-strip {
-  margin-top: 3.8rem;
-  padding-top: 2.8rem;
-  border-top: 1px solid rgba(44, 41, 39, 0.08);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.3rem;
-}
-
-.ql-b2b__media-strip-kicker {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
-
-.ql-b2b__media-strip-items {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.ql-b2b__media-strip-item {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 8px;
-  text-decoration: none;
-  color: var(--color-dark);
-  transition: all 0.3s ease;
-  padding: 4px 0;
-}
-
-.ql-b2b__media-brand {
-  font-family: var(--font-serif);
-  font-size: 1.05rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  color: var(--color-dark);
-  transition: color 0.3s ease;
-}
-
-.ql-b2b__media-topic {
-  font-family: var(--font-sans);
-  font-size: 0.82rem;
-  color: var(--color-muted);
-  font-weight: 350;
-}
-
-.ql-b2b__media-arrow {
-  font-size: 0.85rem;
-  color: var(--color-accent);
-  transition: transform 0.3s var(--ease-elegant), color 0.3s ease;
-}
-
-.ql-b2b__media-strip-item:hover .ql-b2b__media-brand {
-  color: var(--color-accent);
-}
-
-.ql-b2b__media-strip-item:hover .ql-b2b__media-arrow {
-  transform: translate(2px, -2px);
-  color: var(--color-accent);
-}
-
-.ql-b2b__media-sep {
-  color: rgba(44, 41, 39, 0.22);
-  font-size: 0.95rem;
-  font-weight: 300;
-  user-select: none;
-}
-
-@media (max-width: 768px) {
-  .ql-b2b__media-strip-items {
-    flex-direction: column;
-    gap: 0.9rem;
-  }
-  .ql-b2b__media-sep {
-    display: none;
-  }
 }
 
 

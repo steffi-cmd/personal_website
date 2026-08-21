@@ -413,7 +413,7 @@ export default function Home() {
                         aria-selected={activeExpertiseTab === 0}
                       >
                         <span className="ql-about-voyage__tab-num">01</span>
-                        <span>Wirtschaft &amp; Recht</span>
+                        <span>Steuern &amp; Wirtschaft</span>
                       </button>
 
                       <button
@@ -435,32 +435,31 @@ export default function Home() {
                         aria-selected={activeExpertiseTab === 2}
                       >
                         <span className="ql-about-voyage__tab-num">03</span>
-                        <span>Gremien &amp; Leadership</span>
+                        <span>Bühne, Gremien &amp; Publikationen</span>
                       </button>
                     </div>
                   </div>
 
                   <div className="ql-about-voyage__tab-panels">
-                    {/* Tab 0: Wirtschaft & Recht */}
+                    {/* Tab 0: Steuern & Wirtschaft */}
                     {activeExpertiseTab === 0 && (
                       <div className="ql-about-voyage__tab-panel">
-                        <h4 className="ql-about-voyage__panel-title">Steuerberaterin &amp; Dr. rer. soc. oec.</h4>
                         <ul className="ql-about-voyage__fundament-sublist">
                           <li>
                             <strong>Steuerberaterin</strong>
-                            <span>Kammer der Steuerberater:innen und Wirtschaftsprüfer:innen (KSW)</span>
+                            <span>Kammer der Steuerberater:innen und Wirtschaftsprüfer:innen (KSW) · Sonderberatung bei BDO Austria</span>
                           </li>
                           <li>
                             <strong>Doktorat (Dr. rer. soc. oec.)</strong>
-                            <span>Wirtschaftsuniversität Wien (WU) · Promotion mit Auszeichnung</span>
+                            <span>WU Wien · Promotion mit Auszeichnung an der Schnittstelle von Steuerrecht, Gesellschaftsrecht &amp; Rechnungslegung (Finanzierungsinstrumente &amp; Umgründungen)</span>
                           </li>
                           <li>
                             <strong>Master (MSc WU) &amp; Bachelor (BSc WU)</strong>
-                            <span>Steuern &amp; Rechnungslegung · Gewinnerteam International Tax Moot Court</span>
+                            <span>Steuern &amp; Rechnungslegung / BWL · Gewinnerteam International Tax Moot Court</span>
                           </li>
                           <li>
-                            <strong>Kanzlei- &amp; Universitätserfahrung</strong>
-                            <span>Ehem. Managerin Corporate Tax bei BDO Austria &amp; Universitätsassistentin an der WU Wien</span>
+                            <strong>Forschung &amp; Lehre</strong>
+                            <span>Ehem. drittmittelfinanzierte Prae-Doc / Universitätsassistentin an der Wirtschaftsuniversität Wien</span>
                           </li>
                         </ul>
                       </div>
@@ -469,48 +468,76 @@ export default function Home() {
                     {/* Tab 1: Gesundheit & Vitalität */}
                     {activeExpertiseTab === 1 && (
                       <div className="ql-about-voyage__tab-panel">
-                        <h4 className="ql-about-voyage__panel-title">Zertifizierte Health- &amp; Vitalcoach</h4>
                         <ul className="ql-about-voyage__fundament-sublist">
                           <li>
-                            <strong>Akad. geprüfte Gesundheits- &amp; Vitalcoach</strong>
-                            <span>Universitätslehrgang an der Universität Wien (USI)</span>
+                            <strong>Health &amp; Fitness Instructorin (Gesund- &amp; Vitalcoach)</strong>
+                            <span>Zertifikatsprogramm am Zentrum für Sportwissenschaft &amp; Universitätssport der Universität Wien (USI)</span>
+                          </li>
+                          <li>
+                            <strong>Zertifizierte Yogalehrerin (RYT® 200)</strong>
+                            <span>200h-Ausbildung nach Richtlinien der Yoga Alliance (Ashtanga Vinyasa &amp; Yin Yoga)</span>
                           </li>
                           <li>
                             <strong>Yoga für Frauen mit Krebserfahrung</strong>
-                            <span>Spezialisierte Fachfortbildung</span>
+                            <span>Spezialisierte Fachfortbildung beim Yoga Verband Österreich</span>
                           </li>
                           <li>
-                            <strong>Zertifizierte Yoga-Lehrerin (200h)</strong>
-                            <span>Anerkannter Standard der internationalen Yoga Alliance</span>
-                          </li>
-                          <li>
-                            <strong>Barre, Group Fitness &amp; Piloxing</strong>
-                            <span>Fundierte Trainerausbildungen mit Praxiserfahrung in Wiener Studios</span>
+                            <strong>Barre, Piloxing® &amp; Group Fitness</strong>
+                            <span>Seit 2021 über 230+ gehaltene Unterrichtsstunden in Wiener Studios</span>
                           </li>
                         </ul>
                       </div>
                     )}
 
-                    {/* Tab 2: Gremien & Leadership */}
+                    {/* Tab 2: Bühne, Gremien & Publikationen */}
                     {activeExpertiseTab === 2 && (
                       <div className="ql-about-voyage__tab-panel">
-                        <h4 className="ql-about-voyage__panel-title">Gremien, Fachautorin &amp; Speakerin</h4>
                         <ul className="ql-about-voyage__fundament-sublist">
+                          <li>
+                            <strong>Vorträge, Moderation &amp; Podcasts</strong>
+                            <span>
+                              Fachvorträge, Schulungen, Moderationen &amp; Podcast-Gast (u. a.{' '}
+                              <a
+                                href="https://taxtech.at/3-fragen-an-unsere-ttk26-speakerinnen-stefanie-schinnerl/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="ql-about-voyage__inline-link"
+                              >
+                                Tax Tech Konferenz ↗
+                              </a>{' '}
+                              &amp;{' '}
+                              <a
+                                href="https://www.derstandard.at/story/3000000208394/frauen-in-fuehrungspositionen"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="ql-about-voyage__inline-link"
+                              >
+                                Der Standard Podcast ↗
+                              </a>
+                              )
+                            </span>
+                          </li>
+                          <li>
+                            <strong>Fachautorin</strong>
+                            <span>Zahlreiche Fachpublikationen zu Steuerrecht &amp; Rechnungslegung</span>
+                          </li>
                           <li>
                             <strong>Interessensvertretung &amp; Gremien</strong>
                             <span>Ehem. Board Member bei Austrian Experts &amp; Young CEPLIS (Brüssel)</span>
                           </li>
                           <li>
-                            <strong>Frauenförderung &amp; Diversity</strong>
-                            <span>Ehem. Arbeitsgruppe 'Diversity' (KSW) &amp; Leitung von Frauennetzwerk-Initiativen</span>
-                          </li>
-                          <li>
-                            <strong>Fachautorin</strong>
-                            <span>Zahlreiche Fachpublikationen im Steuer- und Wirtschaftsrecht</span>
-                          </li>
-                          <li>
-                            <strong>Speakerin &amp; Medienpräsenz</strong>
-                            <span>Keynotes &amp; Podcasts, u.a. Der Standard („Frauen in Führung“) &amp; Tax Tech Konferenz</span>
+                            <strong>Frauenförderung &amp; Netzwerke</strong>
+                            <span>
+                              Ehem. Arbeitsgruppe 'Diversity' (KSW) &amp; Jubiläumsinterview bei{' '}
+                              <a
+                                href="https://women-in-law.org/2025/02/16/10-jahre-women-in-law-jubilaeum-stefanie-schinnerl-im-interview/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="ql-about-voyage__inline-link"
+                              >
+                                Women in Law ↗
+                              </a>
+                            </span>
                           </li>
                         </ul>
                       </div>
@@ -529,9 +556,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ——————————————————————————————————————————————
-            ⑤ B2B & KEYNOTES
-           —————————————————————————————————————————————— */}
         {/* ——————————————————————————————————————————————
             ⑤ B2B & KEYNOTES
            —————————————————————————————————————————————— */}
@@ -639,49 +663,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            {/* Editorial Media Strip */}
-            <div className="ql-b2b__media-strip ql-stagger">
-              <span className="ql-b2b__media-strip-kicker">INTERVIEWS &amp; BEITRÄGE</span>
-              <div className="ql-b2b__media-strip-items">
-                <a
-                  href="https://www.derstandard.at/story/3000000208394/frauen-in-fuehrungspositionen"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ql-b2b__media-strip-item"
-                >
-                  <span className="ql-b2b__media-brand">Der Standard</span>
-                  <span className="ql-b2b__media-topic">Podcast „Frauen in Führung“</span>
-                  <span className="ql-b2b__media-arrow">↗</span>
-                </a>
-
-                <span className="ql-b2b__media-sep" aria-hidden="true">/</span>
-
-                <a
-                  href="https://women-in-law.org/2025/02/16/10-jahre-women-in-law-jubilaeum-stefanie-schinnerl-im-interview/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ql-b2b__media-strip-item"
-                >
-                  <span className="ql-b2b__media-brand">Women in Law</span>
-                  <span className="ql-b2b__media-topic">Jubiläumsinterview</span>
-                  <span className="ql-b2b__media-arrow">↗</span>
-                </a>
-
-                <span className="ql-b2b__media-sep" aria-hidden="true">/</span>
-
-                <a
-                  href="https://taxtech.at/3-fragen-an-unsere-ttk26-speakerinnen-stefanie-schinnerl/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ql-b2b__media-strip-item"
-                >
-                  <span className="ql-b2b__media-brand">Tax Tech Konferenz</span>
-                  <span className="ql-b2b__media-topic">Speakerinnen-Interview</span>
-                  <span className="ql-b2b__media-arrow">↗</span>
-                </a>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -728,7 +709,7 @@ export default function Home() {
                 </div>
                 <h3 className="ql-process__card-title">Kennenlernen &amp; Start vor Ort</h3>
                 <p className="ql-process__card-text">
-                  Im geschützten, ruhigen Praxisraum (1090 Wien) nehmen wir uns Zeit, analysieren deine Ausgangslage und starten deine persönliche Begleitung.
+                  Im geschützten, ruhigen Praxisraum (1090 Wien) nehmen wir uns Zeit, besprechen deine Ziele und starten deine Begleitung (Termine freitags &amp; abends).
                 </p>
               </div>
             </div>
