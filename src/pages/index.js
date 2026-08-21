@@ -366,12 +366,26 @@ export default function Home() {
         <section className="ql-about-voyage ql-reveal" id="ueber-mich">
           <div className="ql-about-voyage__stage">
             <div className="ql-about-voyage__photo-col ql-stagger">
-              <img
-                src="/img/A7R01328.jpg"
-                alt="Dr. Stefanie Schinnerl – Über mich"
-                className="ql-about-voyage__photo"
-                loading="lazy"
-              />
+              <div className="ql-about-voyage__collage">
+                <img
+                  src="/img/A7R01328.jpg"
+                  alt="Dr. Stefanie Schinnerl – Draußen in der Natur"
+                  className="ql-about-voyage__collage-img ql-about-voyage__collage-img--top-right"
+                  loading="lazy"
+                />
+                <img
+                  src="/img/A7R00851.jpg"
+                  alt="Dr. Stefanie Schinnerl – Freude an Bewegung & Yoga"
+                  className="ql-about-voyage__collage-img ql-about-voyage__collage-img--left"
+                  loading="lazy"
+                />
+                <img
+                  src="/img/A7R01117.jpg"
+                  alt="Dr. Stefanie Schinnerl – Expertise & Achtsamkeit"
+                  className="ql-about-voyage__collage-img ql-about-voyage__collage-img--bottom-right"
+                  loading="lazy"
+                />
+              </div>
             </div>
 
             <div className="ql-about-voyage__content-col ql-stagger">
