@@ -1,18 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Layout from '@theme/Layout';
-import ImageCarousel from '../components/ImageCarousel';
-
-const EDITORIAL_IMAGES = [
-  '/img/A7R01304.jpg',
-  '/img/A7R00276.jpg',
-  '/img/A7R01182.jpg',
-  '/img/A7R01377.jpg',
-  '/img/A7R00105.jpg',
-];
+import LookbookGallery from '../components/LookbookGallery';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeExpertiseTab, setActiveExpertiseTab] = useState(0);
 
   const toggleMenu = useCallback(() => {
     setIsMobileMenuOpen((prev) => !prev);
@@ -82,7 +75,6 @@ export default function Home() {
 
           <nav className="ql-navbar__nav--right" aria-label="Hauptnavigation rechts">
             <ul className="ql-navbar__links">
-              <li><a href="#qualifikationen" onClick={closeMenu}>Expertise</a></li>
               <li><a href="#b2b" onClick={closeMenu}>B2B &amp; Keynotes</a></li>
               <li><a href="#einblicke" onClick={closeMenu}>Einblicke</a></li>
               <li><a href="#kontakt" className="ql-navbar__link-cta" onClick={closeMenu}>Kontakt</a></li>
@@ -107,8 +99,7 @@ export default function Home() {
             <li><a href="#home" onClick={closeMenu}>Home</a></li>
             <li><a href="#mein-ansatz" onClick={closeMenu}>Mein Ansatz</a></li>
             <li><a href="#angebote" onClick={closeMenu}>Angebote &amp; Coaching</a></li>
-            <li><a href="#ueber-mich" onClick={closeMenu}>Über mich</a></li>
-            <li><a href="#qualifikationen" onClick={closeMenu}>Expertise</a></li>
+            <li><a href="#ueber-mich" onClick={closeMenu}>Über mich &amp; Expertise</a></li>
             <li><a href="#b2b" onClick={closeMenu}>B2B &amp; Corporate Health</a></li>
             <li><a href="#einblicke" onClick={closeMenu}>Einblicke</a></li>
             <li><a href="#kontakt" onClick={closeMenu} className="ql-navbar__mobile-cta">Erstgespräch anfragen</a></li>
@@ -370,7 +361,7 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ④ ÜBER MICH – 50/50 Editorial Split
+            ④ ÜBER MICH & FUNDAMENT – 50/50 Editorial Split
            —————————————————————————————————————————————— */}
         <section className="ql-about-voyage ql-reveal" id="ueber-mich">
           <div className="ql-about-voyage__stage">
@@ -409,6 +400,124 @@ export default function Home() {
                   </p>
                 </div>
 
+                {/* Zarter, integrierter Fundament & Expertise Abschluss mit 3 schlanken Tabs */}
+                <div className="ql-about-voyage__fundament" id="qualifikationen">
+                  <div className="ql-about-voyage__fundament-header">
+                    <span className="ql-about-voyage__fundament-kicker">MEIN FUNDAMENT &amp; EXPERTISE</span>
+                    <div className="ql-about-voyage__tabs" role="tablist">
+                      <button
+                        type="button"
+                        className={`ql-about-voyage__tab ${activeExpertiseTab === 0 ? 'is-active' : ''}`}
+                        onClick={() => setActiveExpertiseTab(0)}
+                        role="tab"
+                        aria-selected={activeExpertiseTab === 0}
+                      >
+                        <span className="ql-about-voyage__tab-num">01</span>
+                        <span>Wirtschaft &amp; Recht</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        className={`ql-about-voyage__tab ${activeExpertiseTab === 1 ? 'is-active' : ''}`}
+                        onClick={() => setActiveExpertiseTab(1)}
+                        role="tab"
+                        aria-selected={activeExpertiseTab === 1}
+                      >
+                        <span className="ql-about-voyage__tab-num">02</span>
+                        <span>Gesundheit &amp; Vitalität</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        className={`ql-about-voyage__tab ${activeExpertiseTab === 2 ? 'is-active' : ''}`}
+                        onClick={() => setActiveExpertiseTab(2)}
+                        role="tab"
+                        aria-selected={activeExpertiseTab === 2}
+                      >
+                        <span className="ql-about-voyage__tab-num">03</span>
+                        <span>Gremien &amp; Leadership</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="ql-about-voyage__tab-panels">
+                    {/* Tab 0: Wirtschaft & Recht */}
+                    {activeExpertiseTab === 0 && (
+                      <div className="ql-about-voyage__tab-panel">
+                        <h4 className="ql-about-voyage__panel-title">Steuerberaterin &amp; Dr. rer. soc. oec.</h4>
+                        <ul className="ql-about-voyage__fundament-sublist">
+                          <li>
+                            <strong>Steuerberaterin</strong>
+                            <span>Kammer der Steuerberater:innen und Wirtschaftsprüfer:innen (KSW)</span>
+                          </li>
+                          <li>
+                            <strong>Doktorat (Dr. rer. soc. oec.)</strong>
+                            <span>Wirtschaftsuniversität Wien (WU) · Promotion mit Auszeichnung</span>
+                          </li>
+                          <li>
+                            <strong>Master (MSc WU) &amp; Bachelor (BSc WU)</strong>
+                            <span>Steuern &amp; Rechnungslegung · Gewinnerteam International Tax Moot Court</span>
+                          </li>
+                          <li>
+                            <strong>Kanzlei- &amp; Universitätserfahrung</strong>
+                            <span>Ehem. Managerin Corporate Tax bei BDO Austria &amp; Universitätsassistentin an der WU Wien</span>
+                          </li>
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Tab 1: Gesundheit & Vitalität */}
+                    {activeExpertiseTab === 1 && (
+                      <div className="ql-about-voyage__tab-panel">
+                        <h4 className="ql-about-voyage__panel-title">Zertifizierte Health- &amp; Vitalcoach</h4>
+                        <ul className="ql-about-voyage__fundament-sublist">
+                          <li>
+                            <strong>Akad. geprüfte Gesundheits- &amp; Vitalcoach</strong>
+                            <span>Universitätslehrgang an der Universität Wien (USI)</span>
+                          </li>
+                          <li>
+                            <strong>Yoga für Frauen mit Krebserfahrung</strong>
+                            <span>Spezialisierte Fachfortbildung</span>
+                          </li>
+                          <li>
+                            <strong>Zertifizierte Yoga-Lehrerin (200h)</strong>
+                            <span>Anerkannter Standard der internationalen Yoga Alliance</span>
+                          </li>
+                          <li>
+                            <strong>Barre, Group Fitness &amp; Piloxing</strong>
+                            <span>Fundierte Trainerausbildungen mit Praxiserfahrung in Wiener Studios</span>
+                          </li>
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Tab 2: Gremien & Leadership */}
+                    {activeExpertiseTab === 2 && (
+                      <div className="ql-about-voyage__tab-panel">
+                        <h4 className="ql-about-voyage__panel-title">Gremien, Fachautorin &amp; Speakerin</h4>
+                        <ul className="ql-about-voyage__fundament-sublist">
+                          <li>
+                            <strong>Interessensvertretung &amp; Gremien</strong>
+                            <span>Ehem. Board Member bei Austrian Experts &amp; Young CEPLIS (Brüssel)</span>
+                          </li>
+                          <li>
+                            <strong>Frauenförderung &amp; Diversity</strong>
+                            <span>Ehem. Arbeitsgruppe 'Diversity' (KSW) &amp; Leitung von Frauennetzwerk-Initiativen</span>
+                          </li>
+                          <li>
+                            <strong>Fachautorin</strong>
+                            <span>Zahlreiche Fachpublikationen im Steuer- und Wirtschaftsrecht</span>
+                          </li>
+                          <li>
+                            <strong>Speakerin &amp; Medienpräsenz</strong>
+                            <span>Keynotes &amp; Podcasts, u.a. Der Standard („Frauen in Führung“) &amp; Tax Tech Konferenz</span>
+                          </li>
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
                 <div className="ql-about-voyage__action">
                   <a href="#kontakt" className="ql-btn ql-btn--primary">
                     <span>Erstgespräch vereinbaren</span>
@@ -421,239 +530,155 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ⑤ FUNDAMENT & EXPERTISE
+            ⑤ B2B & KEYNOTES
            —————————————————————————————————————————————— */}
-        <section className="ql-credentials ql-reveal" id="qualifikationen">
-          <div className="ql-credentials__container">
-            <div className="ql-section-header">
-              <span className="ql-kicker">FUNDAMENT &amp; EXPERTISE</span>
-              <h2 className="ql-headline">Fundierte Expertise. Aus der Praxis für deine Praxis.</h2>
-              <p className="ql-subtext">
-                Die seltene Synthese aus universitärer Spitzenforschung, langjähriger Kanzleipraxis und zertifizierter Gesundheits-, Bewegungs- und Mentallehre.
-              </p>
-            </div>
-
-            <div className="ql-credentials__grid">
-              {/* Säule 1: Recht & Steuern */}
-              <div className="ql-credentials__card ql-stagger">
-                <div className="ql-credentials__card-top">
-                  <span className="ql-credentials__num">01</span>
-                  <span className="ql-credentials__pill">Wirtschaft &amp; Recht</span>
-                </div>
-                <h3 className="ql-credentials__card-title">
-                  Steuerberaterin &amp; Dr. rer. soc. oec.
-                </h3>
-                <ul className="ql-credentials__list">
-                  <li>
-                    <strong>Steuerberaterin</strong>
-                    <span>Kammer der Steuerberater:innen und Wirtschaftsprüfer:innen (KSW)</span>
-                  </li>
-                  <li>
-                    <strong>Doktorat (Dr. rer. soc. oec.)</strong>
-                    <span>Wirtschaftsuniversität Wien (WU) · Promotion mit Auszeichnung</span>
-                  </li>
-                  <li>
-                    <strong>Master (MSc WU) &amp; Bachelor (BSc WU)</strong>
-                    <span>Steuern &amp; Rechnungslegung · Gewinnerteam International Tax Moot Court</span>
-                  </li>
-                  <li>
-                    <strong>Kanzlei- &amp; Universitätserfahrung</strong>
-                    <span>Ehem. Managerin Corporate Tax bei BDO Austria &amp; Universitätsassistentin an der WU Wien</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Säule 2: Gesundheit & Vitalität */}
-              <div className="ql-credentials__card ql-stagger">
-                <div className="ql-credentials__card-top">
-                  <span className="ql-credentials__num">02</span>
-                  <span className="ql-credentials__pill">Gesundheit &amp; Vitalität</span>
-                </div>
-                <h3 className="ql-credentials__card-title">
-                  Zertifizierte Health- &amp; Vitalcoach
-                </h3>
-                <ul className="ql-credentials__list">
-                  <li>
-                    <strong>Akad. geprüfte Gesundheits- &amp; Vitalcoach</strong>
-                    <span>Universitätslehrgang an der Universität Wien (USI)</span>
-                  </li>
-                  <li>
-                    <strong>Yoga für Frauen mit Krebserfahrung</strong>
-                    <span>Spezialisierte Fachfortbildung</span>
-                  </li>
-                  <li>
-                    <strong>Zertifizierte Yoga-Lehrerin (200h)</strong>
-                    <span>Anerkannter Standard der internationalen Yoga Alliance</span>
-                  </li>
-                  <li>
-                    <strong>Barre, Group Fitness &amp; Piloxing</strong>
-                    <span>Fundierte Trainerausbildungen mit Praxiserfahrung in Wiener Studios</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Säule 3: Führung & Gremien */}
-              <div className="ql-credentials__card ql-stagger">
-                <div className="ql-credentials__card-top">
-                  <span className="ql-credentials__num">03</span>
-                  <span className="ql-credentials__pill">Gremien &amp; Leadership</span>
-                </div>
-                <h3 className="ql-credentials__card-title">
-                  Gremien, Fachautorin &amp; Speakerin
-                </h3>
-                <ul className="ql-credentials__list">
-                  <li>
-                    <strong>Interessensvertretung &amp; Gremien</strong>
-                    <span>Ehem. Board Member bei Austrian Experts &amp; Young CEPLIS (Brüssel)</span>
-                  </li>
-                  <li>
-                    <strong>Frauenförderung &amp; Diversity</strong>
-                    <span>Ehem. Arbeitsgruppe 'Diversity' (KSW) &amp; Leitung von Frauennetzwerk-Initiativen</span>
-                  </li>
-                  <li>
-                    <strong>Fachautorin</strong>
-                    <span>Zahlreiche Fachpublikationen im Steuer- und Wirtschaftsrecht</span>
-                  </li>
-                  <li>
-                    <strong>Speakerin &amp; Medienpräsenz</strong>
-                    <span>Keynotes &amp; Podcasts, u.a. Der Standard („Frauen in Führung“) &amp; Tax Tech Konferenz</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* ——————————————————————————————————————————————
-            ⑥ EDITORIAL GALLERY & ZITATE
-           —————————————————————————————————————————————— */}
-        <section className="ql-editorial-gallery" id="einblicke">
-          <div className="ql-editorial-gallery__quotes">
-            <div className="ql-editorial-gallery__quote">
-              <span className="ql-quote-mark">"</span>
-              <p>
-                Wahre Stärke zeigt sich nicht darin, nie zu fallen – sondern darin, jedes Mal bewusster aufzustehen.
-              </p>
-            </div>
-
-            <div className="ql-editorial-gallery__divider"></div>
-
-            <div className="ql-editorial-gallery__quote">
-              <span className="ql-quote-mark">"</span>
-              <p>
-                You never regret investing in yourself.
-              </p>
-            </div>
-          </div>
-
-          <div className="ql-editorial-gallery__media">
-            <ImageCarousel
-              variant="fill"
-              autoPlay={true}
-              images={EDITORIAL_IMAGES}
-            />
-          </div>
-        </section>
-
-        {/* ——————————————————————————————————————————————
-            ⑦ B2B & KEYNOTES
+            ⑤ B2B & KEYNOTES
            —————————————————————————————————————————————— */}
         <section className="ql-b2b ql-reveal" id="b2b">
           <div className="ql-b2b__container">
             <div className="ql-section-header">
-              <span className="ql-kicker">B2B &amp; KEYNOTES</span>
+              <span className="ql-kicker">B2B, KEYNOTES &amp; PANELS</span>
               <h2 className="ql-headline">Vorträge, Moderation &amp; Corporate Health</h2>
               <p className="ql-subtext">
                 Buchbar für Unternehmen, Konferenzen und Verbände. Meine Themen: Resilienz &amp; Vitalität, Female Leadership, High Performance &amp; Wellbeing – authentisch, fundiert und inspirierend.
               </p>
             </div>
 
-            <div className="ql-b2b__grid">
-              <div className="ql-b2b__pillar ql-stagger">
-                <div className="ql-b2b__badge">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E1C1A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
-                    <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-                    <line x1="12" y1="19" x2="12" y2="22" />
-                    <line x1="8" y1="22" x2="16" y2="22" />
-                  </svg>
+            <div className="ql-offers__grid" style={{ textAlign: 'left' }}>
+              {/* Karte 1: Keynotes & Vorträge */}
+              <div className="ql-offer-card ql-stagger">
+                <div className="ql-offer-card__media">
+                  <img
+                    src="/img/IMG_4897.JPG"
+                    alt="Keynotes & Vorträge auf Konferenzen – Dr. Stefanie Schinnerl"
+                    className="ql-offer-card__img"
+                    style={{ objectPosition: 'center 35%' }}
+                    loading="lazy"
+                  />
                 </div>
-                <h3 className="ql-b2b__pillar-title">KEYNOTES &amp; VORTRÄGE</h3>
-                <p className="ql-b2b__pillar-text">
-                  Inspirierende und wissenschaftlich fundierte Impulse zu Resilienz, Gesundheit und nachhaltiger Leistungsfähigkeit.
-                </p>
+                <div className="ql-offer-card__body">
+                  <span className="ql-offer-card__kicker">KEYNOTES &amp; VORTRÄGE</span>
+                  <h3 className="ql-offer-card__title">Impulse für Bühne &amp; Konferenzen</h3>
+                  <p className="ql-offer-card__desc">
+                    Inspirierende und wissenschaftlich fundierte Impulse zu Resilienz, Gesundheit und nachhaltiger Leistungsfähigkeit im anspruchsvollen Berufsalltag.
+                  </p>
+                  <ul className="ql-offer-card__bullets">
+                    <li>Wissenschaftlich fundierte Keynotes zu High Performance &amp; Resilienz</li>
+                    <li>Praxisnahe Strategien für mentale Klarheit &amp; Stresskompetenz</li>
+                    <li>Maßgeschneiderte Vorträge für Konferenzen, Summits &amp; Firmenevents</li>
+                  </ul>
+                  <div className="ql-offer-card__action">
+                    <a href="#kontakt" className="ql-btn ql-btn--card">
+                      <span>Keynote anfragen</span>
+                      <span className="ql-btn__arrow">→</span>
+                    </a>
+                  </div>
+                </div>
               </div>
 
-              <div className="ql-b2b__pillar ql-stagger">
-                <div className="ql-b2b__badge">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E1C1A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                    <line x1="8" y1="9" x2="16" y2="9" />
-                    <line x1="8" y1="13" x2="13" y2="13" />
-                  </svg>
+              {/* Karte 2: Moderation & Panels */}
+              <div className="ql-offer-card ql-stagger">
+                <div className="ql-offer-card__media">
+                  <img
+                    src="/img/TTK26_14-08-27_274.jpg"
+                    alt="Moderation & Paneldiskussionen – Dr. Stefanie Schinnerl"
+                    className="ql-offer-card__img"
+                    style={{ objectPosition: 'center 15%' }}
+                    loading="lazy"
+                  />
                 </div>
-                <h3 className="ql-b2b__pillar-title">MODERATION &amp; PANELS</h3>
-                <p className="ql-b2b__pillar-text">
-                  Souveräne, charmante und fachlich fundierte Gesprächsführung für Fachtagungen, Panels und Business-Events.
-                </p>
+                <div className="ql-offer-card__body">
+                  <span className="ql-offer-card__kicker">MODERATION &amp; PANELS</span>
+                  <h3 className="ql-offer-card__title">Gesprächsführung mit Tiefe &amp; Struktur</h3>
+                  <p className="ql-offer-card__desc">
+                    Souveräne, charmante und fachlich fundierte Gesprächsführung für Fachtagungen, Panels und hochkarätige Business-Events.
+                  </p>
+                  <ul className="ql-offer-card__bullets">
+                    <li>Professionelle Moderation von Fachtagungen &amp; Podiumsdiskussionen</li>
+                    <li>Brücke zwischen Wirtschaft, Recht und ganzheitlicher Gesundheit</li>
+                    <li>Strukturierte, lebendige und interaktive Gesprächsführung</li>
+                  </ul>
+                  <div className="ql-offer-card__action">
+                    <a href="#kontakt" className="ql-btn ql-btn--card">
+                      <span>Moderation anfragen</span>
+                      <span className="ql-btn__arrow">→</span>
+                    </a>
+                  </div>
+                </div>
               </div>
 
-              <div className="ql-b2b__pillar ql-stagger">
-                <div className="ql-b2b__badge">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E1C1A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <path d="M3 9h18" />
-                    <path d="M9 21V9" />
-                    <circle cx="15" cy="15" r="2" />
-                  </svg>
+              {/* Karte 3: Corporate Workshops */}
+              <div className="ql-offer-card ql-stagger">
+                <div className="ql-offer-card__media">
+                  <img
+                    src="/img/A7R01100.jpg"
+                    alt="Corporate Workshops & Health – Dr. Stefanie Schinnerl"
+                    className="ql-offer-card__img"
+                    style={{ objectPosition: 'center 20%' }}
+                    loading="lazy"
+                  />
                 </div>
-                <h3 className="ql-b2b__pillar-title">CORPORATE WORKSHOPS</h3>
-                <p className="ql-b2b__pillar-text">
-                  Praxisnahe Formate und Strategien zu Bewegung, Stressmanagement und Vitalität für Teams und Führungskräfte.
-                </p>
+                <div className="ql-offer-card__body">
+                  <span className="ql-offer-card__kicker">CORPORATE WORKSHOPS</span>
+                  <h3 className="ql-offer-card__title">Health &amp; Performance für Teams</h3>
+                  <p className="ql-offer-card__desc">
+                    Praxisnahe Formate und Strategien zu Bewegung, Stressmanagement und Vitalität für Führungskräfte und Teams in Kanzleien und Unternehmen.
+                  </p>
+                  <ul className="ql-offer-card__bullets">
+                    <li>Workshops zu Nervensystem-Regulation, Ergonomie &amp; Routinen</li>
+                    <li>Flexible Formate: Inhouse-Workshops, Offsites oder interaktive Webinare</li>
+                    <li>Nachhaltige Stärkung von Team-Energie und mentaler Widerstandskraft</li>
+                  </ul>
+                  <div className="ql-offer-card__action">
+                    <a href="#kontakt" className="ql-btn ql-btn--card">
+                      <span>Workshop anfragen</span>
+                      <span className="ql-btn__arrow">→</span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="ql-b2b__action-wrap">
-              <a href="#kontakt" className="ql-btn ql-btn--primary">
-                <span>Vortrag oder B2B anfragen</span>
-                <span className="ql-btn__arrow">→</span>
-              </a>
-            </div>
-
-            {/* Social Proof Badges */}
-            <div className="ql-b2b__refs ql-stagger">
-              <span className="ql-b2b__refs-label">Referenzen &amp; Auftritte:</span>
-              <div className="ql-b2b__refs-list">
+            {/* Editorial Media Strip */}
+            <div className="ql-b2b__media-strip ql-stagger">
+              <span className="ql-b2b__media-strip-kicker">INTERVIEWS &amp; BEITRÄGE</span>
+              <div className="ql-b2b__media-strip-items">
                 <a
                   href="https://www.derstandard.at/story/3000000208394/frauen-in-fuehrungspositionen"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ql-b2b__ref-badge"
+                  className="ql-b2b__media-strip-item"
                 >
-                  <span>🎙️</span>
-                  <span>Der Standard Podcast — Frauen in Führung</span>
-                  <span className="ql-b2b__ref-arrow">↗</span>
+                  <span className="ql-b2b__media-brand">Der Standard</span>
+                  <span className="ql-b2b__media-topic">Podcast „Frauen in Führung“</span>
+                  <span className="ql-b2b__media-arrow">↗</span>
                 </a>
+
+                <span className="ql-b2b__media-sep" aria-hidden="true">/</span>
+
                 <a
                   href="https://women-in-law.org/2025/02/16/10-jahre-women-in-law-jubilaeum-stefanie-schinnerl-im-interview/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ql-b2b__ref-badge"
+                  className="ql-b2b__media-strip-item"
                 >
-                  <span>⚖️</span>
-                  <span>Women in Law — Jubiläumsinterview</span>
-                  <span className="ql-b2b__ref-arrow">↗</span>
+                  <span className="ql-b2b__media-brand">Women in Law</span>
+                  <span className="ql-b2b__media-topic">Jubiläumsinterview</span>
+                  <span className="ql-b2b__media-arrow">↗</span>
                 </a>
+
+                <span className="ql-b2b__media-sep" aria-hidden="true">/</span>
+
                 <a
                   href="https://taxtech.at/3-fragen-an-unsere-ttk26-speakerinnen-stefanie-schinnerl/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ql-b2b__ref-badge"
+                  className="ql-b2b__media-strip-item"
                 >
-                  <span>🎤</span>
-                  <span>Tax Tech Konferenz 2026 — Speakerin</span>
-                  <span className="ql-b2b__ref-arrow">↗</span>
+                  <span className="ql-b2b__media-brand">Tax Tech Konferenz</span>
+                  <span className="ql-b2b__media-topic">Speakerinnen-Interview</span>
+                  <span className="ql-b2b__media-arrow">↗</span>
                 </a>
               </div>
             </div>
@@ -661,7 +686,7 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ⑧ ABLAUF – In 3 Schritten
+            ⑥ ABLAUF – In 3 Schritten
            —————————————————————————————————————————————— */}
         <section className="ql-process ql-reveal" id="ablauf">
           <div className="ql-process__container">
@@ -669,7 +694,7 @@ export default function Home() {
               <span className="ql-kicker">ZUSAMMENARBEIT &amp; ABLAUF</span>
               <h2 className="ql-headline">In 3 Schritten zu deiner Begleitung</h2>
               <p className="ql-subtext">
-                Persönlich, unkompliziert und mit Raum für deine individuellen Anliegen.
+                Persönlich, vertrauensvoll und mit vollem Fokus auf deine individuellen Bedürfnisse.
               </p>
             </div>
 
@@ -679,9 +704,9 @@ export default function Home() {
                   <span className="ql-process__step-num">01</span>
                   <span className="ql-process__step-badge">Schritt 1</span>
                 </div>
-                <h3 className="ql-process__card-title">Kurze Anfrage</h3>
+                <h3 className="ql-process__card-title">Deine Kontaktaufnahme</h3>
                 <p className="ql-process__card-text">
-                  Schicke mir eine Nachricht über das Kontaktformular mit deinen Wünschen oder ersten Fragen.
+                  Schicke mir einfach eine Nachricht über das Kontaktformular mit deinem Anliegen, deinen Zielen oder ersten Fragen.
                 </p>
               </div>
 
@@ -690,9 +715,9 @@ export default function Home() {
                   <span className="ql-process__step-num">02</span>
                   <span className="ql-process__step-badge">Schritt 2</span>
                 </div>
-                <h3 className="ql-process__card-title">Kurzes Telefonat</h3>
+                <h3 className="ql-process__card-title">Telefonisches Erstgespräch</h3>
                 <p className="ql-process__card-text">
-                  Wir telefonieren kurz, um dein Thema abzustimmen und direkt einen passenden Termin für unser Treffen zu finden.
+                  Wir besprechen dein Thema in Ruhe am Telefon, klären offene Punkte und vereinbaren einen passenden Termin für unser Treffen.
                 </p>
               </div>
 
@@ -701,9 +726,9 @@ export default function Home() {
                   <span className="ql-process__step-num">03</span>
                   <span className="ql-process__step-badge">Schritt 3</span>
                 </div>
-                <h3 className="ql-process__card-title">Kennenlernen vor Ort</h3>
+                <h3 className="ql-process__card-title">Kennenlernen &amp; Start vor Ort</h3>
                 <p className="ql-process__card-text">
-                  Im ruhigen Praxisraum (1090 Wien) nehmen wir uns Zeit, besprechen alles in Ruhe und starten gemeinsam deine Begleitung.
+                  Im geschützten, ruhigen Praxisraum (1090 Wien) nehmen wir uns Zeit, analysieren deine Ausgangslage und starten deine persönliche Begleitung.
                 </p>
               </div>
             </div>
@@ -712,9 +737,9 @@ export default function Home() {
             <div className="ql-process__b2b-note ql-stagger">
               <div className="ql-process__b2b-icon">✦</div>
               <div className="ql-process__b2b-content">
-                <strong className="ql-process__b2b-title">Unternehmen &amp; Kooperationen:</strong>
+                <strong className="ql-process__b2b-title">Für Unternehmen, Kanzleien &amp; Veranstalter:</strong>
                 <p className="ql-process__b2b-text">
-                  Für Keynotes, Moderationen oder Corporate Health Workshops stimme ich Format, Inhalte und Rahmenbedingungen direkt im individuellen Vorgespräch mit dir ab.
+                  Ob Keynote, Podiumsmoderation oder Corporate Health Workshop – im gemeinsamen Vorgespräch stimmen wir Zielgruppe, inhaltliche Schwerpunkte und den zeitlichen Rahmen exakt auf eure Organisation oder euer Event ab.
                 </p>
               </div>
             </div>
@@ -722,7 +747,7 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ⑨ KONTAKT
+            ⑦ KONTAKT
            —————————————————————————————————————————————— */}
         <section className="ql-contact-section ql-reveal" id="kontakt">
           <div className="ql-contact">
@@ -754,6 +779,13 @@ export default function Home() {
               </button>
             </form>
           </div>
+        </section>
+
+        {/* ——————————————————————————————————————————————
+            ⑧ EINBLICKE & IMPRESSIONEN (Lookbook Gallery Carousel)
+           —————————————————————————————————————————————— */}
+        <section className="ql-reveal" id="einblicke">
+          <LookbookGallery />
         </section>
       </main>
 

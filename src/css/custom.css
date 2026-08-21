@@ -853,6 +853,66 @@ footer.footer {
 
 .ql-offer-card__action {
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Card-Integrated Reference Links */
+.ql-offer-card__ref-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--color-bg);
+  border: 1px solid rgba(179, 159, 136, 0.35);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--color-dark);
+  text-decoration: none;
+  transition: all 0.3s var(--ease-elegant);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ql-offer-card__ref-link:hover {
+  background: #FFFFFF;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(44, 41, 39, 0.05);
+}
+
+.ql-offer-card__ref-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  background: rgba(179, 159, 136, 0.18);
+  padding: 2px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.ql-offer-card__ref-title {
+  flex: 1;
+  font-weight: 500;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ql-offer-card__ref-arrow {
+  color: var(--color-accent);
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+
+.ql-offer-card__ref-link:hover .ql-offer-card__ref-arrow {
+  transform: translate(2px, -2px);
 }
 
 /* Instagram / Group Classes Schedule Card */
@@ -982,7 +1042,7 @@ footer.footer {
 .ql-about-voyage__stage {
   display: grid;
   grid-template-columns: 50% 50%;
-  min-height: 720px;
+  min-height: 640px;
   width: 100%;
 }
 
@@ -990,7 +1050,7 @@ footer.footer {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 540px;
+  min-height: 500px;
   overflow: hidden;
   background-color: var(--color-bg-alt);
 }
@@ -1007,7 +1067,7 @@ footer.footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 90px 8% 80px 60px;
+  padding: 70px 8% 65px 50px;
   background-color: var(--color-bg);
 }
 
@@ -1039,308 +1099,230 @@ footer.footer {
 }
 
 /* ==========================================================================
-   ⑤ FUNDAMENT & QUALIFIKATIONEN [Tone B: #F3EFEA]
+   ④ INTEGRATED FUNDAMENT & EXPERTISE (3 Schlanke Tabs)
    ========================================================================== */
-.ql-credentials {
-  padding: 100px 24px 90px;
-  background-color: var(--color-bg-alt);
-  border-top: 1px solid rgba(44, 41, 39, 0.06);
-  border-bottom: 1px solid rgba(44, 41, 39, 0.06);
+.ql-about-voyage__fundament {
+  margin-top: 2.2rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(44, 41, 39, 0.08);
 }
 
-.ql-credentials__container {
-  max-width: 1180px;
-  margin: 0 auto;
+.ql-about-voyage__fundament-header {
+  margin-bottom: 1.1rem;
 }
 
-.ql-credentials__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.ql-credentials__card {
-  background: var(--color-surface);
-  border: 1px solid rgba(44, 41, 39, 0.07);
-  border-radius: var(--radius-sm);
-  padding: 2.4rem 2rem;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.4s var(--ease-elegant), box-shadow 0.4s var(--ease-elegant), border-color 0.4s ease;
-}
-
-.ql-credentials__card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: var(--color-accent-border);
-}
-
-.ql-credentials__card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.2rem;
-  padding-bottom: 0.9rem;
-  border-bottom: 1px solid rgba(44, 41, 39, 0.06);
-}
-
-.ql-credentials__num {
-  font-family: var(--font-serif);
-  font-size: 2rem;
-  font-weight: 400;
-  color: var(--color-accent);
-  line-height: 1;
-}
-
-.ql-credentials__pill {
+.ql-about-voyage__fundament-kicker {
+  display: block;
   font-family: var(--font-sans);
   font-size: 0.68rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #8A8179;
-  background: rgba(44, 41, 39, 0.04);
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
+  letter-spacing: 0.16em;
+  color: var(--color-accent);
+  margin-bottom: 0.8rem;
 }
 
-.ql-credentials__card-title {
+.ql-about-voyage__tabs {
+  display: flex;
+  gap: 0.4rem;
+  border-bottom: 1px solid rgba(44, 41, 39, 0.08);
+  padding-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ql-about-voyage__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 5px 11px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.ql-about-voyage__tab-num {
   font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+}
+
+.ql-about-voyage__tab:hover {
+  color: var(--color-dark);
+  background: rgba(44, 41, 39, 0.03);
+}
+
+.ql-about-voyage__tab.is-active {
+  background: var(--color-surface);
+  border-color: rgba(44, 41, 39, 0.1);
+  color: var(--color-dark);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(44, 41, 39, 0.04);
+}
+
+.ql-about-voyage__tab-panels {
+  min-height: 130px;
+  padding-top: 0.4rem;
+}
+
+.ql-about-voyage__tab-panel {
+  animation: qlFadeIn 0.3s ease;
+}
+
+.ql-about-voyage__panel-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
   font-weight: 500;
   color: var(--color-dark);
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 0.8rem 0;
   line-height: 1.3;
 }
 
-.ql-credentials__list {
+.ql-about-voyage__fundament-sublist {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem 1.4rem;
 }
 
-.ql-credentials__list li {
+.ql-about-voyage__fundament-sublist li {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
-.ql-credentials__list strong {
+.ql-about-voyage__fundament-sublist strong {
   font-family: var(--font-sans);
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   font-weight: 600;
   color: var(--color-dark);
+  letter-spacing: -0.01em;
 }
 
-.ql-credentials__list span {
+.ql-about-voyage__fundament-sublist span {
   font-family: var(--font-sans);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: var(--color-muted);
-  line-height: 1.5;
-  font-weight: 300;
+  line-height: 1.4;
+  font-weight: 350;
 }
 
-/* ==========================================================================
-   ⑥ EDITORIAL GALLERY & ZITATE [Tone A: #FAF7F2]
-   ========================================================================== */
-.ql-editorial-gallery {
-  display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  background-color: var(--color-bg);
-  min-height: 580px;
-  border-top: 1px solid rgba(44, 41, 39, 0.05);
+@keyframes qlFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.ql-editorial-gallery__quotes {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 4.5rem 3.5rem;
-  text-align: center;
-  background-color: var(--color-bg);
-}
 
-.ql-editorial-gallery__quote {
-  max-width: 380px;
-}
 
-.ql-quote-mark {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 4rem;
-  color: var(--color-accent);
-  line-height: 1;
-  margin-bottom: -1rem;
-  opacity: 0.75;
-}
-
-.ql-editorial-gallery__quote p {
-  font-family: var(--font-serif);
-  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
-  font-style: italic;
-  font-weight: 300;
-  line-height: 1.6;
-  color: var(--color-dark);
-  margin: 0;
-}
-
-.ql-editorial-gallery__divider {
-  width: 40px;
-  height: 1px;
-  background: var(--color-accent);
-  margin: 2.5rem 0;
-  opacity: 0.6;
-}
-
-.ql-editorial-gallery__media {
-  position: relative;
-  overflow: hidden;
-  background-color: var(--color-bg-alt);
-}
-
-/* ==========================================================================
-   ⑦ B2B & KEYNOTES [Tone B: #F3EFEA]
-   ========================================================================== */
 .ql-b2b {
   background-color: var(--color-bg-alt);
-  padding: 100px 24px 90px;
+  padding: 100px 24px 105px;
   text-align: center;
   border-top: 1px solid rgba(44, 41, 39, 0.06);
   border-bottom: 1px solid rgba(44, 41, 39, 0.06);
 }
 
 .ql-b2b__container {
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.ql-b2b__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-bottom: 3.5rem;
-}
-
-.ql-b2b__pillar {
-  background: var(--color-surface);
-  border: 1px solid rgba(44, 41, 39, 0.06);
-  border-radius: var(--radius-sm);
-  padding: 2.8rem 2rem;
-  text-align: center;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.4s var(--ease-elegant), box-shadow 0.4s var(--ease-elegant), border-color 0.4s ease;
-}
-
-.ql-b2b__pillar:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: var(--color-accent-border);
-}
-
-.ql-b2b__badge {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background-color: var(--color-bg);
-  border: 1px solid rgba(179, 159, 136, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.4rem auto;
-  transition: transform 0.3s var(--ease-elegant), background-color 0.3s ease;
-}
-
-.ql-b2b__pillar:hover .ql-b2b__badge {
-  transform: scale(1.05);
-  background-color: #FAF4EB;
-}
-
-.ql-b2b__pillar-title {
-  font-family: var(--font-sans);
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: var(--color-dark);
-  margin-bottom: 0.9rem;
-}
-
-.ql-b2b__pillar-text {
-  font-family: var(--font-sans);
-  font-size: 0.92rem;
-  line-height: 1.65;
-  color: var(--color-muted);
-  margin: 0;
-  font-weight: 300;
-}
-
-.ql-b2b__action-wrap {
-  margin-bottom: 3.5rem;
-}
-
-/* B2B Social Proof Badges */
-.ql-b2b__refs {
-  padding-top: 2.5rem;
+/* Editorial Media & Press Strip */
+.ql-b2b__media-strip {
+  margin-top: 3.8rem;
+  padding-top: 2.8rem;
   border-top: 1px solid rgba(44, 41, 39, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.3rem;
 }
 
-.ql-b2b__refs-label {
+.ql-b2b__media-strip-kicker {
   font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #8A8179;
+  color: var(--color-accent);
 }
 
-.ql-b2b__refs-list {
+.ql-b2b__media-strip-items {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
-.ql-b2b__ref-badge {
+.ql-b2b__media-strip-item {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
   gap: 8px;
-  padding: 8px 20px;
-  background: var(--color-surface);
-  border: 1px solid rgba(44, 41, 39, 0.1);
-  border-radius: var(--radius-full);
+  text-decoration: none;
+  color: var(--color-dark);
+  transition: all 0.3s ease;
+  padding: 4px 0;
+}
+
+.ql-b2b__media-brand {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--color-dark);
+  transition: color 0.3s ease;
+}
+
+.ql-b2b__media-topic {
   font-family: var(--font-sans);
   font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--color-dark);
-  text-decoration: none;
-  transition: all 0.3s var(--ease-elegant);
-  box-shadow: 0 2px 8px rgba(44, 41, 39, 0.03);
+  color: var(--color-muted);
+  font-weight: 350;
 }
 
-.ql-b2b__ref-badge:hover {
-  border-color: var(--color-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(44, 41, 39, 0.08);
-  color: var(--color-dark);
-}
-
-.ql-b2b__ref-arrow {
+.ql-b2b__media-arrow {
   font-size: 0.85rem;
   color: var(--color-accent);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s var(--ease-elegant), color 0.3s ease;
 }
 
-.ql-b2b__ref-badge:hover .ql-b2b__ref-arrow {
-  transform: translate(2px, -2px);
+.ql-b2b__media-strip-item:hover .ql-b2b__media-brand {
+  color: var(--color-accent);
 }
+
+.ql-b2b__media-strip-item:hover .ql-b2b__media-arrow {
+  transform: translate(2px, -2px);
+  color: var(--color-accent);
+}
+
+.ql-b2b__media-sep {
+  color: rgba(44, 41, 39, 0.22);
+  font-size: 0.95rem;
+  font-weight: 300;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .ql-b2b__media-strip-items {
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .ql-b2b__media-sep {
+    display: none;
+  }
+}
+
+
+
+
 
 /* ==========================================================================
    ⑧ ABLAUF [Tone A: #FAF7F2]
@@ -1645,11 +1627,32 @@ footer.footer {
   }
 
   .ql-offers__grid,
-  .ql-credentials__grid,
   .ql-b2b__grid,
   .ql-process__grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .ql-symbiose {
+    padding: 75px 20px 80px;
+  }
+
+  .ql-symbiose__worlds-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .ql-symbiose__world-card {
+    padding: 2.4rem 1.8rem;
+  }
+
+  .ql-symbiose__leadership-card {
+    padding: 2.2rem 1.8rem;
+  }
+
+  .ql-symbiose__leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
   }
 
   .ql-studio-card {
@@ -1674,13 +1677,6 @@ footer.footer {
     padding: 60px 24px;
   }
 
-  .ql-editorial-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .ql-editorial-gallery__media {
-    min-height: 480px;
-  }
 }
 
 /* Small Screens / Mobile (≤ 768px) */
@@ -1742,7 +1738,6 @@ footer.footer {
 
   .ql-ansatz,
   .ql-offers,
-  .ql-credentials,
   .ql-b2b,
   .ql-process,
   .ql-contact-section {
