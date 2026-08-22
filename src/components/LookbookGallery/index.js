@@ -65,11 +65,18 @@ const DEFAULT_GALLERY_IMAGES = [
     alt: 'Lebensfreude, Leichtigkeit und Verbindung',
     position: '65% 25%',
   },
-  // 10. MIT ANDEREN: 998 - Herzliche Betreuung & Bein-Assist (Outdoor)
+  // 10. MIT ANDEREN: 901 - 1:1 Armführung & herzliches Coaching (Outdoor)
   {
     id: 10,
+    src: '/img/A7R00901.jpg',
+    alt: '1:1 Coaching, präzise Haltungsführung und Freude am Movement',
+    position: 'center 20%',
+  },
+  // 11. MIT ANDEREN: 998 - Herzliche Betreuung & Bein-Assist (Outdoor)
+  {
+    id: 11,
     src: '/img/A7R00998.jpg',
-    alt: 'Einfühlsames Mentoring und ganzheitliche Begleitung',
+    alt: 'Einfühlsames Mentoring, Assist und ganzheitliche Begleitung',
     position: 'center 15%',
   },
 ];
