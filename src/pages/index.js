@@ -474,7 +474,7 @@ export default function Home() {
             {/* 2. STUFE: MEIN FUNDAMENT & EXPERTISE */}
             <div className="ql-about-voyage__fundament-center ql-stagger" id="qualifikationen">
               <div className="ql-about-voyage__fundament-center-header">
-                <span className="ql-kicker">MEIN FUNDAMENT &amp; EXPERTISE</span>
+                <span className="ql-kicker">Fundament &amp; Expertise</span>
                 
                 <div className="ql-about-voyage__tabs" role="tablist">
                   <button
@@ -484,8 +484,7 @@ export default function Home() {
                     role="tab"
                     aria-selected={activeExpertiseTab === 0}
                   >
-                    <span className="ql-about-voyage__tab-num">01</span>
-                    <span>Steuern &amp; Wirtschaft</span>
+                    Steuern &amp; Wirtschaft
                   </button>
 
                   <button
@@ -495,8 +494,7 @@ export default function Home() {
                     role="tab"
                     aria-selected={activeExpertiseTab === 1}
                   >
-                    <span className="ql-about-voyage__tab-num">02</span>
-                    <span>Gesundheit &amp; Vitalität</span>
+                    Gesundheit &amp; Vitalität
                   </button>
 
                   <button
@@ -506,8 +504,7 @@ export default function Home() {
                     role="tab"
                     aria-selected={activeExpertiseTab === 2}
                   >
-                    <span className="ql-about-voyage__tab-num">03</span>
-                    <span>Bühne, Gremien &amp; Publikationen</span>
+                    Bühne, Gremien &amp; Publikationen
                   </button>
                 </div>
               </div>
