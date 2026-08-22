@@ -1100,84 +1100,75 @@ img {
   width: 100%;
 }
 
-.ql-about-voyage__moodboard {
+/* 1. STUFE: Duo Moodboard (2 Fotos frei schwebend: Oben Links & Unten Rechts) */
+.ql-about-voyage__moodboard--duo {
   position: relative;
   width: 100%;
-  max-width: 610px;
+  max-width: 580px;
   height: 690px;
+  background: transparent;
+  padding: 0;
 }
 
-.ql-about-voyage__mood-frame {
+.ql-about-voyage__duo-card {
   position: absolute;
-  background: #FFFFFF;
-  padding: 8px;
-  border-radius: 4px;
-  box-shadow: 0 18px 45px rgba(25, 20, 18, 0.17);
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease, z-index 0.2s;
+  background: transparent;
+  padding: 0;
+  border-radius: var(--radius-sm);
   overflow: hidden;
+  box-shadow: 0 20px 48px rgba(28, 22, 18, 0.16);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease, z-index 0.2s;
   transform: translateZ(0);
 }
 
-.ql-about-voyage__mood-frame:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 26px 58px rgba(25, 20, 18, 0.25);
-  z-index: 10 !important;
-}
-
-.ql-about-voyage__mood-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 2px;
-  display: block;
-  transition: transform 0.45s ease;
-}
-
-/* Frame 1: Oben Links (Business & Souveränität - 1304) */
-.ql-about-voyage__mood-frame--top-left {
-  top: 0;
-  left: 0;
-  width: 55%;
-  height: 390px;
-  z-index: 2;
-}
-
-.ql-about-voyage__mood-frame--top-left .ql-about-voyage__mood-img {
-  object-position: center 20%;
-  transform: scale(1.15);
-  transform-origin: center 22%;
-}
-
-/* Frame 2: Rechts Groß / Schlank (Natur & Ausstrahlung - 1328, weiter nach unten versetzt) */
-.ql-about-voyage__mood-frame--right {
-  top: 60px;
-  right: 0;
-  width: 51%;
+/* Foto 1: Oben Links / Leicht geneigt (0795 Bewegung & Lächeln) */
+.ql-about-voyage__duo-card--top-left {
+  top: -30px;
+  left: -28px;
+  width: 65%;
   height: 440px;
+  transform: rotate(-2deg);
   z-index: 1;
 }
 
-.ql-about-voyage__mood-frame--right .ql-about-voyage__mood-img {
-  object-position: center 18%;
-  transform: scale(1.16);
-  transform-origin: center 20%;
+.ql-about-voyage__duo-card--top-left:hover {
+  transform: rotate(0deg) scale(1.02) translateY(-4px);
+  box-shadow: 0 28px 60px rgba(28, 22, 18, 0.24);
+  z-index: 10 !important;
 }
 
-/* Frame 3: Unten Mitte / Überlappend (Work & Balance auf der Matte - 1072) */
-.ql-about-voyage__mood-frame--bottom-center {
+.ql-about-voyage__duo-card--top-left .ql-about-voyage__duo-img {
+  object-position: 68% 36%;
+  transform: scale(1.22);
+  transform-origin: 68% 36%;
+}
+
+/* Foto 2: Unten Rechts / Leicht geneigt / Näher zur Schrift versetzt (1304 Business & Klarheit) */
+.ql-about-voyage__duo-card--bottom-right {
   bottom: 0;
-  left: 10%;
-  width: 74%;
-  height: 300px;
-  z-index: 3;
-  box-shadow: 0 22px 52px rgba(25, 20, 18, 0.24);
+  right: -28px;
+  width: 63%;
+  height: 430px;
+  transform: rotate(2deg);
+  z-index: 2;
 }
 
-.ql-about-voyage__mood-frame--bottom-center .ql-about-voyage__mood-img {
-  object-position: center 36%;
-  transform: scale(1.18);
-  transform-origin: center 38%;
-  filter: brightness(1.2) contrast(1.04) saturate(1.05);
+.ql-about-voyage__duo-card--bottom-right:hover {
+  transform: rotate(0deg) scale(1.02) translateY(-4px);
+  box-shadow: 0 28px 60px rgba(28, 22, 18, 0.24);
+  z-index: 10 !important;
+}
+
+.ql-about-voyage__duo-card--bottom-right .ql-about-voyage__duo-img {
+  object-position: center 20%;
+}
+
+.ql-about-voyage__duo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  display: block;
 }
 
 .ql-about-voyage__content-col {
@@ -1842,26 +1833,24 @@ img {
     justify-content: center;
   }
 
-  .ql-about-voyage__moodboard {
-    max-width: 520px;
-    height: 590px;
+  .ql-about-voyage__moodboard--duo {
+    max-width: 480px;
+    height: 600px;
+    padding: 0;
   }
 
-  .ql-about-voyage__mood-frame--top-left {
-    height: 335px;
-    width: 55%;
-  }
-
-  .ql-about-voyage__mood-frame--right {
+  .ql-about-voyage__duo-card--top-left {
+    top: -20px;
+    left: -18px;
+    width: 65%;
     height: 380px;
-    width: 51%;
-    top: 50px;
   }
 
-  .ql-about-voyage__mood-frame--bottom-center {
-    height: 255px;
-    width: 74%;
-    left: 10%;
+  .ql-about-voyage__duo-card--bottom-right {
+    bottom: 0;
+    right: 0;
+    width: 63%;
+    height: 370px;
   }
 
   .ql-about-voyage__fundament-center {
@@ -1974,30 +1963,29 @@ img {
     padding: 65px 1.25rem 70px;
   }
 
-  .ql-about-voyage__moodboard {
-    max-width: 100%;
-    height: 500px;
+  .ql-about-voyage__moodboard--duo {
+    max-width: 380px;
+    height: 510px;
+    padding: 0;
+    margin: 0 auto;
   }
 
-  .ql-about-voyage__mood-frame {
-    padding: 6px;
+  .ql-about-voyage__duo-card {
+    padding: 0;
   }
 
-  .ql-about-voyage__mood-frame--top-left {
-    height: 285px;
-    width: 55%;
+  .ql-about-voyage__duo-card--top-left {
+    top: -15px;
+    left: -10px;
+    width: 65%;
+    height: 320px;
   }
 
-  .ql-about-voyage__mood-frame--right {
-    height: 330px;
-    width: 51%;
-    top: 35px;
-  }
-
-  .ql-about-voyage__mood-frame--bottom-center {
-    height: 220px;
-    width: 76%;
-    left: 8%;
+  .ql-about-voyage__duo-card--bottom-right {
+    bottom: 0;
+    right: 0;
+    width: 63%;
+    height: 310px;
   }
 
   .ql-about-voyage__tabs {

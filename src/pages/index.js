@@ -426,40 +426,40 @@ export default function Home() {
             {/* 1. STUFE: 3-Foto Collage (Links) & Story (Rechts) */}
             <div className="ql-about-voyage__stage">
               <div className="ql-about-voyage__photo-col ql-stagger">
-                <div className="ql-about-voyage__moodboard">
-                  {/* Foto 1: Oben Links (1304 - Business & Souveränität) */}
-                  <div className="ql-about-voyage__mood-frame ql-about-voyage__mood-frame--top-left">
+                <div className="ql-about-voyage__moodboard ql-about-voyage__moodboard--duo">
+                  {/* Foto 1: Oben Links (0795 - Gemeinschaft, Energie & Lachen) */}
+                  <div className="ql-about-voyage__duo-card ql-about-voyage__duo-card--top-left">
+                    <img
+                      src="/img/A7R00795.jpg"
+                      alt="Dr. Stefanie Schinnerl: Energie, Bewegung und Verbundenheit"
+                      className="ql-about-voyage__duo-img"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+
+                  {/* Foto 2: Unten Rechts (1304 - Business & Klarheit) */}
+                  <div className="ql-about-voyage__duo-card ql-about-voyage__duo-card--bottom-right">
                     <img
                       src="/img/A7R01304.jpg"
-                      alt="Dr. Stefanie Schinnerl: Business, Leadership und Souveränität"
-                      className="ql-about-voyage__mood-img"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-
-                  {/* Foto 2: Rechts Schlank / Hochformatig (1328 - Natur & Leichtigkeit) */}
-                  <div className="ql-about-voyage__mood-frame ql-about-voyage__mood-frame--right">
-                    <img
-                      src="/img/A7R01328.jpg"
-                      alt="Dr. Stefanie Schinnerl in der Natur: Balance und Leichtigkeit"
-                      className="ql-about-voyage__mood-img"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-
-                  {/* Foto 3: Unten Mitte / Überlappend (1072 - Work & Balance auf der Matte) */}
-                  <div className="ql-about-voyage__mood-frame ql-about-voyage__mood-frame--bottom-center">
-                    <img
-                      src="/img/A7R01072.jpg"
-                      alt="Dr. Stefanie Schinnerl: Verbindung von Business, Mindset und Vitalität"
-                      className="ql-about-voyage__mood-img"
+                      alt="Dr. Stefanie Schinnerl: Business, Leadership und Klarheit"
+                      className="ql-about-voyage__duo-img"
                       loading="lazy"
                       decoding="async"
                     />
                   </div>
                 </div>
+
+                {/* SVG Filter zur Schattenaufhellung & Highlight-Schutz für natürliche Ausleuchtung */}
+                <svg style={{ position: 'absolute', width: 0, height: 0, pointerEvents: 'none' }} aria-hidden="true">
+                  <filter id="ql-shadow-lift">
+                    <feComponentTransfer>
+                      <feFuncR type="gamma" exponent="0.62" amplitude="0.92" offset="0.05" />
+                      <feFuncG type="gamma" exponent="0.62" amplitude="0.92" offset="0.05" />
+                      <feFuncB type="gamma" exponent="0.62" amplitude="0.92" offset="0.05" />
+                    </feComponentTransfer>
+                  </filter>
+                </svg>
               </div>
 
               <div className="ql-about-voyage__content-col ql-stagger">
