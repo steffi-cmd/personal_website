@@ -5,7 +5,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Dr. Stefanie Schinnerl',
-  tagline: 'Holistic Mentoring & Health Coaching – High Performance von innen heraus.',
+  tagline: 'Holistic Mentoring & Health Coaching: High Performance von innen heraus.',
   favicon: 'img/favicon.ico',
 
   future: {

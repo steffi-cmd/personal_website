@@ -122,25 +122,25 @@ footer.footer {
 }
 
 /* ==========================================================================
-   UNIFIED BUTTON SYSTEM
+   UNIFIED BUTTON SYSTEM (Quiet Luxury — Weicher, feiner & edler Stil)
    ========================================================================== */
 
 .ql-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
   font-family: var(--font-sans);
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  padding: 13px 28px;
-  border-radius: var(--radius-sm);
+  letter-spacing: 0.13em;
+  padding: 10px 22px;
+  border-radius: 6px;
   text-decoration: none;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: all 0.35s var(--ease-elegant);
+  transition: all 0.3s var(--ease-elegant);
   white-space: nowrap;
 }
 
@@ -149,58 +149,62 @@ footer.footer {
   background-color: var(--color-dark);
   color: #FAF7F2 !important;
   border-color: var(--color-dark);
-  box-shadow: 0 4px 14px rgba(30, 28, 26, 0.12);
+  box-shadow: 0 2px 10px rgba(30, 28, 26, 0.08);
 }
 
 .ql-btn--primary:hover {
-  background-color: #34302C;
-  border-color: #34302C;
+  background-color: #38332F;
+  border-color: #38332F;
   color: #FFFFFF !important;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(30, 28, 26, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(30, 28, 26, 0.14);
 }
 
 /* 2. Outline / Secondary Button */
 .ql-btn--outline {
   background-color: transparent;
   color: var(--color-dark) !important;
-  border-color: rgba(30, 28, 26, 0.35);
+  border-color: rgba(30, 28, 26, 0.24);
 }
 
 .ql-btn--outline:hover {
-  background-color: var(--color-dark);
+  background-color: rgba(30, 28, 26, 0.05);
   border-color: var(--color-dark);
-  color: #FAF7F2 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(30, 28, 26, 0.12);
+  color: var(--color-dark) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 28, 26, 0.06);
 }
 
 /* 3. Card Action Button */
 .ql-btn--card {
   width: 100%;
-  padding: 12px 20px;
-  font-size: 0.8rem;
+  padding: 9px 16px;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   background-color: var(--color-dark);
   color: #FAF7F2 !important;
   border-color: var(--color-dark);
-  box-shadow: 0 2px 8px rgba(30, 28, 26, 0.08);
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(30, 28, 26, 0.06);
 }
 
 .ql-btn--card:hover {
-  background-color: #34302C;
-  border-color: #34302C;
+  background-color: #38332F;
+  border-color: #38332F;
   color: #FFFFFF !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(30, 28, 26, 0.18);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(30, 28, 26, 0.12);
 }
 
 .ql-btn--card .ql-btn__arrow {
   display: inline-block;
   transition: transform 0.3s ease;
+  font-size: 0.85rem;
 }
 
 .ql-btn--card:hover .ql-btn__arrow {
-  transform: translateX(4px);
+  transform: translateX(3px);
 }
 
 /* 4. Full Width Modifier */
@@ -324,14 +328,14 @@ footer.footer {
 }
 
 .ql-navbar__link-cta {
-  padding: 7px 16px !important;
-  border: 1px solid rgba(30, 28, 26, 0.35) !important;
-  border-radius: var(--radius-sm) !important;
+  padding: 6px 14px !important;
+  border: 1px solid rgba(30, 28, 26, 0.22) !important;
+  border-radius: 5px !important;
   background: transparent !important;
   color: var(--color-dark) !important;
   font-size: 0.68rem !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.14em !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.13em !important;
   transition: all 0.3s var(--ease-elegant) !important;
 }
 
@@ -340,7 +344,7 @@ footer.footer {
   color: #FFFFFF !important;
   border-color: var(--color-dark) !important;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(30, 28, 26, 0.15);
+  box-shadow: 0 3px 10px rgba(30, 28, 26, 0.1);
 }
 
 .ql-navbar__link-cta::after {
@@ -481,15 +485,16 @@ footer.footer {
 
 .ql-navbar__mobile-cta {
   font-family: var(--font-sans) !important;
-  font-size: 0.85rem !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   display: inline-block;
   margin-top: 1rem;
-  padding: 12px 28px;
+  padding: 10px 24px;
   background: var(--color-dark);
   color: #FAF7F2 !important;
-  border-radius: var(--radius-sm);
+  border-radius: 6px;
 }
 
 /* ==========================================================================
@@ -681,7 +686,7 @@ footer.footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 45% 68%;
+  object-position: center 25%;
   display: block;
   transition: transform 0.8s var(--ease-elegant);
 }
@@ -715,7 +720,7 @@ footer.footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 58%;
+  object-position: center 22%;
   display: block;
 }
 
@@ -812,6 +817,26 @@ footer.footer {
 
 .ql-offer-card:hover .ql-offer-card__img {
   transform: scale(1.04);
+}
+
+.ql-offer-card__img--panel-zoom {
+  object-position: 74% 30%;
+  transform: scale(2.4);
+  transform-origin: 74% 30%;
+}
+
+.ql-offer-card:hover .ql-offer-card__img--panel-zoom {
+  transform: scale(2.48);
+}
+
+.ql-offer-card__img--keynote-zoom {
+  object-position: 57% 46%;
+  transform: scale(1.6);
+  transform-origin: 57% 46%;
+}
+
+.ql-offer-card:hover .ql-offer-card__img--keynote-zoom {
+  transform: scale(1.68);
 }
 
 .ql-offer-card__body {
@@ -981,15 +1006,33 @@ footer.footer {
 }
 
 .ql-studio-card__body {
-  padding: 2.2rem 2.5rem;
+  padding: 2.4rem 2.8rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2.5rem;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.ql-studio-card__content {
-  flex: 1;
+.ql-studio-card__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+.ql-studio-card__col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ql-studio-card__col--left {
+  padding-right: 2.4rem;
+  border-right: 1px solid rgba(179, 159, 136, 0.25);
+}
+
+.ql-studio-card__col-content {
+  margin-bottom: 1.4rem;
 }
 
 .ql-studio-card__kicker {
@@ -1000,7 +1043,7 @@ footer.footer {
   letter-spacing: 0.16em;
   color: var(--color-accent);
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.45rem;
 }
 
 .ql-studio-card__title {
@@ -1008,31 +1051,24 @@ footer.footer {
   font-size: 1.45rem;
   font-weight: 500;
   color: var(--color-dark);
-  margin: 0 0 0.75rem 0;
-  line-height: 1.3;
+  margin: 0 0 0.65rem 0;
+  line-height: 1.25;
 }
 
 .ql-studio-card__desc {
   font-family: var(--font-sans);
   font-size: 0.92rem;
-  line-height: 1.7;
+  line-height: 1.65;
   color: var(--color-text-body);
   margin: 0;
   font-weight: 300;
 }
 
-.ql-studio-card__cta-box {
+.ql-studio-card__col-actions {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  flex-shrink: 0;
-}
-
-.ql-studio-card__handle {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  color: var(--color-muted);
+  gap: 0.5rem;
+  align-items: flex-start;
 }
 
 @media (max-width: 991px) {
@@ -1044,14 +1080,17 @@ footer.footer {
     min-height: auto;
   }
   .ql-studio-card__body {
-    flex-direction: column;
-    align-items: flex-start;
     padding: 2rem;
-    gap: 1.5rem;
   }
-  .ql-studio-card__cta-box {
-    align-items: flex-start;
-    width: 100%;
+  .ql-studio-card__columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .ql-studio-card__col--left {
+    padding-right: 0;
+    padding-bottom: 2rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(179, 159, 136, 0.25);
   }
 }
 

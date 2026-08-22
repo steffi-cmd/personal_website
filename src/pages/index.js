@@ -8,7 +8,7 @@ const FACET_DATA = [
     title: 'Bewegung & Vitalität',
     subtitle: 'Gesund- & Vitalcoach · Yoga & Pilates',
     img: '/img/A7R00851.jpg',
-    alt: 'Dr. Stefanie Schinnerl – Freude an Bewegung & Yoga',
+    alt: 'Dr. Stefanie Schinnerl: Freude an Bewegung & Yoga',
     pos: 'center 15%'
   },
   {
@@ -16,7 +16,7 @@ const FACET_DATA = [
     title: 'Business & Leadership',
     subtitle: 'Steuerberaterin · Promovierte Ökonomin',
     img: '/img/stefanie_00451_portrait.jpg',
-    alt: 'Dr. Stefanie Schinnerl – Wirtschaft & Leadership',
+    alt: 'Dr. Stefanie Schinnerl: Wirtschaft & Leadership',
     pos: 'center 20%'
   },
   {
@@ -24,7 +24,7 @@ const FACET_DATA = [
     title: 'Natur & Regeneration',
     subtitle: 'Präsenz & Gelassenheit im Alltag',
     img: '/img/A7R01328.jpg',
-    alt: 'Dr. Stefanie Schinnerl – Natur & Regeneration',
+    alt: 'Dr. Stefanie Schinnerl: Natur & Regeneration',
     pos: 'center 20%'
   }
 ];
@@ -82,7 +82,7 @@ export default function Home() {
   return (
     <Layout
       title="Holistic Mentoring & Health Coaching"
-      description="Dr. Stefanie Schinnerl – Holistic Mentoring, Health Coaching & Keynote Speaking für ambitionierte Frauen."
+      description="Dr. Stefanie Schinnerl: Holistic Mentoring, Health Coaching & Keynote Speaking für ambitionierte Frauen."
     >
       {/* ——— NAVBAR (Split Navigation: Left - Brand Center - Right) ——— */}
       <header className={`ql-navbar ${isScrolled ? 'ql-navbar--scrolled' : ''}`}>
@@ -144,7 +144,7 @@ export default function Home() {
             <div className="ql-hero__fade-mask">
               <img
                 src="/img/A7R01339.jpg"
-                alt="Dr. Stefanie Schinnerl – Holistic Mentoring & Health Coaching"
+                alt="Dr. Stefanie Schinnerl: Holistic Mentoring & Health Coaching"
                 className="ql-hero__faded-img"
                 loading="eager"
               />
@@ -176,7 +176,7 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ② MEIN ANSATZ – Storytelling & 3 Säulen
+            ② MEIN ANSATZ: Storytelling & 3 Säulen
            —————————————————————————————————————————————— */}
         <section className="ql-ansatz ql-reveal" id="mein-ansatz">
           <div className="ql-ansatz__container">
@@ -208,7 +208,7 @@ export default function Home() {
                   <div className="ql-ansatz__photo-frame">
                     <img
                       src="/img/A7R00276.jpg"
-                      alt="Stefanie Brand – Business, Body & Mind"
+                      alt="Dr. Stefanie Schinnerl: Business, Body & Mind"
                       className="ql-ansatz__photo-img"
                       loading="lazy"
                     />
@@ -226,18 +226,19 @@ export default function Home() {
           <div className="ql-atmospheric-banner__bg">
             <img
               src="/img/A7R00690.jpg"
-              alt="Stefanie Brand – Atmosphäre & Raum für Entfaltung"
+              alt="Dr. Stefanie Schinnerl: Atmosphäre und Raum für Entfaltung"
               className="ql-atmospheric-banner__img"
+              style={{ objectPosition: 'center 32%' }}
               loading="lazy"
             />
             <div className="ql-atmospheric-banner__overlay"></div>
           </div>
           <div className="ql-atmospheric-banner__content">
             <p className="ql-atmospheric-banner__quote">
-              „Wahre Leistungsfähigkeit entsteht durch Gesundheit: Gemeinsam schaffen wir die Balance aus Bewegung, mentaler Klarheit und nachhaltiger Regeneration.“
+              „Nachhaltige Leistungsfähigkeit entsteht von innen. Gemeinsam schaffen wir die Balance aus Bewegung, mentaler Klarheit und nachhaltiger Regeneration.“
             </p>
             <span className="ql-atmospheric-banner__sub">
-              Business, Body &amp; Mind • Raum für nachhaltige Kraft &amp; Entfaltung
+              Dr. Stefanie Schinnerl • Business, Body &amp; Mind
             </span>
           </div>
         </section>
@@ -251,10 +252,10 @@ export default function Home() {
               <span className="ql-kicker">ANGEBOTE &amp; FORMATE</span>
               <h2 className="ql-headline">Gezielte Begleitung nach deinen Bedürfnissen</h2>
               <p className="ql-subtext">
-                Ich begleite ambitionierte Frauen – die einem ständigen Leistungsdruck unterliegen, hohe Erwartungen an sich selbst haben und ein anspruchsvolles Leben mit viel Verantwortung führen – dabei, aus dem ständigen Erschöpfungsmodus auszusteigen und Leistungsfähigkeit mit innerer Gelassenheit zu verbinden.
+                Ich begleite ambitionierte Frauen, die einem hohen Leistungsdruck unterliegen und ein anspruchsvolles Leben mit viel Verantwortung führen, dabei, aus dem ständigen Erschöpfungsmodus auszusteigen und Leistungsfähigkeit mit innerer Gelassenheit zu verbinden.
               </p>
               <p className="ql-subtext" style={{ marginTop: '0.85rem' }}>
-                Ob im intensiven 1:1-Mentoring, in maßgeschneiderten Movement-Sessions oder bei gemeinsamen Workshops &amp; Retreats: Wir entwickeln Systeme, mit denen du deinen Alltag mit voller Souveränität meisterst – und dich kraftvoll, gesund und lebendig fühlst. Wähle das Format, das am besten zu deinen Zielen und deiner aktuellen Lebensphase passt.
+                Ob im intensiven 1:1-Mentoring, in maßgeschneiderten Movement-Sessions oder bei gemeinsamen Workshops &amp; Retreats: Wir entwickeln Systeme, mit denen du deinen Alltag mit voller Souveränität meisterst und dich kraftvoll, gesund und lebendig fühlst. Wähle das Format, das am besten zu deinen Zielen und deiner aktuellen Lebensphase passt.
               </p>
             </div>
 
@@ -264,7 +265,7 @@ export default function Home() {
                 <div className="ql-offer-card__media">
                   <img
                     src="/img/A7R00199.jpg"
-                    alt="Holistic Health Mentoring – Stefanie Brand"
+                    alt="Holistic Health Mentoring mit Dr. Stefanie Schinnerl"
                     className="ql-offer-card__img"
                     style={{ objectPosition: 'center 35%' }}
                     loading="lazy"
@@ -296,9 +297,9 @@ export default function Home() {
                 <div className="ql-offer-card__media">
                   <img
                     src="/img/A7R00636.jpg"
-                    alt="Personal Movement & Training – Stefanie Brand"
+                    alt="Personal Movement und Training mit Dr. Stefanie Schinnerl"
                     className="ql-offer-card__img"
-                    style={{ objectPosition: 'center 25%' }}
+                    style={{ objectPosition: 'center 22%' }}
                     loading="lazy"
                   />
                 </div>
@@ -306,7 +307,7 @@ export default function Home() {
                   <span className="ql-offer-card__kicker">1:1 MOVEMENT &amp; VITALITÄT</span>
                   <h3 className="ql-offer-card__title">Personal Movement &amp; Training</h3>
                   <p className="ql-offer-card__desc">
-                    Individuell abgestimmter 1:1 Unterricht nach deinen Bedürfnissen. Ob eine reine Yoga-Einheit, gezieltes Pilates, funktionelle Kräftigung oder ein maßgeschneiderter Bewegungsmix – jede Einheit orientiert sich an deinem Körper.
+                    Individuell abgestimmter 1:1 Unterricht nach deinen Bedürfnissen. Ob eine reine Yoga-Einheit, gezieltes Pilates, funktionelle Kräftigung oder ein maßgeschneiderter Bewegungsmix, jede Einheit orientiert sich an deinem Körper.
                   </p>
                   <ul className="ql-offer-card__bullets">
                     <li>Fokus nach Wahl: Reine Praxis (Yoga, Pilates, Barre) oder kombinierter Mix</li>
@@ -328,7 +329,7 @@ export default function Home() {
                 <div className="ql-offer-card__media">
                   <img
                     src="/img/A7R00474.jpg"
-                    alt="Workshops & Retreats – Stefanie Brand"
+                    alt="Workshops und Retreats mit Dr. Stefanie Schinnerl"
                     className="ql-offer-card__img"
                     style={{ objectPosition: 'center 35%' }}
                     loading="lazy"
@@ -360,36 +361,81 @@ export default function Home() {
             <div className="ql-studio-card ql-stagger">
               <div className="ql-studio-card__media">
                 <img
-                  src="/img/A7R00573.jpg"
-                  alt="Gruppenklassen &amp; Specials in Wien – Stefanie Brand"
+                  src="/img/A7R00846.jpg"
+                  alt="Gruppenklassen und Specials in Wien: Dr. Stefanie Schinnerl"
                   className="ql-studio-card__img"
+                  style={{ objectPosition: 'center 35%' }}
                   loading="lazy"
                 />
               </div>
               <div className="ql-studio-card__body">
-                <div className="ql-studio-card__content">
+                <div style={{ marginBottom: '1.75rem' }}>
                   <span className="ql-studio-card__kicker">GRUPPENKLASSEN &amp; SPECIALS</span>
-                  <h3 className="ql-studio-card__title">Gemeinsam praktizieren &amp; Energie tanken</h3>
+                  <h3 className="ql-studio-card__title" style={{ margin: '0 0 0.65rem 0' }}>Gemeinsam praktizieren &amp; Energie tanken</h3>
                   <p className="ql-studio-card__desc">
-                    Du möchtest die Dynamik einer gemeinsamen Praxis erleben? Ich unterrichte regelmäßig wechselnde Klassen und Specials in ausgewählten Studios in Wien. Da sich Zeiten, Locations und Formate flexibel gestalten, veröffentliche ich den aktuellen Stundenplan jede Woche direkt auf Instagram.
+                    Du möchtest die Dynamik einer gemeinsamen Praxis erleben? Ich unterrichte regelmäßig wechselnde Klassen und Specials in ausgewählten Studios in Wien.
                   </p>
                 </div>
-                <div className="ql-studio-card__cta-box">
-                  <a
-                    href="https://www.instagram.com/bystefanieschinnerl/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ql-btn ql-btn--primary"
-                  >
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                    <span>Wochenplan auf Instagram</span>
-                    <span>↗</span>
-                  </a>
-                  <span className="ql-studio-card__handle">@bystefanieschinnerl</span>
+
+                <div className="ql-studio-card__columns">
+                  {/* Spalte 1: Feste Klassen & Turnsaal Women */}
+                  <div className="ql-studio-card__col ql-studio-card__col--left">
+                    <div className="ql-studio-card__col-content">
+                      <span className="ql-studio-card__kicker" style={{ color: 'var(--color-accent)' }}>
+                        Turnsaal Women • 1090 Wien
+                      </span>
+                      <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', color: 'var(--color-dark)', margin: '0 0 0.45rem 0', fontWeight: 500 }}>
+                        Bodybalance
+                      </h4>
+                      <p className="ql-studio-card__desc">
+                        Kräftigung, Haltung und tiefe Entspannung: Eine fließende Kombination aus Elementen von Yoga, Pilates und Barre für nachhaltige Vitalität.
+                      </p>
+                    </div>
+                    <div className="ql-studio-card__col-actions">
+                      <a
+                        href="https://www.turnsaal-women.at"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ql-btn ql-btn--primary"
+                        style={{ whiteSpace: 'nowrap' }}
+                      >
+                        <span>Stundenplan &amp; Buchung</span>
+                        <span>↗</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Spalte 2: Specials, wechselnde Studios & Instagram */}
+                  <div className="ql-studio-card__col">
+                    <div className="ql-studio-card__col-content">
+                      <span className="ql-studio-card__kicker" style={{ color: 'var(--color-accent)' }}>
+                        Specials &amp; Formate
+                      </span>
+                      <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', color: 'var(--color-dark)', margin: '0 0 0.45rem 0', fontWeight: 500 }}>
+                        Specials &amp; Termine
+                      </h4>
+                      <p className="ql-studio-card__desc">
+                        Neben festen Klassen unterrichte ich wechselnde Specials und Pop-up Einheiten in Wien.
+                      </p>
+                    </div>
+                    <div className="ql-studio-card__col-actions">
+                      <a
+                        href="https://www.instagram.com/bystefanieschinnerl/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ql-btn ql-btn--outline"
+                        style={{ whiteSpace: 'nowrap' }}
+                      >
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        <span>Wochenplan auf Instagram</span>
+                        <span>↗</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -397,7 +443,7 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ④ ÜBER MICH & FUNDAMENT – 3-Foto Collage & Zentriertes Fundament
+            ④ ÜBER MICH & FUNDAMENT: 3-Foto Collage & Zentriertes Fundament
            —————————————————————————————————————————————— */}
         <section className="ql-about-voyage ql-reveal" id="ueber-mich">
           <div className="ql-about-voyage__container">
@@ -406,24 +452,24 @@ export default function Home() {
             <div className="ql-about-voyage__stage">
               <div className="ql-about-voyage__photo-col ql-stagger">
                 <div className="ql-about-voyage__collage">
-                  {/* Foto 1: Oben Rechts – Sonnenlicht Natur */}
+                  {/* Foto 1: Oben Rechts: Sonnenlicht Natur */}
                   <img
                     src="/img/A7R01328.jpg"
-                    alt="Dr. Stefanie Schinnerl – Draußen in der Natur"
+                    alt="Dr. Stefanie Schinnerl in der Natur"
                     className="ql-about-voyage__collage-img ql-about-voyage__collage-img--top-right"
                     loading="lazy"
                   />
-                  {/* Foto 2: Links Hero – Herzliches Lachen im Sportoutfit */}
+                  {/* Foto 2: Links Hero: Herzliches Lachen im Sportoutfit */}
                   <img
                     src="/img/A7R00851.jpg"
-                    alt="Dr. Stefanie Schinnerl – Freude an Bewegung &amp; Yoga"
+                    alt="Dr. Stefanie Schinnerl: Freude an Bewegung und Yoga"
                     className="ql-about-voyage__collage-img ql-about-voyage__collage-img--left"
                     loading="lazy"
                   />
-                  {/* Foto 3: Unten Rechts – Yogamatte mit Laptop &amp; Notizen */}
+                  {/* Foto 3: Unten Rechts: Yogamatte mit Laptop und Notizen */}
                   <img
                     src="/img/A7R01117.jpg"
-                    alt="Dr. Stefanie Schinnerl – Expertise &amp; Achtsamkeit"
+                    alt="Dr. Stefanie Schinnerl: Expertise und Achtsamkeit"
                     className="ql-about-voyage__collage-img ql-about-voyage__collage-img--bottom-right"
                     loading="lazy"
                   />
@@ -442,13 +488,13 @@ export default function Home() {
 
                   <div className="ql-about-voyage__text">
                     <p>
-                      Als Steuerberaterin, Führungskraft und Unternehmerin kenne ich den täglichen Spagat zwischen Deadlines, Teamverantwortung, eigenen Projekten und dem privaten Leben aus erster Hand. Lange Zeit war mein Antrieb geprägt von der ständigen Suche nach dem nächsten Meilenstein: noch ein Abschluss, noch ein Titel, noch mehr Leistung – immer in der Hoffnung, irgendwann das Gefühl zu haben, „angekommen“ zu sein. Erst eine schwere Erkrankung hat mich gezwungen, innezuhalten und radikal zu hinterfragen, wofür ich meine Energie eigentlich einsetzen möchte.
+                      Als Steuerberaterin, Führungskraft und Unternehmerin kenne ich den täglichen Spagat zwischen Deadlines, Teamverantwortung, eigenen Projekten und dem privaten Leben aus erster Hand. Lange Zeit war mein Antrieb geprägt von der ständigen Suche nach dem nächsten Meilenstein: noch ein Abschluss, noch ein Titel, noch mehr Leistung, immer in der Hoffnung, irgendwann das Gefühl zu haben, „angekommen“ zu sein. Erst eine schwere Erkrankung hat mich gezwungen, innezuhalten und radikal zu hinterfragen, wofür ich meine Energie eigentlich einsetzen möchte.
                     </p>
                     <p>
                       Meine Ambitionen sind geblieben, doch die Art, wie ich meine Ziele verfolge, hat sich grundlegend verändert: Ich habe gelernt, mir den Raum für meine eigenen Bedürfnisse zu nehmen und meine Ziele aus einer Haltung innerer Stärke und Gelassenheit zu verfolgen. Wahre Veränderung braucht keine extremen Umbrüche, sondern die Kraft kleiner, beständiger Routinen und den Mut zu klaren Grenzen. Denn langfristiger Erfolg und Freude am eigenen Weg funktionieren nur, wenn mentale und körperliche Gesundheit an erster Stelle stehen.
                     </p>
                     <p>
-                      Genau das macht mich aus: Ich verbinde das Beste aus beiden Welten. Als promovierte Wirtschaftsexpertin und akademisch zertifizierte Gesundheits- und Vitalcoach spreche ich deine Sprache – analytisch, pragmatisch und frei von realitätsfremden Dogmen. Gemeinsam schaffen wir alltagstaugliche Systeme, die dir deine Energie zurückgeben: damit du beruflich mit voller Souveränität wirkst und dich privat kraftvoll, lebendig und ganz bei dir fühlst.
+                      Genau das macht mich aus: Ich verbinde das Beste aus beiden Welten. Als promovierte Wirtschaftsexpertin und akademisch zertifizierte Gesundheits- und Vitalcoach spreche ich deine Sprache: analytisch, pragmatisch und frei von realitätsfremden Dogmen. Gemeinsam schaffen wir alltagstaugliche Systeme, die dir deine Energie zurückgeben: damit du beruflich mit voller Souveränität wirkst und dich privat kraftvoll, lebendig und ganz bei dir fühlst.
                     </p>
                   </div>
                 </div>
@@ -618,15 +664,16 @@ export default function Home() {
           <div className="ql-atmospheric-banner__bg">
             <img
               src="/img/A7R01377.jpg"
-              alt="Dr. Stefanie Schinnerl – Raum für nachhaltige Kraft &amp; Entfaltung"
+              alt="Dr. Stefanie Schinnerl: Raum für nachhaltige Kraft und Entfaltung"
               className="ql-atmospheric-banner__img"
+              style={{ objectPosition: 'center 15%' }}
               loading="lazy"
             />
             <div className="ql-atmospheric-banner__overlay"></div>
           </div>
           <div className="ql-atmospheric-banner__content">
             <p className="ql-atmospheric-banner__quote">
-              „Du verdienst beruflichen Erfolg und Erfüllung – ohne dass deine Gesundheit, deine Lebensfreude oder deine innere Ruhe auf der Strecke bleiben.“
+              „Du verdienst beruflichen Erfolg und Erfüllung, ohne dass deine Gesundheit, deine Lebensfreude oder deine innere Ruhe auf der Strecke bleiben.“
             </p>
             <span className="ql-atmospheric-banner__sub">
               Dr. Stefanie Schinnerl • Business, Body &amp; Mind
@@ -643,10 +690,10 @@ export default function Home() {
               <span className="ql-kicker">B2B, KEYNOTES &amp; PANELS</span>
               <h2 className="ql-headline">Vorträge, Moderation &amp; Corporate Health</h2>
               <p className="ql-subtext">
-                Spitzenleistung im anspruchsvollen Berufsalltag braucht ein starkes Fundament: Ich unterstütze Unternehmen und Netzwerke dabei, nachhaltige Leistungsfähigkeit und ganzheitliche Gesundheit in ihrer Arbeitskultur zu verankern – und gebe Führungskräften sowie Teams praxistaugliche Werkzeuge für Resilienz, Energie und mentale Klarheit an die Hand.
+                Spitzenleistung im anspruchsvollen Berufsalltag braucht ein starkes Fundament: Ich unterstütze Unternehmen und Netzwerke dabei, nachhaltige Leistungsfähigkeit und ganzheitliche Gesundheit in ihrer Arbeitskultur zu verankern, und gebe Führungskräften sowie Teams praxistaugliche Werkzeuge für Resilienz, Energie und mentale Klarheit an die Hand.
               </p>
               <p className="ql-subtext" style={{ marginTop: '0.85rem' }}>
-                Ob als inspirierende Keynote auf Konferenzen und Summits, als souveräne Panel-Moderation oder im Rahmen maßgeschneiderter Corporate-Health-Workshops: Wissenschaftlich fundiert, praxisnah und mit echtem Mehrwert.
+                Ob als inspirierende Keynote auf Konferenzen, als souveräne Panel-Moderation oder im Rahmen maßgeschneiderter Corporate-Health-Workshops: Wissenschaftlich fundiert, praxisnah und mit echtem Mehrwert.
               </p>
             </div>
 
@@ -656,9 +703,8 @@ export default function Home() {
                 <div className="ql-offer-card__media">
                   <img
                     src="/img/IMG_4897.JPG"
-                    alt="Keynotes & Vorträge auf Konferenzen – Dr. Stefanie Schinnerl"
-                    className="ql-offer-card__img"
-                    style={{ objectPosition: 'center 35%' }}
+                    alt="Keynotes und Vorträge auf Konferenzen mit Dr. Stefanie Schinnerl"
+                    className="ql-offer-card__img ql-offer-card__img--keynote-zoom"
                     loading="lazy"
                   />
                 </div>
@@ -686,10 +732,9 @@ export default function Home() {
               <div className="ql-offer-card ql-stagger">
                 <div className="ql-offer-card__media">
                   <img
-                    src="/img/TTK26_14-08-27_274.jpg"
-                    alt="Moderation & Paneldiskussionen – Dr. Stefanie Schinnerl"
-                    className="ql-offer-card__img"
-                    style={{ objectPosition: 'center 15%' }}
+                    src="/img/TTK26_14-22-57_292.jpg"
+                    alt="Moderation und Paneldiskussionen mit Dr. Stefanie Schinnerl"
+                    className="ql-offer-card__img ql-offer-card__img--panel-zoom"
                     loading="lazy"
                   />
                 </div>
@@ -717,10 +762,10 @@ export default function Home() {
               <div className="ql-offer-card ql-stagger">
                 <div className="ql-offer-card__media">
                   <img
-                    src="/img/A7R01100.jpg"
-                    alt="Corporate Workshops & Health – Dr. Stefanie Schinnerl"
+                    src="/img/A7R01161.jpg"
+                    alt="Corporate Workshops und Team-Performance mit Dr. Stefanie Schinnerl"
                     className="ql-offer-card__img"
-                    style={{ objectPosition: 'center 20%' }}
+                    style={{ objectPosition: '62% 48%' }}
                     loading="lazy"
                   />
                 </div>
@@ -748,7 +793,7 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ⑥ ABLAUF – In 3 Schritten
+            ⑥ ABLAUF: In 3 Schritten
            —————————————————————————————————————————————— */}
         <section className="ql-process ql-reveal" id="ablauf">
           <div className="ql-process__container">
@@ -801,7 +846,7 @@ export default function Home() {
               <div className="ql-process__b2b-content">
                 <strong className="ql-process__b2b-title">Für Unternehmen, Kanzleien &amp; Veranstalter:</strong>
                 <p className="ql-process__b2b-text">
-                  Ob Keynote, Podiumsmoderation oder Corporate Health Workshop – im gemeinsamen Vorgespräch stimmen wir Zielgruppe, inhaltliche Schwerpunkte und den zeitlichen Rahmen exakt auf eure Organisation oder euer Event ab.
+                  Ob Keynote, Podiumsmoderation oder Corporate Health Workshop: Im gemeinsamen Vorgespräch stimmen wir Zielgruppe, inhaltliche Schwerpunkte und den zeitlichen Rahmen exakt auf eure Organisation oder euer Event ab.
                 </p>
               </div>
             </div>
@@ -817,7 +862,7 @@ export default function Home() {
               <span className="ql-kicker">KONTAKT</span>
               <h2 className="ql-headline">Lass uns sprechen.</h2>
               <p className="ql-subtext">
-                Ob Coaching, Keynote Speaking oder ein gemeinsames Projekt – ich freue mich auf deine Anfrage.
+                Ob Coaching, Keynote Speaking oder ein gemeinsames Projekt: Ich freue mich auf deine Anfrage.
               </p>
             </div>
 
@@ -835,7 +880,7 @@ export default function Home() {
                 <option value="interview">Interview / Podcast</option>
                 <option value="sonstiges">Sonstiges</option>
               </select>
-              <textarea name="message" placeholder="Deine Nachricht – worum geht es?" rows="5" required></textarea>
+              <textarea name="message" placeholder="Deine Nachricht: Worum geht es?" rows="5" required></textarea>
               <button type="submit" className="ql-btn ql-btn--primary ql-btn--full">
                 Anfrage senden
               </button>
@@ -865,7 +910,7 @@ export default function Home() {
           <li><a href="https://www.instagram.com/bystefanieschinnerl/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
         <span className="ql-footer__copy">
-          © {new Date().getFullYear()} Dr. Stefanie Schinnerl — Alle Rechte vorbehalten.
+          © {new Date().getFullYear()} Dr. Stefanie Schinnerl · Alle Rechte vorbehalten.
         </span>
       </footer>
     </Layout>

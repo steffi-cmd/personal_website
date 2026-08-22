@@ -2,12 +2,12 @@ import React, { useState, useEffect, useCallback } from 'react';
 import styles from './styles.module.css';
 
 const DEFAULT_GALLERY_IMAGES = [
-  { id: 1, src: '/img/A7R01304.jpg', alt: 'Impression 1 – Dr. Stefanie Schinnerl' },
-  { id: 2, src: '/img/A7R00276.jpg', alt: 'Impression 2 – Movement & Yoga' },
-  { id: 3, src: '/img/A7R01182.jpg', alt: 'Impression 3 – Praxisraum & Vitalität' },
-  { id: 4, src: '/img/A7R00105.jpg', alt: 'Impression 4 – Business & Coaching' },
-  { id: 5, src: '/img/A7R01377.jpg', alt: 'Impression 5 – Fokus & Mindset' },
-  { id: 6, src: '/img/A7R00636.jpg', alt: 'Impression 6 – Kraft & Balance' },
+  { id: 1, src: '/img/A7R01304.jpg', alt: 'Dr. Stefanie Schinnerl: Natur, Klarheit und Bewegung' },
+  { id: 2, src: '/img/A7R00615.jpg', alt: 'Movement, Vitalität und Achtsamkeit' },
+  { id: 3, src: '/img/A7R01182.jpg', alt: 'Praxisraum und Mentoring in 1090 Wien' },
+  { id: 4, src: '/img/A7R00105.jpg', alt: 'Business, Klarheit und Souveränität' },
+  { id: 5, src: '/img/A7R01262.jpg', alt: 'Regeneration, Sonnenlicht und Fokus' },
+  { id: 6, src: '/img/A7R00818.jpg', alt: 'Freude an Bewegung, Kraft und Balance' },
 ];
 
 export default function LookbookGallery({ images = DEFAULT_GALLERY_IMAGES }) {
@@ -41,12 +41,13 @@ export default function LookbookGallery({ images = DEFAULT_GALLERY_IMAGES }) {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Header with elegant overlapping script title */}
-      <div className={styles.header}>
-        <span className={styles.kicker}>EINBLICKE &amp; IMPRESSIONEN</span>
-        <h2 className={styles.title}>
-          Gallery <span className={styles.scriptAccent}>Photo</span>
-        </h2>
+      {/* Standardized Section Header matching entire site */}
+      <div className="ql-section-header" style={{ marginBottom: '3.5rem' }}>
+        <span className="ql-kicker">EINBLICKE &amp; IMPRESSIONEN</span>
+        <h2 className="ql-headline">Momente, Räume &amp; Bewegung</h2>
+        <p className="ql-subtext">
+          Ein visueller Eindruck aus Praxis, Bewegungseinheiten und Business-Impulsen.
+        </p>
       </div>
 
       {/* 3-Slide Stage */}
