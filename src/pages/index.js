@@ -2,38 +2,10 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Layout from '@theme/Layout';
 import LookbookGallery from '../components/LookbookGallery';
 
-const FACET_DATA = [
-  {
-    id: 0,
-    title: 'Bewegung & Vitalität',
-    subtitle: 'Gesund- & Vitalcoach · Yoga & Pilates',
-    img: '/img/A7R00851.jpg',
-    alt: 'Dr. Stefanie Schinnerl: Freude an Bewegung & Yoga',
-    pos: 'center 15%'
-  },
-  {
-    id: 1,
-    title: 'Business & Leadership',
-    subtitle: 'Steuerberaterin · Promovierte Ökonomin',
-    img: '/img/stefanie_00451_portrait.jpg',
-    alt: 'Dr. Stefanie Schinnerl: Wirtschaft & Leadership',
-    pos: 'center 20%'
-  },
-  {
-    id: 2,
-    title: 'Natur & Regeneration',
-    subtitle: 'Präsenz & Gelassenheit im Alltag',
-    img: '/img/A7R01328.jpg',
-    alt: 'Dr. Stefanie Schinnerl: Natur & Regeneration',
-    pos: 'center 20%'
-  }
-];
-
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeExpertiseTab, setActiveExpertiseTab] = useState(0);
-  const [activeFacetTab, setActiveFacetTab] = useState(0);
 
   const toggleMenu = useCallback(() => {
     setIsMobileMenuOpen((prev) => !prev);
@@ -384,7 +356,7 @@ export default function Home() {
                       <span className="ql-studio-card__kicker" style={{ color: 'var(--color-accent)' }}>
                         Turnsaal Women • 1090 Wien
                       </span>
-                      <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', color: 'var(--color-dark)', margin: '0 0 0.45rem 0', fontWeight: 500 }}>
+                      <h4 className="ql-studio-card__col-title">
                         Bodybalance
                       </h4>
                       <p className="ql-studio-card__desc">
@@ -411,7 +383,7 @@ export default function Home() {
                       <span className="ql-studio-card__kicker" style={{ color: 'var(--color-accent)' }}>
                         Specials &amp; Formate
                       </span>
-                      <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', color: 'var(--color-dark)', margin: '0 0 0.45rem 0', fontWeight: 500 }}>
+                      <h4 className="ql-studio-card__col-title">
                         Specials &amp; Termine
                       </h4>
                       <p className="ql-studio-card__desc">
@@ -897,7 +869,9 @@ export default function Home() {
           <li><a href="#angebote">Angebote</a></li>
           <li><a href="#ueber-mich">Über mich</a></li>
           <li><a href="#b2b">B2B &amp; Keynotes</a></li>
-          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="#ablauf">Ablauf</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#einblicke">Einblicke</a></li>
           <li><a href="https://www.instagram.com/bystefanieschinnerl/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
         <span className="ql-footer__copy">

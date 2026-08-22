@@ -1055,6 +1055,15 @@ footer.footer {
   line-height: 1.25;
 }
 
+.ql-studio-card__col-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  margin: 0 0 0.45rem 0;
+  line-height: 1.3;
+}
+
 .ql-studio-card__desc {
   font-family: var(--font-sans);
   font-size: 0.92rem;
@@ -1094,9 +1103,6 @@ footer.footer {
   }
 }
 
-/* ==========================================================================
-   ④ ÜBER MICH [Tone A: #FAF7F2]
-   ========================================================================== */
 /* ==========================================================================
    ④ ÜBER MICH [Tone A: #FAF7F2] – Harmonische Collage & Zentriertes Fundament
    ========================================================================== */
@@ -1292,57 +1298,27 @@ footer.footer {
   gap: 1.3rem 2.2rem;
 }
 
+.ql-about-voyage__fundament-sublist li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .ql-about-voyage__fundament-sublist li strong {
   display: block;
   font-family: var(--font-sans);
-  font-size: 0.92rem;
+  font-size: 0.90rem;
   font-weight: 600;
   color: var(--color-dark);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
+  letter-spacing: -0.01em;
 }
 
 .ql-about-voyage__fundament-sublist li span {
   font-family: var(--font-sans);
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   line-height: 1.55;
   color: var(--color-muted);
-}
-
-.ql-about-voyage__inline-link {
-  color: var(--color-dark);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: color 0.2s ease;
-}
-
-.ql-about-voyage__inline-link:hover {
-  color: var(--color-accent);
-}
-
-.ql-about-voyage__action-center {
-  text-align: center;
-  margin-top: 2.5rem;
-}
-
-.ql-about-voyage__fundament-sublist li {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-
-.ql-about-voyage__fundament-sublist strong {
-  font-family: var(--font-sans);
-  font-size: 0.84rem;
-  font-weight: 600;
-  color: var(--color-dark);
-  letter-spacing: -0.01em;
-}
-
-.ql-about-voyage__fundament-sublist span {
-  font-family: var(--font-sans);
-  font-size: 0.78rem;
-  color: var(--color-muted);
-  line-height: 1.4;
   font-weight: 350;
 }
 
@@ -1358,6 +1334,11 @@ footer.footer {
 .ql-about-voyage__inline-link:hover {
   color: var(--color-accent);
   text-decoration-color: var(--color-accent);
+}
+
+.ql-about-voyage__action-center {
+  text-align: center;
+  margin-top: 2.5rem;
 }
 
 @keyframes qlFadeIn {
@@ -1671,52 +1652,11 @@ footer.footer {
     margin: 0 auto;
   }
 
-  .ql-offer-row,
-  .ql-offer-row--reverse {
-    grid-template-columns: 1fr;
-    gap: 2.2rem;
-  }
-
-  .ql-offer-row--reverse .ql-offer-row__media {
-    order: 1;
-  }
-
-  .ql-offer-row--reverse .ql-offer-row__card {
-    order: 2;
-  }
-
-  .ql-offer-row__media {
-    max-width: 520px;
-    margin: 0 auto;
-  }
-
   .ql-offers__grid,
   .ql-b2b__grid,
   .ql-process__grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-  }
-
-  .ql-symbiose {
-    padding: 75px 20px 80px;
-  }
-
-  .ql-symbiose__worlds-grid {
-    grid-template-columns: 1fr;
-    gap: 1.8rem;
-  }
-
-  .ql-symbiose__world-card {
-    padding: 2.4rem 1.8rem;
-  }
-
-  .ql-symbiose__leadership-card {
-    padding: 2.2rem 1.8rem;
-  }
-
-  .ql-symbiose__leadership-grid {
-    grid-template-columns: 1fr;
-    gap: 1.4rem;
   }
 
   .ql-studio-card {
