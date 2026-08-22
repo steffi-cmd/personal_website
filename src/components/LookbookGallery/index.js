@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import styles from './styles.module.css';
 
 const DEFAULT_GALLERY_IMAGES = [
@@ -13,6 +13,8 @@ const DEFAULT_GALLERY_IMAGES = [
 export default function LookbookGallery({ images = DEFAULT_GALLERY_IMAGES }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
   const total = images.length;
 
   const prevSlide = useCallback(() => {
@@ -23,6 +25,7 @@ export default function LookbookGallery({ images = DEFAULT_GALLERY_IMAGES }) {
     setCurrentIndex((prev) => (prev + 1) % total);
   }, [total]);
 
+  // Autoplay with timer cleanup
   useEffect(() => {
     if (isPaused || total <= 1) return;
     const interval = setInterval(() => {
@@ -31,7 +34,27 @@ export default function LookbookGallery({ images = DEFAULT_GALLERY_IMAGES }) {
     return () => clearInterval(interval);
   }, [isPaused, total]);
 
-  // Compute 3 visible slides: prev, current, next
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const distance = touchStartX.current - touchEndX.current;
+    if (distance > 50) {
+      nextSlide();
+    } else if (distance < -50) {
+      prevSlide();
+    }
+    touchStartX.current = 0;
+    touchEndX.current = 0;
+  };
+
   const prevIndex = (currentIndex - 1 + total) % total;
   const nextIndex = (currentIndex + 1) % total;
 
@@ -40,8 +63,10 @@ export default function LookbookGallery({ images = DEFAULT_GALLERY_IMAGES }) {
       className={styles.lookbookContainer}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
-      {/* Standardized Section Header */}
       <div className="ql-section-header" style={{ marginBottom: '2.8rem' }}>
         <span className="ql-kicker">GALERIE</span>
         <h2 className="ql-headline">Einblicke &amp; Impressionen</h2>
@@ -49,9 +74,9 @@ export default function LookbookGallery({ images = DEFAULT_GALLERY_IMAGES }) {
 
       {/* 3-Slide Stage */}
       <div className={styles.stage}>
-        {/* Left Faded Slide */}
+        {/* Left Preview Slide */}
         <div className={`${styles.slide} ${styles.slideLeft}`} onClick={prevSlide}>
-          <img src={images[prevIndex].src} alt={images[prevIndex].alt} loading="lazy" />
+          <img src={images[prevIndex].src} alt={images[prevIndex].alt} loading="lazy" decoding="async" />
           <div className={styles.fadeOverlay}></div>
         </div>
 
@@ -69,7 +94,7 @@ export default function LookbookGallery({ images = DEFAULT_GALLERY_IMAGES }) {
 
         {/* Center Active Slide */}
         <div className={`${styles.slide} ${styles.slideCenter}`}>
-          <img src={images[currentIndex].src} alt={images[currentIndex].alt} loading="eager" />
+          <img src={images[currentIndex].src} alt={images[currentIndex].alt} loading="eager" decoding="async" />
         </div>
 
         {/* Right Arrow Button */}
@@ -84,9 +109,9 @@ export default function LookbookGallery({ images = DEFAULT_GALLERY_IMAGES }) {
           </svg>
         </button>
 
-        {/* Right Faded Slide */}
+        {/* Right Preview Slide */}
         <div className={`${styles.slide} ${styles.slideRight}`} onClick={nextSlide}>
-          <img src={images[nextIndex].src} alt={images[nextIndex].alt} loading="lazy" />
+          <img src={images[nextIndex].src} alt={images[nextIndex].alt} loading="lazy" decoding="async" />
           <div className={styles.fadeOverlay}></div>
         </div>
       </div>

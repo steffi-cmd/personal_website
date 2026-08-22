@@ -5,9 +5,9 @@
   position: relative;
   overflow: hidden;
   border-top: 1px solid rgba(44, 41, 39, 0.05);
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
 }
-
-
 
 .stage {
   display: flex;
@@ -27,6 +27,7 @@
   transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   user-select: none;
   background: var(--color-bg-alt);
+  transform: translateZ(0);
 }
 
 .slide img {
@@ -90,6 +91,8 @@
   box-shadow: 0 4px 18px rgba(44, 41, 39, 0.08);
   transition: all 0.3s ease;
   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  touch-action: manipulation;
 }
 
 .navBtn:hover {
@@ -126,6 +129,7 @@
   padding: 0;
   cursor: pointer;
   transition: all 0.3s ease;
+  touch-action: manipulation;
 }
 
 .dotActive {
@@ -134,8 +138,11 @@
   border-radius: 4px;
 }
 
-/* Responsive */
+/* Responsive Breakpoints */
 @media (max-width: 1024px) {
+  .lookbookContainer {
+    padding: 80px 0 85px;
+  }
   .slideCenter {
     width: 320px;
     height: 450px;
@@ -155,7 +162,7 @@
 
 @media (max-width: 768px) {
   .lookbookContainer {
-    padding: 70px 0 75px;
+    padding: 65px 0 70px;
   }
   .slideLeft,
   .slideRight {
@@ -164,7 +171,7 @@
   .slideCenter {
     width: 85vw;
     max-width: 340px;
-    height: 470px;
+    height: 460px;
   }
   .navBtnPrev {
     left: 12px;
@@ -172,8 +179,11 @@
   .navBtnNext {
     right: 12px;
   }
-  .scriptAccent {
-    right: -1.8rem;
-    font-size: 0.65em;
+}
+
+@media (max-width: 400px) {
+  .slideCenter {
+    width: 88vw;
+    height: 400px;
   }
 }

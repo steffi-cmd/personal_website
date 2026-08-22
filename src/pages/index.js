@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Layout from '@theme/Layout';
 import LookbookGallery from '../components/LookbookGallery';
+import Footer from '../components/Footer';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,10 +16,18 @@ export default function Home() {
     setIsMobileMenuOpen(false);
   }, []);
 
-  // Navbar scroll effect
+  // Optimized Navbar scroll listener via requestAnimationFrame
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 60);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 60);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     handleScroll();
@@ -44,7 +53,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
     );
 
     reveals.forEach((el) => observer.observe(el));
@@ -108,9 +117,7 @@ export default function Home() {
       </header>
 
       <main>
-        {/* ——————————————————————————————————————————————
-            ① HERO SECTION
-           —————————————————————————————————————————————— */}
+        {/* ① HERO SECTION */}
         <section className="ql-hero" id="home">
           <div className="ql-hero__bg-visual">
             <div className="ql-hero__fade-mask">
@@ -119,6 +126,7 @@ export default function Home() {
                 alt="Dr. Stefanie Schinnerl: Holistic Mentoring & Health Coaching"
                 className="ql-hero__faded-img"
                 loading="eager"
+                decoding="async"
               />
               <div className="ql-hero__soft-overlay" />
             </div>
@@ -147,9 +155,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ——————————————————————————————————————————————
-            ② MEIN ANSATZ: Storytelling & 3 Säulen
-           —————————————————————————————————————————————— */}
+        {/* ② MEIN ANSATZ: Storytelling */}
         <section className="ql-ansatz ql-reveal" id="mein-ansatz">
           <div className="ql-ansatz__container">
             <div className="ql-ansatz__editorial">
@@ -183,6 +189,7 @@ export default function Home() {
                       alt="Dr. Stefanie Schinnerl: Business, Body & Mind"
                       className="ql-ansatz__photo-img"
                       loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 </div>
@@ -191,9 +198,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ——————————————————————————————————————————————
-            TRANSITION: ATMOSPHERIC BANNER
-           —————————————————————————————————————————————— */}
+        {/* ATMOSPHERIC BANNER (1) */}
         <section className="ql-atmospheric-banner ql-reveal">
           <div className="ql-atmospheric-banner__bg">
             <img
@@ -202,6 +207,7 @@ export default function Home() {
               className="ql-atmospheric-banner__img"
               style={{ objectPosition: 'center 0%', transform: 'scale(2.5)', transformOrigin: 'center top' }}
               loading="lazy"
+              decoding="async"
             />
             <div className="ql-atmospheric-banner__overlay"></div>
           </div>
@@ -215,9 +221,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ——————————————————————————————————————————————
-            ③ ANGEBOTE & FORMATE
-           —————————————————————————————————————————————— */}
+        {/* ③ ANGEBOTE & FORMATE */}
         <section className="ql-offers ql-reveal" id="angebote">
           <div className="ql-offers__container">
             <div className="ql-section-header ql-section-header--wide">
@@ -241,6 +245,7 @@ export default function Home() {
                     className="ql-offer-card__img"
                     style={{ objectPosition: 'center 35%' }}
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="ql-offer-card__body">
@@ -273,6 +278,7 @@ export default function Home() {
                     className="ql-offer-card__img"
                     style={{ objectPosition: 'center 22%' }}
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="ql-offer-card__body">
@@ -305,6 +311,7 @@ export default function Home() {
                     className="ql-offer-card__img"
                     style={{ objectPosition: 'center 35%' }}
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="ql-offer-card__body">
@@ -338,6 +345,7 @@ export default function Home() {
                   className="ql-studio-card__img"
                   style={{ objectPosition: 'center 35%' }}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="ql-studio-card__body">
@@ -353,7 +361,7 @@ export default function Home() {
                   {/* Spalte 1: Feste Klassen & Turnsaal Women */}
                   <div className="ql-studio-card__col ql-studio-card__col--left">
                     <div className="ql-studio-card__col-content">
-                      <span className="ql-studio-card__kicker" style={{ color: 'var(--color-accent)' }}>
+                      <span className="ql-studio-card__kicker">
                         Turnsaal Women • 1090 Wien
                       </span>
                       <h4 className="ql-studio-card__col-title">
@@ -369,7 +377,6 @@ export default function Home() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="ql-btn ql-btn--primary"
-                        style={{ whiteSpace: 'nowrap' }}
                       >
                         <span>Stundenplan &amp; Buchung</span>
                         <span>↗</span>
@@ -377,10 +384,10 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Spalte 2: Specials, wechselnde Studios & Instagram */}
+                  {/* Spalte 2: Specials & Instagram */}
                   <div className="ql-studio-card__col">
                     <div className="ql-studio-card__col-content">
-                      <span className="ql-studio-card__kicker" style={{ color: 'var(--color-accent)' }}>
+                      <span className="ql-studio-card__kicker">
                         Specials &amp; Formate
                       </span>
                       <h4 className="ql-studio-card__col-title">
@@ -396,7 +403,6 @@ export default function Home() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="ql-btn ql-btn--outline"
-                        style={{ whiteSpace: 'nowrap' }}
                       >
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                           <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -414,49 +420,41 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ——————————————————————————————————————————————
-            ④ ÜBER MICH & FUNDAMENT: 3-Foto Collage & Zentriertes Fundament
-           —————————————————————————————————————————————— */}
+        {/* ④ ÜBER MICH & FUNDAMENT */}
         <section className="ql-about-voyage ql-reveal" id="ueber-mich">
           <div className="ql-about-voyage__container">
-            
             {/* 1. STUFE: 3-Foto Collage (Links) & Story (Rechts) */}
             <div className="ql-about-voyage__stage">
               <div className="ql-about-voyage__photo-col ql-stagger">
                 <div className="ql-about-voyage__collage">
-                  {/* Foto 1: Oben Rechts: Natur & Golden Hour (1328) */}
                   <img
                     src="/img/A7R01328.jpg"
                     alt="Dr. Stefanie Schinnerl in der Natur"
                     className="ql-about-voyage__collage-img ql-about-voyage__collage-img--top-right"
                     loading="lazy"
+                    decoding="async"
                   />
-                  {/* Foto 2: Links Mitte Hero: Porträt im Blazer (1262) */}
                   <img
                     src="/img/A7R01262.jpg"
                     alt="Dr. Stefanie Schinnerl: Business, Body & Mind"
                     className="ql-about-voyage__collage-img ql-about-voyage__collage-img--left"
                     loading="lazy"
+                    decoding="async"
                   />
-                  {/* Foto 3: Unten Rechts: Expertise & Vorbereitung (1084) */}
                   <img
                     src="/img/A7R01084.jpg"
                     alt="Dr. Stefanie Schinnerl: Expertise und Vorbereitung"
                     className="ql-about-voyage__collage-img ql-about-voyage__collage-img--bottom-right"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>
 
               <div className="ql-about-voyage__content-col ql-stagger">
                 <div className="ql-about-voyage__inner">
-                  <span className="ql-kicker">
-                    ÜBER MICH
-                  </span>
-
-                  <h2 className="ql-headline">
-                    Dr. Stefanie Schinnerl
-                  </h2>
+                  <span className="ql-kicker">ÜBER MICH</span>
+                  <h2 className="ql-headline">Dr. Stefanie Schinnerl</h2>
 
                   <div className="ql-about-voyage__text">
                     <p>
@@ -473,7 +471,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 2. STUFE: MEIN FUNDAMENT & EXPERTISE (Zentriert direkt darunter, dezent & edel) */}
+            {/* 2. STUFE: MEIN FUNDAMENT & EXPERTISE */}
             <div className="ql-about-voyage__fundament-center ql-stagger" id="qualifikationen">
               <div className="ql-about-voyage__fundament-center-header">
                 <span className="ql-kicker">MEIN FUNDAMENT &amp; EXPERTISE</span>
@@ -515,7 +513,6 @@ export default function Home() {
               </div>
 
               <div className="ql-about-voyage__fundament-center-card">
-                {/* Tab 0 */}
                 {activeExpertiseTab === 0 && (
                   <div className="ql-about-voyage__tab-panel">
                     <ul className="ql-about-voyage__fundament-sublist">
@@ -539,7 +536,6 @@ export default function Home() {
                   </div>
                 )}
 
-                {/* Tab 1 */}
                 {activeExpertiseTab === 1 && (
                   <div className="ql-about-voyage__tab-panel">
                     <ul className="ql-about-voyage__fundament-sublist">
@@ -563,7 +559,6 @@ export default function Home() {
                   </div>
                 )}
 
-                {/* Tab 2 */}
                 {activeExpertiseTab === 2 && (
                   <div className="ql-about-voyage__tab-panel">
                     <ul className="ql-about-voyage__fundament-sublist">
@@ -625,13 +620,10 @@ export default function Home() {
                 </a>
               </div>
             </div>
-
           </div>
         </section>
- 
-        {/* ——————————————————————————————————————————————
-            TRANSITION: ATMOSPHERIC BANNER (POST-ABOUT)
-           —————————————————————————————————————————————— */}
+
+        {/* ATMOSPHERIC BANNER (2) */}
         <section className="ql-atmospheric-banner ql-reveal">
           <div className="ql-atmospheric-banner__bg">
             <img
@@ -640,6 +632,7 @@ export default function Home() {
               className="ql-atmospheric-banner__img"
               style={{ objectPosition: 'center 15%' }}
               loading="lazy"
+              decoding="async"
             />
             <div className="ql-atmospheric-banner__overlay"></div>
           </div>
@@ -653,9 +646,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ——————————————————————————————————————————————
-            ⑤ B2B & KEYNOTES
-           —————————————————————————————————————————————— */}
+        {/* ⑤ B2B & KEYNOTES */}
         <section className="ql-b2b ql-reveal" id="b2b">
           <div className="ql-b2b__container">
             <div className="ql-section-header ql-section-header--wide">
@@ -678,6 +669,7 @@ export default function Home() {
                     alt="Keynotes und Vorträge auf Konferenzen mit Dr. Stefanie Schinnerl"
                     className="ql-offer-card__img ql-offer-card__img--keynote-zoom"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="ql-offer-card__body">
@@ -708,6 +700,7 @@ export default function Home() {
                     alt="Moderation und Paneldiskussionen mit Dr. Stefanie Schinnerl"
                     className="ql-offer-card__img ql-offer-card__img--panel-zoom"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="ql-offer-card__body">
@@ -739,6 +732,7 @@ export default function Home() {
                     className="ql-offer-card__img"
                     style={{ objectPosition: '62% 48%' }}
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="ql-offer-card__body">
@@ -764,9 +758,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ——————————————————————————————————————————————
-            ⑥ ABLAUF: In 3 Schritten
-           —————————————————————————————————————————————— */}
+        {/* ⑥ ABLAUF: In 3 Schritten */}
         <section className="ql-process ql-reveal" id="ablauf">
           <div className="ql-process__container">
             <div className="ql-section-header">
@@ -825,9 +817,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ——————————————————————————————————————————————
-            ⑦ KONTAKT
-           —————————————————————————————————————————————— */}
+        {/* ⑦ EINBLICKE & IMPRESSIONEN */}
+        <section className="ql-reveal" id="einblicke">
+          <LookbookGallery />
+        </section>
+
+        {/* ⑧ KONTAKT */}
         <section className="ql-contact-section ql-reveal" id="kontakt">
           <div className="ql-contact">
             <div className="ql-section-header">
@@ -850,34 +845,10 @@ export default function Home() {
             </form>
           </div>
         </section>
-
-        {/* ——————————————————————————————————————————————
-            ⑧ EINBLICKE & IMPRESSIONEN (Lookbook Gallery Carousel)
-           —————————————————————————————————————————————— */}
-        <section className="ql-reveal" id="einblicke">
-          <LookbookGallery />
-        </section>
       </main>
 
       {/* ——— FOOTER ——— */}
-      <footer className="ql-footer">
-        <span className="ql-footer__brand">Dr. Stefanie Schinnerl</span>
-        <span className="ql-footer__tagline">High Performance von innen heraus</span>
-        <ul className="ql-footer__links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#mein-ansatz">Mein Ansatz</a></li>
-          <li><a href="#angebote">Angebote</a></li>
-          <li><a href="#ueber-mich">Über mich</a></li>
-          <li><a href="#b2b">B2B &amp; Keynotes</a></li>
-          <li><a href="#ablauf">Ablauf</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-          <li><a href="#einblicke">Einblicke</a></li>
-          <li><a href="https://www.instagram.com/bystefanieschinnerl/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-        </ul>
-        <span className="ql-footer__copy">
-          © {new Date().getFullYear()} Dr. Stefanie Schinnerl · Alle Rechte vorbehalten.
-        </span>
-      </footer>
+      <Footer />
     </Layout>
   );
 }

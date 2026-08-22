@@ -6,18 +6,13 @@
 
 /* ——— Global Tokens ——— */
 :root {
-  /* 
-     STRIKTE 2-FARBEN-HINTERGRUND-SYSTEMATIK:
-     - Tone A: #FAF7F2 (Haupthintergrund / Warmes Sand-Elfenbein)
-     - Tone B: #F3EFEA (Harmonischer Zwischenton für rhythmischen Wechsel)
-     - Cards:  #FFFFFF (Strahlende, saubere Kartenflächen auf beiden Tönen)
-  */
-  --color-bg: #FAF7F2;               /* Tone A: Hauptton */
-  --color-bg-alt: #F3EFEA;           /* Tone B: Rhythmus-Ton */
-  --color-surface: #FFFFFF;          /* Karten / Card Surfaces */
+  /* 2-Farben-Hintergrund-Systematik */
+  --color-bg: #FAF7F2;               /* Tone A: Warmes Sand-Elfenbein */
+  --color-bg-alt: #F3EFEA;           /* Tone B: Rhythmus-Zwischenton */
+  --color-surface: #FFFFFF;          /* Karten- und Element-Flächen */
 
   /* Dark & Accent Colors */
-  --color-dark: #1E1C1A;             /* Deep warm charcoal/black */
+  --color-dark: #1E1C1A;             /* Deep warm charcoal */
   --color-text: #1E1C1A;             /* Headlines & brand */
   --color-text-body: #443F3B;        /* High-readability warm body */
   --color-muted: #78716C;            /* Subtle labels, subtext */
@@ -42,7 +37,7 @@
   --shadow-hover: 0 18px 45px rgba(44, 41, 39, 0.08);
 }
 
-/* ——— Global Resets & Base ——— */
+/* ——— Global Resets & Performance Base ——— */
 *,
 *::before,
 *::after {
@@ -62,6 +57,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 /* Hide default Docusaurus chrome */
@@ -75,6 +71,25 @@ footer.footer {
 ::selection {
   background: var(--color-accent-soft);
   color: var(--color-dark);
+}
+
+/* Hardware acceleration & smooth rendering helper */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Content visibility optimizations for buttery smooth scrolling */
+.ql-ansatz,
+.ql-atmospheric-banner,
+.ql-offers,
+.ql-about-voyage,
+.ql-b2b,
+.ql-process,
+.ql-contact-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
 }
 
 /* ==========================================================================
@@ -104,7 +119,7 @@ footer.footer {
 
 .ql-headline {
   font-family: var(--font-serif);
-  font-size: clamp(2.1rem, 3.4vw, 2.85rem);
+  font-size: clamp(2rem, 3.2vw, 2.85rem);
   font-weight: 400;
   color: var(--color-dark);
   line-height: 1.2;
@@ -122,7 +137,7 @@ footer.footer {
 }
 
 /* ==========================================================================
-   UNIFIED BUTTON SYSTEM (Quiet Luxury — Weicher, feiner & edler Stil)
+   UNIFIED BUTTON SYSTEM (Quiet Luxury)
    ========================================================================== */
 
 .ql-btn {
@@ -142,6 +157,7 @@ footer.footer {
   border: 1px solid transparent;
   transition: all 0.3s var(--ease-elegant);
   white-space: nowrap;
+  touch-action: manipulation;
 }
 
 /* 1. Primary Solid Luxury Button */
@@ -160,7 +176,7 @@ footer.footer {
   box-shadow: 0 6px 18px rgba(30, 28, 26, 0.14);
 }
 
-/* 2. Outline / Secondary Button */
+/* 2. Outline Button */
 .ql-btn--outline {
   background-color: transparent;
   color: var(--color-dark) !important;
@@ -207,7 +223,6 @@ footer.footer {
   transform: translateX(3px);
 }
 
-/* 4. Full Width Modifier */
 .ql-btn--full {
   width: 100%;
 }
@@ -215,10 +230,12 @@ footer.footer {
 /* ==========================================================================
    ANIMATIONS & SCROLL-REVEAL
    ========================================================================== */
+
 .ql-reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.8s var(--ease-elegant), transform 0.8s var(--ease-elegant);
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease-elegant), transform 0.7s var(--ease-elegant);
+  will-change: opacity, transform;
 }
 
 .ql-reveal--visible {
@@ -233,18 +250,19 @@ footer.footer {
 
 .ql-stagger {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s var(--ease-elegant), transform 0.6s var(--ease-elegant);
+  transform: translateY(18px);
+  transition: opacity 0.55s var(--ease-elegant), transform 0.55s var(--ease-elegant);
 }
 
-.ql-reveal--visible .ql-stagger:nth-child(1) { transition-delay: 0.05s; }
-.ql-reveal--visible .ql-stagger:nth-child(2) { transition-delay: 0.15s; }
-.ql-reveal--visible .ql-stagger:nth-child(3) { transition-delay: 0.25s; }
-.ql-reveal--visible .ql-stagger:nth-child(4) { transition-delay: 0.35s; }
+.ql-reveal--visible .ql-stagger:nth-child(1) { transition-delay: 0.04s; }
+.ql-reveal--visible .ql-stagger:nth-child(2) { transition-delay: 0.12s; }
+.ql-reveal--visible .ql-stagger:nth-child(3) { transition-delay: 0.20s; }
+.ql-reveal--visible .ql-stagger:nth-child(4) { transition-delay: 0.28s; }
 
 /* ==========================================================================
    NAVBAR (Split Navigation)
    ========================================================================== */
+
 .ql-navbar {
   position: fixed;
   top: 0;
@@ -253,11 +271,12 @@ footer.footer {
   z-index: 100;
   padding: 0.75rem 2.5rem;
   background: rgba(250, 247, 242, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(44, 41, 39, 0.07);
   box-shadow: 0 2px 14px rgba(44, 41, 39, 0.03);
   transition: padding 0.3s var(--ease-elegant), box-shadow 0.3s var(--ease-elegant), background 0.3s var(--ease-elegant);
+  transform: translateZ(0);
 }
 
 .ql-navbar--scrolled {
@@ -438,10 +457,7 @@ footer.footer {
 
 .ql-navbar__mobile-drawer {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   height: 100vh;
   background: var(--color-bg);
   z-index: 105;
@@ -500,6 +516,7 @@ footer.footer {
 /* ==========================================================================
    ① HERO SECTION [Tone A: #FAF7F2]
    ========================================================================== */
+
 .ql-hero {
   position: relative;
   width: 100%;
@@ -537,6 +554,7 @@ footer.footer {
   object-fit: cover;
   object-position: center 20%;
   display: block;
+  transform: translateZ(0);
 }
 
 .ql-hero__soft-overlay {
@@ -571,7 +589,7 @@ footer.footer {
 
 .ql-hero__headline {
   font-family: var(--font-serif);
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-size: clamp(2.3rem, 3.8vw, 3.6rem);
   font-weight: 400;
   line-height: 1.15;
   color: var(--color-dark);
@@ -596,8 +614,9 @@ footer.footer {
 }
 
 /* ==========================================================================
-   ② MEIN ANSATZ & 3 SÄULEN [Tone A: #FAF7F2]
+   ② MEIN ANSATZ [Tone A: #FAF7F2]
    ========================================================================== */
+
 .ql-ansatz {
   padding: 100px 24px 90px;
   background-color: var(--color-bg);
@@ -696,8 +715,9 @@ footer.footer {
 }
 
 /* ==========================================================================
-   VISUELLER RUHEPOL: ATMOSPHERIC BANNER (Foto + Zitat)
+   ATMOSPHERIC BANNER (Foto + Zitat)
    ========================================================================== */
+
 .ql-atmospheric-banner {
   position: relative;
   width: 100%;
@@ -722,6 +742,7 @@ footer.footer {
   object-fit: cover;
   object-position: center 22%;
   display: block;
+  transform: translateZ(0);
 }
 
 .ql-atmospheric-banner__overlay {
@@ -739,7 +760,7 @@ footer.footer {
 
 .ql-atmospheric-banner__quote {
   font-family: var(--font-serif);
-  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
   font-style: italic;
   font-weight: 300;
   color: #FAF7F2;
@@ -761,6 +782,7 @@ footer.footer {
 /* ==========================================================================
    ③ ANGEBOTE & FORMATE [Tone B: #F3EFEA]
    ========================================================================== */
+
 .ql-offers {
   padding: 100px 24px 90px;
   background-color: var(--color-bg-alt);
@@ -791,6 +813,7 @@ footer.footer {
   box-shadow: 0 10px 30px rgba(30, 28, 26, 0.04);
   transition: transform 0.4s var(--ease-elegant), box-shadow 0.4s var(--ease-elegant), border-color 0.4s ease;
   height: 100%;
+  transform: translateZ(0);
 }
 
 .ql-offer-card:hover {
@@ -909,63 +932,6 @@ footer.footer {
   gap: 0.75rem;
 }
 
-/* Card-Integrated Reference Links */
-.ql-offer-card__ref-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  background: var(--color-bg);
-  border: 1px solid rgba(179, 159, 136, 0.35);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-sans);
-  font-size: 0.78rem;
-  color: var(--color-dark);
-  text-decoration: none;
-  transition: all 0.3s var(--ease-elegant);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.ql-offer-card__ref-link:hover {
-  background: #FFFFFF;
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(44, 41, 39, 0.05);
-}
-
-.ql-offer-card__ref-tag {
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-accent);
-  background: rgba(179, 159, 136, 0.18);
-  padding: 2px 6px;
-  border-radius: 3px;
-  white-space: nowrap;
-}
-
-.ql-offer-card__ref-title {
-  flex: 1;
-  font-weight: 500;
-  color: inherit;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.ql-offer-card__ref-arrow {
-  color: var(--color-accent);
-  font-size: 0.85rem;
-  transition: transform 0.2s ease;
-}
-
-.ql-offer-card__ref-link:hover .ql-offer-card__ref-arrow {
-  transform: translate(2px, -2px);
-}
-
 /* Instagram / Group Classes Schedule Card */
 .ql-studio-card {
   background: var(--color-surface);
@@ -978,6 +944,7 @@ footer.footer {
   box-shadow: 0 10px 30px rgba(30, 28, 26, 0.04);
   margin-top: 2.5rem;
   transition: transform 0.4s var(--ease-elegant), box-shadow 0.4s var(--ease-elegant);
+  transform: translateZ(0);
 }
 
 .ql-studio-card:hover {
@@ -1080,32 +1047,10 @@ footer.footer {
   align-items: flex-start;
 }
 
-@media (max-width: 991px) {
-  .ql-studio-card {
-    grid-template-columns: 1fr;
-  }
-  .ql-studio-card__media {
-    aspect-ratio: 16 / 9;
-    min-height: auto;
-  }
-  .ql-studio-card__body {
-    padding: 2rem;
-  }
-  .ql-studio-card__columns {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .ql-studio-card__col--left {
-    padding-right: 0;
-    padding-bottom: 2rem;
-    border-right: none;
-    border-bottom: 1px solid rgba(179, 159, 136, 0.25);
-  }
-}
-
 /* ==========================================================================
    ④ ÜBER MICH [Tone A: #FAF7F2] – Harmonische Collage & Zentriertes Fundament
    ========================================================================== */
+
 .ql-about-voyage {
   background-color: var(--color-bg);
   position: relative;
@@ -1119,7 +1064,7 @@ footer.footer {
   margin: 0 auto;
 }
 
-/* 1. STUFE: 3-Foto High-Luxury Editorial Collage (Links) & Story (Rechts) */
+/* 1. STUFE: 3-Foto Collage (Links) & Story (Rechts) */
 .ql-about-voyage__stage {
   display: grid;
   grid-template-columns: 47% 53%;
@@ -1148,6 +1093,7 @@ footer.footer {
   box-shadow: 0 18px 40px rgba(30, 28, 26, 0.13);
   border: 1px solid rgba(179, 159, 136, 0.25);
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease, z-index 0.2s;
+  transform: translateZ(0);
 }
 
 .ql-about-voyage__collage-img:hover {
@@ -1156,7 +1102,7 @@ footer.footer {
   z-index: 10 !important;
 }
 
-/* Foto 1: Oben Rechts (Natur & Golden Hour 1328) – Beginnt bündig ganz oben */
+/* Foto 1: Oben Rechts */
 .ql-about-voyage__collage-img--top-right {
   top: 0;
   right: 0;
@@ -1166,7 +1112,7 @@ footer.footer {
   z-index: 1;
 }
 
-/* Foto 2: Links Mittig (Hero Portrait Blazer 1262) – Perfekt zwischen oben und unten zentriert */
+/* Foto 2: Links Mittig */
 .ql-about-voyage__collage-img--left {
   top: 60px;
   left: 0;
@@ -1176,7 +1122,7 @@ footer.footer {
   z-index: 2;
 }
 
-/* Foto 3: Unten Rechts (Expertise & Vorbereitung auf Matte 1084) – Schließt bündig mit dem letzten Absatz ab */
+/* Foto 3: Unten Rechts */
 .ql-about-voyage__collage-img--bottom-right {
   bottom: 0;
   right: 0;
@@ -1186,7 +1132,6 @@ footer.footer {
   z-index: 3;
 }
 
-/* Rechte Spalte (Story) */
 .ql-about-voyage__content-col {
   display: flex;
   flex-direction: column;
@@ -1215,7 +1160,7 @@ footer.footer {
   font-weight: 300;
 }
 
-/* 2. STUFE: MEIN FUNDAMENT & EXPERTISE (Direkt angeschlossen, nahtlos & dezent) */
+/* 2. STUFE: MEIN FUNDAMENT & EXPERTISE */
 .ql-about-voyage__fundament-center {
   margin-top: 3.2rem;
   padding-top: 0;
@@ -1253,6 +1198,7 @@ footer.footer {
   color: var(--color-muted);
   cursor: pointer;
   transition: all 0.25s ease;
+  touch-action: manipulation;
 }
 
 .ql-about-voyage__tab-num {
@@ -1275,8 +1221,9 @@ footer.footer {
 }
 
 .ql-about-voyage__fundament-center-card {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(179, 159, 136, 0.2);
   border-radius: var(--radius-lg);
   padding: 2.2rem 2.6rem;
@@ -1346,6 +1293,10 @@ footer.footer {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ==========================================================================
+   ⑤ B2B & KEYNOTES [Tone B: #F3EFEA]
+   ========================================================================== */
+
 .ql-b2b {
   background-color: var(--color-bg-alt);
   padding: 100px 24px 105px;
@@ -1359,13 +1310,10 @@ footer.footer {
   margin: 0 auto;
 }
 
-
-
-
-
 /* ==========================================================================
-   ⑧ ABLAUF [Tone A: #FAF7F2]
+   ⑥ ABLAUF [Tone A: #FAF7F2]
    ========================================================================== */
+
 .ql-process {
   padding: 100px 24px 90px;
   background-color: var(--color-bg);
@@ -1395,6 +1343,7 @@ footer.footer {
   flex-direction: column;
   box-shadow: var(--shadow-soft);
   transition: transform 0.4s var(--ease-elegant), box-shadow 0.4s var(--ease-elegant), border-color 0.4s ease;
+  transform: translateZ(0);
 }
 
 .ql-process__card:hover {
@@ -1492,8 +1441,9 @@ footer.footer {
 }
 
 /* ==========================================================================
-   ⑨ KONTAKT [Tone B: #F3EFEA]
+   ⑦ KONTAKT [Tone B: #F3EFEA]
    ========================================================================== */
+
 .ql-contact-section {
   padding: 100px 24px 90px;
   background-color: var(--color-bg-alt);
@@ -1525,6 +1475,7 @@ footer.footer {
   color: var(--color-dark);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   appearance: none;
+  width: 100%;
 }
 
 .ql-contact__form textarea {
@@ -1546,14 +1497,6 @@ footer.footer {
   opacity: 0.8;
 }
 
-.ql-contact__form select {
-  cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2378716C'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 1.3rem center;
-  padding-right: 2.8rem;
-}
-
 .ql-contact__form .ql-btn {
   margin-top: 0.5rem;
 }
@@ -1561,23 +1504,37 @@ footer.footer {
 /* ==========================================================================
    FOOTER [Deep Charcoal: #1E1C1A]
    ========================================================================== */
+
 .ql-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 4.5rem 2rem 3.5rem;
+  padding: 5rem 2rem 3rem;
   background-color: var(--color-dark);
   color: #FAF7F2;
   text-align: center;
+  position: relative;
+}
+
+.ql-footer__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.ql-footer__brand-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .ql-footer__brand {
   font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   font-weight: 300;
   color: #FAF7F2;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
@@ -1585,15 +1542,20 @@ footer.footer {
   font-family: var(--font-sans);
   font-size: 0.82rem;
   color: var(--color-accent);
-  margin-top: -0.75rem;
-  font-style: italic;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.ql-footer__nav {
+  width: 100%;
 }
 
 .ql-footer__links {
   list-style: none;
   display: flex;
-  gap: 2.2rem;
+  gap: 2rem;
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
@@ -1602,17 +1564,77 @@ footer.footer {
 
 .ql-footer__links a {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: #A8A199;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .ql-footer__links a:hover {
   color: #FAF7F2;
+}
+
+.ql-footer__socials {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.ql-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(250, 247, 242, 0.16);
+  background: rgba(255, 255, 255, 0.02);
+  color: #FAF7F2;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ql-footer__social-icon {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.ql-footer__social-link:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(197, 168, 128, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.ql-footer__social-link:hover .ql-footer__social-icon {
+  transform: scale(1.1);
+}
+
+.ql-footer__divider {
+  width: 100%;
+  max-width: 500px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(250, 247, 242, 0.12), transparent);
+  margin: -0.35rem 0 -0.55rem;
+}
+
+.ql-footer__bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 750px;
+  gap: 0.8rem;
+  flex-wrap: wrap;
 }
 
 .ql-footer__copy {
@@ -1621,19 +1643,60 @@ footer.footer {
   color: #78716C;
 }
 
+.ql-footer__legal {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ql-footer__legal-link {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: #78716C;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+}
+
+.ql-footer__legal-link:hover {
+  color: #A8A199;
+}
+
+.ql-footer__legal-separator {
+  color: rgba(120, 113, 108, 0.5);
+  font-size: 0.72rem;
+}
+
 /* ==========================================================================
-   RESPONSIVE LAYOUTS
+   RESPONSIVE LAYOUTS FOR ALL FORMATS
    ========================================================================== */
 
-/* Medium Screens (≤ 1024px) */
+/* Laptops & Desktops (1025px - 1200px) */
+@media (max-width: 1200px) {
+  .ql-hero {
+    padding: 8rem 3rem 4rem 4vw;
+  }
+  .ql-about-voyage__stage {
+    gap: 3.5rem;
+  }
+  .ql-studio-card {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+/* Medium Screens & Tablets (769px - 1024px) */
 @media (max-width: 1024px) {
   .ql-hero {
-    padding: 9rem 2.5rem 5rem;
+    padding: 8.5rem 2.5rem 4.5rem;
     min-height: auto;
   }
 
   .ql-hero__bg-visual {
-    width: 52%;
+    width: 50%;
+  }
+
+  .ql-ansatz {
+    padding: 80px 24px 75px;
   }
 
   .ql-ansatz__editorial {
@@ -1652,25 +1715,51 @@ footer.footer {
     margin: 0 auto;
   }
 
+  .ql-offers,
+  .ql-b2b,
+  .ql-process,
+  .ql-contact-section {
+    padding: 80px 24px 75px;
+  }
+
   .ql-offers__grid,
-  .ql-b2b__grid,
   .ql-process__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+
+  .ql-offers__grid > *:last-child,
+  .ql-process__grid > *:last-child {
+    grid-column: span 2;
   }
 
   .ql-studio-card {
     grid-template-columns: 1fr;
-    text-align: center;
-    gap: 1.5rem;
   }
 
-  .ql-studio-card__cta-box {
-    align-items: center;
+  .ql-studio-card__media {
+    aspect-ratio: 16 / 9;
+    min-height: auto;
+  }
+
+  .ql-studio-card__body {
+    padding: 2.2rem;
+  }
+
+  .ql-studio-card__columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .ql-studio-card__col--left {
+    padding-right: 2rem;
+    border-right: 1px solid rgba(179, 159, 136, 0.25);
+    border-bottom: none;
+    padding-bottom: 0;
   }
 
   .ql-about-voyage {
-    padding: 75px 20px 85px;
+    padding: 80px 24px 85px;
   }
 
   .ql-about-voyage__stage {
@@ -1678,49 +1767,41 @@ footer.footer {
     gap: 3.5rem;
   }
 
+  .ql-about-voyage__photo-col {
+    justify-content: center;
+  }
+
   .ql-about-voyage__collage {
     max-width: 480px;
-    height: 560px;
+    height: 520px;
   }
 
   .ql-about-voyage__collage-img--top-right {
-    top: 0;
-    right: 0;
-    height: 270px;
+    height: 260px;
     width: 52%;
   }
 
   .ql-about-voyage__collage-img--left {
     top: 50px;
-    left: 0;
-    height: 360px;
+    height: 350px;
     width: 58%;
   }
 
   .ql-about-voyage__collage-img--bottom-right {
-    bottom: 0;
-    right: 0;
-    height: 240px;
+    height: 230px;
     width: 66%;
   }
 
   .ql-about-voyage__fundament-center {
     margin-top: 2.8rem;
-    padding-top: 0;
   }
 
   .ql-about-voyage__fundament-center-card {
-    padding: 1.8rem 1.4rem;
+    padding: 1.8rem 1.6rem;
   }
-
-  .ql-about-voyage__fundament-sublist {
-    grid-template-columns: 1fr;
-    gap: 1.3rem;
-  }
-
 }
 
-/* Small Screens / Mobile (≤ 768px) */
+/* Small Screens / Mobile Devices (≤ 768px) */
 @media (max-width: 768px) {
   .ql-navbar {
     padding: 0.6rem 1.25rem;
@@ -1754,12 +1835,13 @@ footer.footer {
   .ql-hero {
     flex-direction: column;
     padding: 6.5rem 1.25rem 3.5rem;
+    min-height: auto;
   }
 
   .ql-hero__bg-visual {
     position: relative;
     width: 100%;
-    height: 340px;
+    height: 320px;
     margin-bottom: 2rem;
   }
 
@@ -1782,21 +1864,242 @@ footer.footer {
   .ql-b2b,
   .ql-process,
   .ql-contact-section {
-    padding: 70px 1.25rem 60px;
+    padding: 65px 1.25rem 55px;
+  }
+
+  .ql-section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .ql-offers__grid,
+  .ql-process__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .ql-offers__grid > *:last-child,
+  .ql-process__grid > *:last-child {
+    grid-column: auto;
+  }
+
+  .ql-offer-card__body {
+    padding: 1.8rem 1.4rem;
+  }
+
+  .ql-studio-card__body {
+    padding: 1.8rem 1.4rem;
+  }
+
+  .ql-studio-card__columns {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .ql-studio-card__col--left {
+    padding-right: 0;
+    padding-bottom: 1.8rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(179, 159, 136, 0.25);
+  }
+
+  .ql-about-voyage {
+    padding: 65px 1.25rem 70px;
+  }
+
+  .ql-about-voyage__collage {
+    max-width: 100%;
+    height: 460px;
+  }
+
+  .ql-about-voyage__collage-img--top-right {
+    height: 220px;
+    width: 54%;
+  }
+
+  .ql-about-voyage__collage-img--left {
+    top: 40px;
+    height: 310px;
+    width: 60%;
+  }
+
+  .ql-about-voyage__collage-img--bottom-right {
+    height: 200px;
+    width: 68%;
+  }
+
+  .ql-about-voyage__fundament-center-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .ql-about-voyage__fundament-sublist {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
 
   .ql-atmospheric-banner {
-    height: 340px;
+    height: 320px;
+  }
+
+  .ql-atmospheric-banner__content {
+    padding: 0 1.25rem;
+  }
+
+  .ql-process__card {
+    padding: 1.8rem 1.4rem;
   }
 
   .ql-process__b2b-note {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.8rem;
-    padding: 1.2rem 1.4rem;
+    padding: 1.2rem 1.2rem;
+  }
+
+  .ql-footer {
+    padding: 3.5rem 1.25rem 2.5rem;
   }
 
   .ql-footer__links {
     gap: 1.2rem;
+  }
+
+  .ql-footer__bottom {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+    text-align: center;
+  }
+}
+
+/* Extra Small Phones (≤ 400px) */
+@media (max-width: 400px) {
+  .ql-hero__headline {
+    font-size: 2.1rem;
+  }
+
+  .ql-ansatz__handwritten-greeting {
+    font-size: 2.3rem;
+    left: -10px;
+  }
+
+  .ql-btn {
+    padding: 9px 16px;
+    font-size: 0.72rem;
+  }
+
+  .ql-about-voyage__tabs {
+    gap: 0.4rem;
+  }
+
+  .ql-about-voyage__tab {
+    padding: 5px 11px;
+    font-size: 0.75rem;
+  }
+}
+
+/* ==========================================================================
+   LEGAL / IMPRESSUM PAGE STYLES
+   ========================================================================== */
+
+.ql-legal-page {
+  padding: 130px 1.5rem 80px;
+  background-color: var(--color-bg);
+  min-height: 80vh;
+}
+
+.ql-legal-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.ql-legal-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.ql-legal-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-accent-border);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 3.5rem 3rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.ql-legal-section {
+  padding-bottom: 2.2rem;
+  margin-bottom: 2.2rem;
+  border-bottom: 1px solid rgba(179, 159, 136, 0.18);
+}
+
+.ql-legal-section--last {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.ql-legal-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.ql-legal-content {
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: var(--color-text-body);
+}
+
+.ql-legal-content p {
+  margin-bottom: 0.85rem;
+}
+
+.ql-legal-content p:last-child {
+  margin-bottom: 0;
+}
+
+.ql-legal-highlight {
+  font-size: 1.08rem;
+  color: var(--color-dark);
+}
+
+.ql-legal-link {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: 3px;
+  transition: all 0.25s ease;
+}
+
+.ql-legal-link:hover {
+  color: var(--color-accent-hover);
+  text-decoration-color: var(--color-accent-hover);
+}
+
+.ql-legal-actions {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(179, 159, 136, 0.18);
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .ql-legal-page {
+    padding: 100px 1rem 60px;
+  }
+
+  .ql-legal-card {
+    padding: 2rem 1.5rem 2rem;
+  }
+
+  .ql-legal-title {
+    font-size: 1.25rem;
+  }
+
+  .ql-legal-content {
+    font-size: 0.9rem;
   }
 }

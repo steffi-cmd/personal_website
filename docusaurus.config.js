@@ -16,6 +16,7 @@ const config = {
   baseUrl: '/',
 
   onBrokenLinks: 'throw',
+  onBrokenAnchors: 'warn',
 
   i18n: {
     defaultLocale: 'de',
