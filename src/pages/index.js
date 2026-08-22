@@ -2,10 +2,38 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Layout from '@theme/Layout';
 import LookbookGallery from '../components/LookbookGallery';
 
+const FACET_DATA = [
+  {
+    id: 0,
+    title: 'Bewegung & Vitalität',
+    subtitle: 'Gesund- & Vitalcoach · Yoga & Pilates',
+    img: '/img/A7R00851.jpg',
+    alt: 'Dr. Stefanie Schinnerl – Freude an Bewegung & Yoga',
+    pos: 'center 15%'
+  },
+  {
+    id: 1,
+    title: 'Business & Leadership',
+    subtitle: 'Steuerberaterin · Promovierte Ökonomin',
+    img: '/img/stefanie_00451_portrait.jpg',
+    alt: 'Dr. Stefanie Schinnerl – Wirtschaft & Leadership',
+    pos: 'center 20%'
+  },
+  {
+    id: 2,
+    title: 'Natur & Regeneration',
+    subtitle: 'Präsenz & Gelassenheit im Alltag',
+    img: '/img/A7R01328.jpg',
+    alt: 'Dr. Stefanie Schinnerl – Natur & Regeneration',
+    pos: 'center 20%'
+  }
+];
+
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeExpertiseTab, setActiveExpertiseTab] = useState(0);
+  const [activeFacetTab, setActiveFacetTab] = useState(0);
 
   const toggleMenu = useCallback(() => {
     setIsMobileMenuOpen((prev) => !prev);
@@ -173,13 +201,18 @@ export default function Home() {
               </div>
 
               <div className="ql-ansatz__media-col">
-                <div className="ql-ansatz__photo-frame">
-                  <img
-                    src="/img/A7R00276.jpg"
-                    alt="Stefanie Brand – Business, Body & Mind"
-                    className="ql-ansatz__photo-img"
-                    loading="lazy"
-                  />
+                <div className="ql-ansatz__photo-wrap">
+                  <div className="ql-ansatz__handwritten-greeting">
+                    Schön, dass du da bist.
+                  </div>
+                  <div className="ql-ansatz__photo-frame">
+                    <img
+                      src="/img/A7R00276.jpg"
+                      alt="Stefanie Brand – Business, Body & Mind"
+                      className="ql-ansatz__photo-img"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -214,11 +247,14 @@ export default function Home() {
            —————————————————————————————————————————————— */}
         <section className="ql-offers ql-reveal" id="angebote">
           <div className="ql-offers__container">
-            <div className="ql-section-header">
+            <div className="ql-section-header ql-section-header--wide">
               <span className="ql-kicker">ANGEBOTE &amp; FORMATE</span>
               <h2 className="ql-headline">Gezielte Begleitung nach deinen Bedürfnissen</h2>
               <p className="ql-subtext">
-                Individuell und ganzheitlich: Wähle das Format, das am besten zu deinen Zielen und deiner aktuellen Lebensphase passt.
+                Ich begleite ambitionierte Frauen – die einem ständigen Leistungsdruck unterliegen, hohe Erwartungen an sich selbst haben und ein anspruchsvolles Leben mit viel Verantwortung führen – dabei, aus dem ständigen Erschöpfungsmodus auszusteigen und Leistungsfähigkeit mit innerer Gelassenheit zu verbinden.
+              </p>
+              <p className="ql-subtext" style={{ marginTop: '0.85rem' }}>
+                Ob im intensiven 1:1-Mentoring, in maßgeschneiderten Movement-Sessions oder bei gemeinsamen Workshops &amp; Retreats: Wir entwickeln Systeme, mit denen du deinen Alltag mit voller Souveränität meisterst – und dich kraftvoll, gesund und lebendig fühlst. Wähle das Format, das am besten zu deinen Zielen und deiner aktuellen Lebensphase passt.
               </p>
             </div>
 
@@ -361,212 +397,240 @@ export default function Home() {
         </section>
 
         {/* ——————————————————————————————————————————————
-            ④ ÜBER MICH & FUNDAMENT – 50/50 Editorial Split
+            ④ ÜBER MICH & FUNDAMENT – 3-Foto Collage & Zentriertes Fundament
            —————————————————————————————————————————————— */}
         <section className="ql-about-voyage ql-reveal" id="ueber-mich">
-          <div className="ql-about-voyage__stage">
-            <div className="ql-about-voyage__photo-col ql-stagger">
-              <div className="ql-about-voyage__collage">
-                <img
-                  src="/img/A7R01328.jpg"
-                  alt="Dr. Stefanie Schinnerl – Draußen in der Natur"
-                  className="ql-about-voyage__collage-img ql-about-voyage__collage-img--top-right"
-                  loading="lazy"
-                />
-                <img
-                  src="/img/A7R00851.jpg"
-                  alt="Dr. Stefanie Schinnerl – Freude an Bewegung & Yoga"
-                  className="ql-about-voyage__collage-img ql-about-voyage__collage-img--left"
-                  loading="lazy"
-                />
-                <img
-                  src="/img/A7R01117.jpg"
-                  alt="Dr. Stefanie Schinnerl – Expertise & Achtsamkeit"
-                  className="ql-about-voyage__collage-img ql-about-voyage__collage-img--bottom-right"
-                  loading="lazy"
-                />
+          <div className="ql-about-voyage__container">
+            
+            {/* 1. STUFE: 3-Foto Collage (Links) & Story (Rechts) */}
+            <div className="ql-about-voyage__stage">
+              <div className="ql-about-voyage__photo-col ql-stagger">
+                <div className="ql-about-voyage__collage">
+                  {/* Foto 1: Oben Rechts – Sonnenlicht Natur */}
+                  <img
+                    src="/img/A7R01328.jpg"
+                    alt="Dr. Stefanie Schinnerl – Draußen in der Natur"
+                    className="ql-about-voyage__collage-img ql-about-voyage__collage-img--top-right"
+                    loading="lazy"
+                  />
+                  {/* Foto 2: Links Hero – Herzliches Lachen im Sportoutfit */}
+                  <img
+                    src="/img/A7R00851.jpg"
+                    alt="Dr. Stefanie Schinnerl – Freude an Bewegung &amp; Yoga"
+                    className="ql-about-voyage__collage-img ql-about-voyage__collage-img--left"
+                    loading="lazy"
+                  />
+                  {/* Foto 3: Unten Rechts – Yogamatte mit Laptop &amp; Notizen */}
+                  <img
+                    src="/img/A7R01117.jpg"
+                    alt="Dr. Stefanie Schinnerl – Expertise &amp; Achtsamkeit"
+                    className="ql-about-voyage__collage-img ql-about-voyage__collage-img--bottom-right"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              <div className="ql-about-voyage__content-col ql-stagger">
+                <div className="ql-about-voyage__inner">
+                  <span className="ql-kicker">
+                    ÜBER MICH
+                  </span>
+
+                  <h2 className="ql-headline">
+                    Dr. Stefanie Schinnerl
+                  </h2>
+
+                  <div className="ql-about-voyage__text">
+                    <p>
+                      Als Steuerberaterin, Führungskraft und Unternehmerin kenne ich den täglichen Spagat zwischen Deadlines, Teamverantwortung, eigenen Projekten und dem privaten Leben aus erster Hand. Lange Zeit war mein Antrieb geprägt von der ständigen Suche nach dem nächsten Meilenstein: noch ein Abschluss, noch ein Titel, noch mehr Leistung – immer in der Hoffnung, irgendwann das Gefühl zu haben, „angekommen“ zu sein. Erst eine schwere Erkrankung hat mich gezwungen, innezuhalten und radikal zu hinterfragen, wofür ich meine Energie eigentlich einsetzen möchte.
+                    </p>
+                    <p>
+                      Meine Ambitionen sind geblieben, doch die Art, wie ich meine Ziele verfolge, hat sich grundlegend verändert: Ich habe gelernt, mir den Raum für meine eigenen Bedürfnisse zu nehmen und meine Ziele aus einer Haltung innerer Stärke und Gelassenheit zu verfolgen. Wahre Veränderung braucht keine extremen Umbrüche, sondern die Kraft kleiner, beständiger Routinen und den Mut zu klaren Grenzen. Denn langfristiger Erfolg und Freude am eigenen Weg funktionieren nur, wenn mentale und körperliche Gesundheit an erster Stelle stehen.
+                    </p>
+                    <p>
+                      Genau das macht mich aus: Ich verbinde das Beste aus beiden Welten. Als promovierte Wirtschaftsexpertin und akademisch zertifizierte Gesundheits- und Vitalcoach spreche ich deine Sprache – analytisch, pragmatisch und frei von realitätsfremden Dogmen. Gemeinsam schaffen wir alltagstaugliche Systeme, die dir deine Energie zurückgeben: damit du beruflich mit voller Souveränität wirkst und dich privat kraftvoll, lebendig und ganz bei dir fühlst.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="ql-about-voyage__content-col ql-stagger">
-              <div className="ql-about-voyage__inner">
-                <span className="ql-kicker">
-                  ÜBER MICH · DR. STEFANIE SCHINNERL
-                </span>
-
-                <h2 className="ql-headline">
-                  Schön, dass du da bist.
-                </h2>
+            {/* 2. STUFE: MEIN FUNDAMENT & EXPERTISE (Zentriert direkt darunter, dezent & edel) */}
+            <div className="ql-about-voyage__fundament-center ql-stagger" id="qualifikationen">
+              <div className="ql-about-voyage__fundament-center-header">
+                <span className="ql-kicker">MEIN FUNDAMENT &amp; EXPERTISE</span>
                 
-                <p className="ql-about-voyage__lead">
-                  Du verdienst beruflichen Erfolg und Erfüllung – ohne dass deine Gesundheit, deine Lebensfreude oder deine innere Ruhe auf der Strecke bleiben.
-                </p>
+                <div className="ql-about-voyage__tabs" role="tablist">
+                  <button
+                    type="button"
+                    className={`ql-about-voyage__tab ${activeExpertiseTab === 0 ? 'is-active' : ''}`}
+                    onClick={() => setActiveExpertiseTab(0)}
+                    role="tab"
+                    aria-selected={activeExpertiseTab === 0}
+                  >
+                    <span className="ql-about-voyage__tab-num">01</span>
+                    <span>Steuern &amp; Wirtschaft</span>
+                  </button>
 
-                <div className="ql-about-voyage__text">
-                  <p>
-                    Als promovierte Steuerrechtsexpertin und langjährige Managerin im dynamischen Kanzleialltag kenne ich die Corporate-Welt und die Anforderungen der High-Performance-Gesellschaft in- und auswendig. Ich weiß aus eigener Praxis, wie es sich anfühlt, unter hohem Leistungsdruck zu stehen, Deadlines zu jonglieren und gleichzeitig den Anspruch an Perfektion, Karriere und Erfolg zu wahren.
-                  </p>
-                  <p>
-                    Eine persönliche Lebenskrise hat mir vor Augen geführt, dass nachhaltige Spitzenleistung ein starkes inneres Fundament braucht: Resilienz, Vitalität und mentale Stärke sind die unverzichtbare Basis für alles, was wir schaffen.
-                  </p>
-                  <p>
-                    Als akademisch zertifizierte Gesundheits- und Vitalcoach verbinde ich die strukturierte Denkweise der Business-Welt mit fundiertem Health-Coaching – damit du deine Energie zurückgewinnst, deinen Fokus schärfst und deinen eigenen Weg mit Souveränität gehst.
-                  </p>
-                </div>
+                  <button
+                    type="button"
+                    className={`ql-about-voyage__tab ${activeExpertiseTab === 1 ? 'is-active' : ''}`}
+                    onClick={() => setActiveExpertiseTab(1)}
+                    role="tab"
+                    aria-selected={activeExpertiseTab === 1}
+                  >
+                    <span className="ql-about-voyage__tab-num">02</span>
+                    <span>Gesundheit &amp; Vitalität</span>
+                  </button>
 
-                {/* Zarter, integrierter Fundament & Expertise Abschluss mit 3 schlanken Tabs */}
-                <div className="ql-about-voyage__fundament" id="qualifikationen">
-                  <div className="ql-about-voyage__fundament-header">
-                    <span className="ql-about-voyage__fundament-kicker">MEIN FUNDAMENT &amp; EXPERTISE</span>
-                    <div className="ql-about-voyage__tabs" role="tablist">
-                      <button
-                        type="button"
-                        className={`ql-about-voyage__tab ${activeExpertiseTab === 0 ? 'is-active' : ''}`}
-                        onClick={() => setActiveExpertiseTab(0)}
-                        role="tab"
-                        aria-selected={activeExpertiseTab === 0}
-                      >
-                        <span className="ql-about-voyage__tab-num">01</span>
-                        <span>Steuern &amp; Wirtschaft</span>
-                      </button>
-
-                      <button
-                        type="button"
-                        className={`ql-about-voyage__tab ${activeExpertiseTab === 1 ? 'is-active' : ''}`}
-                        onClick={() => setActiveExpertiseTab(1)}
-                        role="tab"
-                        aria-selected={activeExpertiseTab === 1}
-                      >
-                        <span className="ql-about-voyage__tab-num">02</span>
-                        <span>Gesundheit &amp; Vitalität</span>
-                      </button>
-
-                      <button
-                        type="button"
-                        className={`ql-about-voyage__tab ${activeExpertiseTab === 2 ? 'is-active' : ''}`}
-                        onClick={() => setActiveExpertiseTab(2)}
-                        role="tab"
-                        aria-selected={activeExpertiseTab === 2}
-                      >
-                        <span className="ql-about-voyage__tab-num">03</span>
-                        <span>Bühne, Gremien &amp; Publikationen</span>
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="ql-about-voyage__tab-panels">
-                    {/* Tab 0: Steuern & Wirtschaft */}
-                    {activeExpertiseTab === 0 && (
-                      <div className="ql-about-voyage__tab-panel">
-                        <ul className="ql-about-voyage__fundament-sublist">
-                          <li>
-                            <strong>Steuerberaterin</strong>
-                            <span>Kammer der Steuerberater:innen und Wirtschaftsprüfer:innen (KSW) · Sonderberatung bei BDO Austria</span>
-                          </li>
-                          <li>
-                            <strong>Doktorat (Dr. rer. soc. oec.)</strong>
-                            <span>WU Wien · Promotion mit Auszeichnung an der Schnittstelle von Steuerrecht, Gesellschaftsrecht &amp; Rechnungslegung (Finanzierungsinstrumente &amp; Umgründungen)</span>
-                          </li>
-                          <li>
-                            <strong>Master (MSc WU) &amp; Bachelor (BSc WU)</strong>
-                            <span>Steuern &amp; Rechnungslegung / BWL · Gewinnerteam International Tax Moot Court</span>
-                          </li>
-                          <li>
-                            <strong>Forschung &amp; Lehre</strong>
-                            <span>Ehem. drittmittelfinanzierte Prae-Doc / Universitätsassistentin an der Wirtschaftsuniversität Wien</span>
-                          </li>
-                        </ul>
-                      </div>
-                    )}
-
-                    {/* Tab 1: Gesundheit & Vitalität */}
-                    {activeExpertiseTab === 1 && (
-                      <div className="ql-about-voyage__tab-panel">
-                        <ul className="ql-about-voyage__fundament-sublist">
-                          <li>
-                            <strong>Health &amp; Fitness Instructorin (Gesund- &amp; Vitalcoach)</strong>
-                            <span>Zertifikatsprogramm am Zentrum für Sportwissenschaft &amp; Universitätssport der Universität Wien (USI)</span>
-                          </li>
-                          <li>
-                            <strong>Zertifizierte Yogalehrerin (RYT® 200)</strong>
-                            <span>200h-Ausbildung nach Richtlinien der Yoga Alliance (Ashtanga Vinyasa &amp; Yin Yoga)</span>
-                          </li>
-                          <li>
-                            <strong>Yoga für Frauen mit Krebserfahrung</strong>
-                            <span>Spezialisierte Fachfortbildung beim Yoga Verband Österreich</span>
-                          </li>
-                          <li>
-                            <strong>Barre, Piloxing® &amp; Group Fitness</strong>
-                            <span>Seit 2021 über 230+ gehaltene Unterrichtsstunden in Wiener Studios</span>
-                          </li>
-                        </ul>
-                      </div>
-                    )}
-
-                    {/* Tab 2: Bühne, Gremien & Publikationen */}
-                    {activeExpertiseTab === 2 && (
-                      <div className="ql-about-voyage__tab-panel">
-                        <ul className="ql-about-voyage__fundament-sublist">
-                          <li>
-                            <strong>Vorträge, Moderation &amp; Podcasts</strong>
-                            <span>
-                              Fachvorträge, Schulungen, Moderationen &amp; Podcast-Gast (u. a.{' '}
-                              <a
-                                href="https://taxtech.at/3-fragen-an-unsere-ttk26-speakerinnen-stefanie-schinnerl/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="ql-about-voyage__inline-link"
-                              >
-                                Tax Tech Konferenz ↗
-                              </a>{' '}
-                              &amp;{' '}
-                              <a
-                                href="https://www.derstandard.at/story/3000000208394/frauen-in-fuehrungspositionen"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="ql-about-voyage__inline-link"
-                              >
-                                Der Standard Podcast ↗
-                              </a>
-                              )
-                            </span>
-                          </li>
-                          <li>
-                            <strong>Fachautorin</strong>
-                            <span>Zahlreiche Fachpublikationen zu Steuerrecht &amp; Rechnungslegung</span>
-                          </li>
-                          <li>
-                            <strong>Interessensvertretung &amp; Gremien</strong>
-                            <span>Ehem. Board Member bei Austrian Experts &amp; Young CEPLIS (Brüssel)</span>
-                          </li>
-                          <li>
-                            <strong>Frauenförderung &amp; Netzwerke</strong>
-                            <span>
-                              Ehem. Arbeitsgruppe 'Diversity' (KSW) &amp; Jubiläumsinterview bei{' '}
-                              <a
-                                href="https://women-in-law.org/2025/02/16/10-jahre-women-in-law-jubilaeum-stefanie-schinnerl-im-interview/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="ql-about-voyage__inline-link"
-                              >
-                                Women in Law ↗
-                              </a>
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                <div className="ql-about-voyage__action">
-                  <a href="#kontakt" className="ql-btn ql-btn--primary">
-                    <span>Erstgespräch vereinbaren</span>
-                    <span className="ql-btn__arrow">→</span>
-                  </a>
+                  <button
+                    type="button"
+                    className={`ql-about-voyage__tab ${activeExpertiseTab === 2 ? 'is-active' : ''}`}
+                    onClick={() => setActiveExpertiseTab(2)}
+                    role="tab"
+                    aria-selected={activeExpertiseTab === 2}
+                  >
+                    <span className="ql-about-voyage__tab-num">03</span>
+                    <span>Bühne, Gremien &amp; Publikationen</span>
+                  </button>
                 </div>
               </div>
+
+              <div className="ql-about-voyage__fundament-center-card">
+                {/* Tab 0 */}
+                {activeExpertiseTab === 0 && (
+                  <div className="ql-about-voyage__tab-panel">
+                    <ul className="ql-about-voyage__fundament-sublist">
+                      <li>
+                        <strong>Steuerberaterin</strong>
+                        <span>Kammer der Steuerberater:innen und Wirtschaftsprüfer:innen (KSW) · Sonderberatung bei BDO Austria</span>
+                      </li>
+                      <li>
+                        <strong>Doktorat (Dr. rer. soc. oec.)</strong>
+                        <span>WU Wien · Promotion mit Auszeichnung an der Schnittstelle von Steuerrecht, Gesellschaftsrecht &amp; Rechnungslegung (Finanzierungsinstrumente &amp; Umgründungen)</span>
+                      </li>
+                      <li>
+                        <strong>Master (MSc WU) &amp; Bachelor (BSc WU)</strong>
+                        <span>Steuern &amp; Rechnungslegung / BWL · Gewinnerteam International Tax Moot Court</span>
+                      </li>
+                      <li>
+                        <strong>Forschung &amp; Lehre</strong>
+                        <span>Ehem. drittmittelfinanzierte Prae-Doc / Universitätsassistentin an der Wirtschaftsuniversität Wien</span>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+
+                {/* Tab 1 */}
+                {activeExpertiseTab === 1 && (
+                  <div className="ql-about-voyage__tab-panel">
+                    <ul className="ql-about-voyage__fundament-sublist">
+                      <li>
+                        <strong>Health &amp; Fitness Instructorin (Gesund- &amp; Vitalcoach)</strong>
+                        <span>Zertifikatsprogramm am Zentrum für Sportwissenschaft &amp; Universitätssport der Universität Wien (USI)</span>
+                      </li>
+                      <li>
+                        <strong>Zertifizierte Yogalehrerin (RYT® 200)</strong>
+                        <span>200h-Ausbildung nach Richtlinien der Yoga Alliance (Ashtanga Vinyasa &amp; Yin Yoga)</span>
+                      </li>
+                      <li>
+                        <strong>Yoga für Frauen mit Krebserfahrung</strong>
+                        <span>Spezialisierte Fachfortbildung beim Yoga Verband Österreich</span>
+                      </li>
+                      <li>
+                        <strong>Barre, Piloxing® &amp; Group Fitness</strong>
+                        <span>Seit 2021 über 230+ gehaltene Unterrichtsstunden in Wiener Studios</span>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+
+                {/* Tab 2 */}
+                {activeExpertiseTab === 2 && (
+                  <div className="ql-about-voyage__tab-panel">
+                    <ul className="ql-about-voyage__fundament-sublist">
+                      <li>
+                        <strong>Vorträge, Moderation &amp; Podcasts</strong>
+                        <span>
+                          Fachvorträge, Schulungen, Moderationen &amp; Podcast-Gast (u. a.{' '}
+                          <a
+                            href="https://taxtech.at/3-fragen-an-unsere-ttk26-speakerinnen-stefanie-schinnerl/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="ql-about-voyage__inline-link"
+                          >
+                            Tax Tech Konferenz ↗
+                          </a>{' '}
+                          &amp;{' '}
+                          <a
+                            href="https://www.derstandard.at/story/3000000208394/frauen-in-fuehrungspositionen"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="ql-about-voyage__inline-link"
+                          >
+                            Der Standard Podcast ↗
+                          </a>
+                          )
+                        </span>
+                      </li>
+                      <li>
+                        <strong>Fachautorin</strong>
+                        <span>Zahlreiche Fachpublikationen zu Steuerrecht &amp; Rechnungslegung</span>
+                      </li>
+                      <li>
+                        <strong>Interessensvertretung &amp; Gremien</strong>
+                        <span>Ehem. Board Member bei Austrian Experts &amp; Young CEPLIS (Brüssel)</span>
+                      </li>
+                      <li>
+                        <strong>Frauenförderung &amp; Netzwerke</strong>
+                        <span>
+                          Ehem. Arbeitsgruppe 'Diversity' (KSW) &amp; Jubiläumsinterview bei{' '}
+                          <a
+                            href="https://women-in-law.org/2025/02/16/10-jahre-women-in-law-jubilaeum-stefanie-schinnerl-im-interview/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="ql-about-voyage__inline-link"
+                          >
+                            Women in Law ↗
+                          </a>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              <div className="ql-about-voyage__action-center">
+                <a href="#kontakt" className="ql-btn ql-btn--primary">
+                  <span>Erstgespräch vereinbaren</span>
+                  <span className="ql-btn__arrow">→</span>
+                </a>
+              </div>
             </div>
+
+          </div>
+        </section>
+ 
+        {/* ——————————————————————————————————————————————
+            TRANSITION: ATMOSPHERIC BANNER (POST-ABOUT)
+           —————————————————————————————————————————————— */}
+        <section className="ql-atmospheric-banner ql-reveal">
+          <div className="ql-atmospheric-banner__bg">
+            <img
+              src="/img/A7R01377.jpg"
+              alt="Dr. Stefanie Schinnerl – Raum für nachhaltige Kraft &amp; Entfaltung"
+              className="ql-atmospheric-banner__img"
+              loading="lazy"
+            />
+            <div className="ql-atmospheric-banner__overlay"></div>
+          </div>
+          <div className="ql-atmospheric-banner__content">
+            <p className="ql-atmospheric-banner__quote">
+              „Du verdienst beruflichen Erfolg und Erfüllung – ohne dass deine Gesundheit, deine Lebensfreude oder deine innere Ruhe auf der Strecke bleiben.“
+            </p>
+            <span className="ql-atmospheric-banner__sub">
+              Dr. Stefanie Schinnerl • Business, Body &amp; Mind
+            </span>
           </div>
         </section>
 
@@ -575,11 +639,14 @@ export default function Home() {
            —————————————————————————————————————————————— */}
         <section className="ql-b2b ql-reveal" id="b2b">
           <div className="ql-b2b__container">
-            <div className="ql-section-header">
+            <div className="ql-section-header ql-section-header--wide">
               <span className="ql-kicker">B2B, KEYNOTES &amp; PANELS</span>
               <h2 className="ql-headline">Vorträge, Moderation &amp; Corporate Health</h2>
               <p className="ql-subtext">
-                Buchbar für Unternehmen, Konferenzen und Verbände. Meine Themen: Resilienz &amp; Vitalität, Female Leadership, High Performance &amp; Wellbeing – authentisch, fundiert und inspirierend.
+                Spitzenleistung im anspruchsvollen Berufsalltag braucht ein starkes Fundament: Ich unterstütze Unternehmen und Netzwerke dabei, nachhaltige Leistungsfähigkeit und ganzheitliche Gesundheit in ihrer Arbeitskultur zu verankern – und gebe Führungskräften sowie Teams praxistaugliche Werkzeuge für Resilienz, Energie und mentale Klarheit an die Hand.
+              </p>
+              <p className="ql-subtext" style={{ marginTop: '0.85rem' }}>
+                Ob als inspirierende Keynote auf Konferenzen und Summits, als souveräne Panel-Moderation oder im Rahmen maßgeschneiderter Corporate-Health-Workshops: Wissenschaftlich fundiert, praxisnah und mit echtem Mehrwert.
               </p>
             </div>
 
