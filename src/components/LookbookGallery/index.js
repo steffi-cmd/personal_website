@@ -2,12 +2,76 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import styles from './styles.module.css';
 
 const DEFAULT_GALLERY_IMAGES = [
-  { id: 1, src: '/img/A7R01304.jpg', alt: 'Dr. Stefanie Schinnerl: Natur, Klarheit und Bewegung' },
-  { id: 2, src: '/img/A7R00615.jpg', alt: 'Movement, Vitalität und Achtsamkeit' },
-  { id: 3, src: '/img/A7R01182.jpg', alt: 'Praxisraum und Mentoring in 1090 Wien' },
-  { id: 4, src: '/img/A7R00105.jpg', alt: 'Business, Klarheit und Souveränität' },
-  { id: 5, src: '/img/A7R01262.jpg', alt: 'Regeneration, Sonnenlicht und Fokus' },
-  { id: 6, src: '/img/A7R00818.jpg', alt: 'Freude an Bewegung, Kraft und Balance' },
+  // 1. SOLO: 811 - Steffi fokussiert in Balance (Outdoor)
+  {
+    id: 1,
+    src: '/img/A7R00811.jpg',
+    alt: 'Dr. Stefanie Schinnerl: Balance, Fokus und Erdung',
+    position: 'center 20%',
+  },
+  // 2. MIT ANDEREN: 625 - 1:1 Hands-on Coaching & Adjustment (Studio)
+  {
+    id: 2,
+    src: '/img/A7R00625 copy.jpg',
+    alt: 'Individuelle Betreuung und persönliches Alignment',
+    position: 'center 15%',
+  },
+  // 3. SOLO: 615 - Steffi im Studio (Präsenz & Bewegung)
+  {
+    id: 3,
+    src: '/img/A7R00615.jpg',
+    alt: 'Klarheit, Bewegungsimpulse und Vitalität',
+    position: 'center 20%',
+  },
+  // 4. MIT ANDEREN: 869 - 1:1 Haltungskorrektur & Präzision (Outdoor)
+  {
+    id: 4,
+    src: '/img/A7R00869.jpg',
+    alt: 'Präzise Anleitung und gemeinsame Bewegung',
+    position: 'center 25%',
+  },
+  // 5. SOLO: 657 - Steffi zentriert im Schneidersitz / Meditation (Outdoor)
+  {
+    id: 5,
+    src: '/img/A7R00657.jpg',
+    alt: 'Innere Ruhe, Achtsamkeit und mentale Klarheit',
+    position: 'center 35%',
+  },
+  // 6. MIT ANDEREN: 963 - 1:1 Mattentraining & Bridge Pose (Outdoor)
+  {
+    id: 6,
+    src: '/img/A7R00963.jpg',
+    alt: 'Kraftvolles Training mit Freude und Empathie',
+    position: 'center 15%',
+  },
+  // 7. SOLO: 725 - Steffi im Krieger / Kraft & Ausrichtung (Outdoor)
+  {
+    id: 7,
+    src: '/img/A7R00725.jpg',
+    alt: 'Kraftvolle Haltung, Stabilität und Souveränität',
+    position: 'center 15%',
+  },
+  // 8. MIT ANDEREN: 744 - Gruppen-Flow & Dynamik (Outdoor)
+  {
+    id: 8,
+    src: '/img/A7R00744.jpg',
+    alt: 'Gemeinsame Dynamik und Gruppenenergie in der Natur',
+    position: '45% 40%',
+  },
+  // 9. SOLO / FOKUS: 795 - Herzlicher Blickkontakt & Lachen (Outdoor)
+  {
+    id: 9,
+    src: '/img/A7R00795.jpg',
+    alt: 'Lebensfreude, Leichtigkeit und Verbindung',
+    position: '65% 25%',
+  },
+  // 10. MIT ANDEREN: 998 - Herzliche Betreuung & Bein-Assist (Outdoor)
+  {
+    id: 10,
+    src: '/img/A7R00998.jpg',
+    alt: 'Einfühlsames Mentoring und ganzheitliche Begleitung',
+    position: 'center 15%',
+  },
 ];
 
 export default function LookbookGallery({ images = DEFAULT_GALLERY_IMAGES }) {
@@ -76,7 +140,13 @@ export default function LookbookGallery({ images = DEFAULT_GALLERY_IMAGES }) {
       <div className={styles.stage}>
         {/* Left Preview Slide */}
         <div className={`${styles.slide} ${styles.slideLeft}`} onClick={prevSlide}>
-          <img src={images[prevIndex].src} alt={images[prevIndex].alt} loading="lazy" decoding="async" />
+          <img
+            src={images[prevIndex].src}
+            alt={images[prevIndex].alt}
+            style={{ objectPosition: images[prevIndex].position || 'center' }}
+            loading="lazy"
+            decoding="async"
+          />
           <div className={styles.fadeOverlay}></div>
         </div>
 
@@ -94,7 +164,13 @@ export default function LookbookGallery({ images = DEFAULT_GALLERY_IMAGES }) {
 
         {/* Center Active Slide */}
         <div className={`${styles.slide} ${styles.slideCenter}`}>
-          <img src={images[currentIndex].src} alt={images[currentIndex].alt} loading="eager" decoding="async" />
+          <img
+            src={images[currentIndex].src}
+            alt={images[currentIndex].alt}
+            style={{ objectPosition: images[currentIndex].position || 'center' }}
+            loading="eager"
+            decoding="async"
+          />
         </div>
 
         {/* Right Arrow Button */}
@@ -111,7 +187,13 @@ export default function LookbookGallery({ images = DEFAULT_GALLERY_IMAGES }) {
 
         {/* Right Preview Slide */}
         <div className={`${styles.slide} ${styles.slideRight}`} onClick={nextSlide}>
-          <img src={images[nextIndex].src} alt={images[nextIndex].alt} loading="lazy" decoding="async" />
+          <img
+            src={images[nextIndex].src}
+            alt={images[nextIndex].alt}
+            style={{ objectPosition: images[nextIndex].position || 'center' }}
+            loading="lazy"
+            decoding="async"
+          />
           <div className={styles.fadeOverlay}></div>
         </div>
       </div>
