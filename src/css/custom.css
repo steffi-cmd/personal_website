@@ -1113,24 +1113,26 @@ footer.footer {
   margin: 0 auto;
 }
 
-/* 1. STUFE: 3-Foto Collage (Links) & Story (Rechts) */
+/* 1. STUFE: 3-Foto High-Luxury Editorial Collage (Links) & Story (Rechts) */
 .ql-about-voyage__stage {
   display: grid;
-  grid-template-columns: 48% 52%;
+  grid-template-columns: 47% 53%;
   gap: 4.5rem;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .ql-about-voyage__photo-col {
   display: flex;
   justify-content: center;
+  align-self: flex-start;
+  width: 100%;
 }
 
 .ql-about-voyage__collage {
   position: relative;
   width: 100%;
-  max-width: 560px;
-  height: 600px;
+  max-width: 550px;
+  height: 575px;
 }
 
 .ql-about-voyage__collage-img {
@@ -1138,44 +1140,44 @@ footer.footer {
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 18px 40px rgba(30, 28, 26, 0.13);
-  border: 1px solid rgba(179, 159, 136, 0.22);
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
+  border: 1px solid rgba(179, 159, 136, 0.25);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease, z-index 0.2s;
 }
 
 .ql-about-voyage__collage-img:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 24px 50px rgba(30, 28, 26, 0.2);
-  z-index: 5 !important;
+  z-index: 10 !important;
 }
 
-/* Foto 1: Oben Rechts – Sonnenlicht Natur (größer) */
+/* Foto 1: Oben Rechts (Natur & Golden Hour 1328) – Beginnt bündig ganz oben */
 .ql-about-voyage__collage-img--top-right {
   top: 0;
   right: 0;
-  width: 54%;
-  height: 330px;
+  width: 53%;
+  height: 295px;
   object-position: center 20%;
   z-index: 1;
 }
 
-/* Foto 2: Links Hero – Herzliches Lachen im Sportoutfit (groß & dominant) */
+/* Foto 2: Links Mittig (Hero Portrait Blazer 1262) – Perfekt zwischen oben und unten zentriert */
 .ql-about-voyage__collage-img--left {
-  top: 65px;
+  top: 60px;
   left: 0;
   width: 58%;
-  height: 420px;
+  height: 410px;
   object-position: center 15%;
   z-index: 2;
 }
 
-/* Foto 3: Unten Rechts – Yogamatte & Laptop (noch größer & bündig unten) */
+/* Foto 3: Unten Rechts (Expertise & Vorbereitung auf Matte 1084) – Schließt bündig mit dem letzten Absatz ab */
 .ql-about-voyage__collage-img--bottom-right {
   bottom: 0;
-  right: -15px;
-  width: 68%;
-  height: 265px;
+  right: 0;
+  width: 66%;
+  height: 255px;
   object-position: 28% center;
-  z-index: 4;
+  z-index: 3;
 }
 
 /* Rechte Spalte (Story) */
@@ -1737,25 +1739,29 @@ footer.footer {
   }
 
   .ql-about-voyage__collage {
-    max-width: 460px;
-    height: 520px;
+    max-width: 480px;
+    height: 560px;
   }
 
   .ql-about-voyage__collage-img--top-right {
-    height: 280px;
-    width: 55%;
+    top: 0;
+    right: 0;
+    height: 270px;
+    width: 52%;
   }
 
   .ql-about-voyage__collage-img--left {
-    top: 55px;
-    height: 370px;
+    top: 50px;
+    left: 0;
+    height: 360px;
     width: 58%;
   }
 
   .ql-about-voyage__collage-img--bottom-right {
-    height: 230px;
-    width: 68%;
-    right: -8px;
+    bottom: 0;
+    right: 0;
+    height: 240px;
+    width: 66%;
   }
 
   .ql-about-voyage__fundament-center {

@@ -41,13 +41,10 @@ export default function LookbookGallery({ images = DEFAULT_GALLERY_IMAGES }) {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Standardized Section Header matching entire site */}
-      <div className="ql-section-header" style={{ marginBottom: '3.5rem' }}>
-        <span className="ql-kicker">EINBLICKE &amp; IMPRESSIONEN</span>
-        <h2 className="ql-headline">Momente, Räume &amp; Bewegung</h2>
-        <p className="ql-subtext">
-          Ein visueller Eindruck aus Praxis, Bewegungseinheiten und Business-Impulsen.
-        </p>
+      {/* Standardized Section Header */}
+      <div className="ql-section-header" style={{ marginBottom: '2.8rem' }}>
+        <span className="ql-kicker">GALERIE</span>
+        <h2 className="ql-headline">Einblicke &amp; Impressionen</h2>
       </div>
 
       {/* 3-Slide Stage */}

@@ -228,7 +228,7 @@ export default function Home() {
               src="/img/A7R00690.jpg"
               alt="Dr. Stefanie Schinnerl: Atmosphäre und Raum für Entfaltung"
               className="ql-atmospheric-banner__img"
-              style={{ objectPosition: 'center 32%' }}
+              style={{ objectPosition: 'center 0%', transform: 'scale(2.5)', transformOrigin: 'center top' }}
               loading="lazy"
             />
             <div className="ql-atmospheric-banner__overlay"></div>
@@ -452,24 +452,24 @@ export default function Home() {
             <div className="ql-about-voyage__stage">
               <div className="ql-about-voyage__photo-col ql-stagger">
                 <div className="ql-about-voyage__collage">
-                  {/* Foto 1: Oben Rechts: Sonnenlicht Natur */}
+                  {/* Foto 1: Oben Rechts: Natur & Golden Hour (1328) */}
                   <img
                     src="/img/A7R01328.jpg"
                     alt="Dr. Stefanie Schinnerl in der Natur"
                     className="ql-about-voyage__collage-img ql-about-voyage__collage-img--top-right"
                     loading="lazy"
                   />
-                  {/* Foto 2: Links Hero: Herzliches Lachen im Sportoutfit */}
+                  {/* Foto 2: Links Mitte Hero: Porträt im Blazer (1262) */}
                   <img
-                    src="/img/A7R00851.jpg"
-                    alt="Dr. Stefanie Schinnerl: Freude an Bewegung und Yoga"
+                    src="/img/A7R01262.jpg"
+                    alt="Dr. Stefanie Schinnerl: Business, Body & Mind"
                     className="ql-about-voyage__collage-img ql-about-voyage__collage-img--left"
                     loading="lazy"
                   />
-                  {/* Foto 3: Unten Rechts: Yogamatte mit Laptop und Notizen */}
+                  {/* Foto 3: Unten Rechts: Expertise & Vorbereitung (1084) */}
                   <img
-                    src="/img/A7R01117.jpg"
-                    alt="Dr. Stefanie Schinnerl: Expertise und Achtsamkeit"
+                    src="/img/A7R01084.jpg"
+                    alt="Dr. Stefanie Schinnerl: Expertise und Vorbereitung"
                     className="ql-about-voyage__collage-img ql-about-voyage__collage-img--bottom-right"
                     loading="lazy"
                   />
@@ -870,16 +870,7 @@ export default function Home() {
               <input type="text" name="name" placeholder="Dein Name" required />
               <input type="email" name="email" placeholder="Deine E-Mail-Adresse" required />
               <input type="tel" name="phone" placeholder="Telefonnummer (optional)" />
-              <select name="inquiry" defaultValue="" required>
-                <option value="" disabled>
-                  Themenbereich auswählen …
-                </option>
-                <option value="coaching">Holistic Mentoring &amp; Coaching</option>
-                <option value="b2b">B2B, Keynotes &amp; Corporate Health</option>
-                <option value="speaking">Keynote Speaking / Moderation</option>
-                <option value="interview">Interview / Podcast</option>
-                <option value="sonstiges">Sonstiges</option>
-              </select>
+              <input type="text" name="subject" placeholder="Betreff (z. B. Coaching, Keynote, Zusammenarbeit)" required />
               <textarea name="message" placeholder="Deine Nachricht: Worum geht es?" rows="5" required></textarea>
               <button type="submit" className="ql-btn ql-btn--primary ql-btn--full">
                 Anfrage senden
