@@ -10,7 +10,7 @@ export default function Footer() {
         {/* Brand & Tagline */}
         <div className="ql-footer__brand-wrapper">
           <span className="ql-footer__brand">Dr. Stefanie Schinnerl</span>
-          <span className="ql-footer__tagline">Business, Body &amp; Mind</span>
+          <span className="ql-footer__tagline">BUSINESS ✦ BODY ✦ MIND</span>
         </div>
 
         {/* Navigation Links */}

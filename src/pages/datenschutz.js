@@ -51,7 +51,7 @@ export default function Datenschutz() {
 
           <Link to="/" className="ql-navbar__brand" onClick={closeMenu}>
             <span className="ql-navbar__brand-name">Dr. Stefanie Schinnerl</span>
-            <span className="ql-navbar__brand-sub">Business, Body &amp; Mind</span>
+            <span className="ql-navbar__brand-sub">BUSINESS ✦ BODY ✦ MIND</span>
           </Link>
 
           <nav className="ql-navbar__nav--right" aria-label="Hauptnavigation rechts">
@@ -173,9 +173,28 @@ export default function Datenschutz() {
               </div>
             </section>
 
-            {/* 4. Social Media Links */}
+            {/* 4. Vertragsabwicklung, Buchung & Rechnungslegung */}
             <section className="ql-legal-section">
-              <h2 className="ql-legal-title">4. Links zu Social-Media-Profilen (Instagram, LinkedIn)</h2>
+              <h2 className="ql-legal-title">4. Vertragsabwicklung, Buchung &amp; Rechnungslegung</h2>
+              <div className="ql-legal-content">
+                <p>
+                  Wenn du einen Workshop, ein Einzeltraining oder eine sonstige Leistung buchst, verarbeite ich deine angegebenen Daten (Name, Rechnungsanschrift, E-Mail-Adresse sowie gebuchte Einheiten und Zahlungsdaten) zur Abwicklung des Vertrags und zur Rechnungsstellung.
+                </p>
+                <p>
+                  <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) sowie Art. 6 Abs. 1 lit. c DSGVO i.V.m. § 132 BAO (Erfüllung gesetzlicher Buchführungs- und Aufbewahrungspflichten).
+                </p>
+                <p>
+                  <strong>Weitergabe von Daten:</strong> Eine Übermittlung deiner Rechnungs- und Zahlungsdaten erfolgt ausschließlich an die abwickelnden Bankinstitute bzw. im Rahmen der gesetzlichen Verpflichtungen an die Finanzverwaltung oder Steuerberatung.
+                </p>
+                <p>
+                  <strong>Speicherdauer:</strong> Rechnungs- und Buchhaltungsbelege werden gemäß § 132 BAO für die Dauer von 7 Jahren ab Ende des Kalenderjahres aufbewahrt.
+                </p>
+              </div>
+            </section>
+
+            {/* 5. Social Media Links */}
+            <section className="ql-legal-section">
+              <h2 className="ql-legal-title">5. Links zu Social-Media-Profilen (Instagram, LinkedIn)</h2>
               <div className="ql-legal-content">
                 <p>
                   Auf dieser Website sind Verlinkungen zu meinen Profilen bei Instagram und LinkedIn gesetzt. Hierbei handelt es sich um normale Hyperlinks und keine dynamischen Social-Plugins oder Tracking-Pixel. Erst wenn du aktiv auf das entsprechende Symbol oder den Link klickst, wirst du auf die externe Seite weitergeleitet.
@@ -183,9 +202,9 @@ export default function Datenschutz() {
               </div>
             </section>
 
-            {/* 5. Cookies */}
+            {/* 6. Cookies */}
             <section className="ql-legal-section">
-              <h2 className="ql-legal-title">5. Cookies</h2>
+              <h2 className="ql-legal-title">6. Cookies</h2>
               <div className="ql-legal-content">
                 <p>
                   Diese Website nutzt ausschließlich technisch erforderliche Funktionen zur Auslieferung der statischen Seiten. Es werden keine zustimmungspflichtigen Tracking-, Analyse- oder Marketing-Cookies eingesetzt.
@@ -193,9 +212,9 @@ export default function Datenschutz() {
               </div>
             </section>
 
-            {/* 6. Betroffenenrechte */}
+            {/* 7. Betroffenenrechte */}
             <section className="ql-legal-section ql-legal-section--last">
-              <h2 className="ql-legal-title">6. Deine Rechte</h2>
+              <h2 className="ql-legal-title">7. Deine Rechte</h2>
               <div className="ql-legal-content">
                 <p>Nach den Bestimmungen der DSGVO stehen dir bezüglich der dich betreffenden Daten folgende Rechte zu:</p>
                 <ul>

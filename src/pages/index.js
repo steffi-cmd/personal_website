@@ -79,7 +79,7 @@ export default function Home() {
 
           <a href="#home" className="ql-navbar__brand" onClick={closeMenu}>
             <span className="ql-navbar__brand-name">Dr. Stefanie Schinnerl</span>
-            <span className="ql-navbar__brand-sub">Business, Body &amp; Mind</span>
+            <span className="ql-navbar__brand-sub">BUSINESS ✦ BODY ✦ MIND</span>
           </a>
 
           <nav className="ql-navbar__nav--right" aria-label="Hauptnavigation rechts">
