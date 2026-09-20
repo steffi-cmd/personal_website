@@ -1,41 +1,79 @@
-# Website
+# Dr. Stefanie Schinnerl – Website (Business, Body & Mind)
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Moderne, performante und rechtssichere Website für **Dr. Stefanie Schinnerl: Holistic Mentoring & Health Coaching**, gebaut mit [Astro](https://astro.build).
 
-## Installation
+---
 
-```bash
-yarn
-```
-
-## Local Development
+## 🚀 Lokale Entwicklung
 
 ```bash
-yarn start
+# Abhängigkeiten installieren
+npm install
+
+# Lokalen Entwicklungsserver starten
+npm run dev
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Der Entwicklungsserver startet unter `http://localhost:4321/steffi_personal_website/`.  
+Änderungen an Komponenten oder Seiten werden durch Hot-Module-Reloading sofort im Browser aktualisiert.
 
-## Build
+---
+
+## 🏗️ Projektstruktur & Aufbau
+
+```text
+├── public/
+│   ├── img/                   # Alle optimierten Fotos & Assets (82+ Bilder)
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── Footer.astro       # Globaler Footer mit Social Links & Rechtlichem
+│   │   └── LookbookGallery.astro # Touch-fähige, optimierte Galerie
+│   ├── layouts/
+│   │   └── Layout.astro       # Split-Navbar, Responsive Mobile-Drawer & SEO-Tags
+│   ├── pages/
+│   │   ├── index.astro        # Startseite mit allen Sektionen (Hero, Ansatz, Angebote, Über mich, B2B, Ablauf, Galerie, Kontakt)
+│   │   ├── impressum.astro    # Rechtliches Impressum (§ 5 ECG / § 25 Mediengesetz Österreich)
+│   │   └── datenschutz.astro  # DSGVO-konforme Datenschutzerklärung
+│   └── styles/
+│       └── custom.css         # Vollständiges, edles Designsystem
+├── scripts/
+│   ├── dev.mjs                # Lokaler Dev-Starter
+│   └── optimize-images.mjs    # HEIC-Konverter & automatische Bildkomprimierung
+├── astro.config.mjs           # Astro-Konfiguration (GitHub Pages Base-Path)
+└── package.json
+```
+
+---
+
+## 🖼️ Bilder tauschen & automatisch optimieren
+
+Alle Fotos liegen im Ordner:
+📁 `public/img/`
+
+* **Neues Foto einbinden:** Bild in `public/img/` ablegen und in der jeweiligen Komponente (z. B. `src/pages/index.astro` oder `src/components/LookbookGallery.astro`) referenzieren.
+* **Bilder automatisch komprimieren & HEIC konvertieren:**
+  ```bash
+  npm run optimize-images
+  ```
+  *(Konvertiert iPhone-HEIC-Fotos in Web-JPEGs und komprimiert große DSLR-Dateien verlustarm auf optimale Ladezeiten).*
+
+---
+
+## 📦 Produktions-Build testen
 
 ```bash
-yarn build
+# Produktions-Build erzeugen
+npm run build
+
+# Gebaute Website lokal testen
+npm run preview
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+---
 
-## Deployment
+## 🚢 Automatisches Deployment (GitHub Pages)
 
-Using SSH:
+Die Website wird automatisch per **GitHub Actions** (`.github/workflows/deploy.yml`) gebaut und bereitgestellt, sobald Änderungen in den `main`-Branch fließen:
 
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+🌐 **Live-URL:** [https://steffi-cmd.github.io/steffi_personal_website/](https://steffi-cmd.github.io/steffi_personal_website/)

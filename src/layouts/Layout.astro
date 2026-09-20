@@ -1,0 +1,186 @@
+---
+import '../styles/custom.css';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  showNavLinks?: boolean;
+}
+
+const {
+  title = "Dr. Stefanie Schinnerl | Holistic Mentoring & Health Coaching",
+  description = "Dr. Stefanie Schinnerl: Holistic Mentoring, Health Coaching & Keynote Speaking für ambitionierte Frauen.",
+  showNavLinks = true
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL 
+  : `${import.meta.env.BASE_URL}/`;
+
+const homeLink = `${base}#home`;
+const ansatzLink = `${base}#mein-ansatz`;
+const angeboteLink = `${base}#angebote`;
+const ueberMichLink = `${base}#ueber-mich`;
+const b2bLink = `${base}#b2b`;
+const einblickeLink = `${base}#einblicke`;
+const kontaktLink = `${base}#kontakt`;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/x-icon" href={`${base}favicon.ico`} />
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="de_AT" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ——— NAVBAR (Split Navigation: Left - Brand Center - Right) ——— -->
+    <header class="ql-navbar" id="navbar">
+      <div class="ql-navbar__inner">
+        {showNavLinks && (
+          <nav class="ql-navbar__nav--left" aria-label="Hauptnavigation links">
+            <ul class="ql-navbar__links">
+              <li><a href={homeLink}>Home</a></li>
+              <li><a href={ansatzLink}>Mein Ansatz</a></li>
+              <li><a href={angeboteLink}>Angebote</a></li>
+              <li><a href={ueberMichLink}>Über mich</a></li>
+            </ul>
+          </nav>
+        )}
+
+        <a href={homeLink} class="ql-navbar__brand">
+          <span class="ql-navbar__brand-name">Dr. Stefanie Schinnerl</span>
+          <span class="ql-navbar__brand-sub">BUSINESS ✦ BODY ✦ MIND</span>
+        </a>
+
+        {showNavLinks && (
+          <nav class="ql-navbar__nav--right" aria-label="Hauptnavigation rechts">
+            <ul class="ql-navbar__links">
+              <li><a href={b2bLink}>B2B &amp; Keynotes</a></li>
+              <li><a href={einblickeLink}>Einblicke</a></li>
+              <li><a href={kontaktLink} class="ql-navbar__link-cta">Kontakt</a></li>
+            </ul>
+          </nav>
+        )}
+
+        {/* Mobile Hamburger */}
+        {showNavLinks && (
+          <button
+            type="button"
+            class="ql-navbar__toggle"
+            id="nav-toggle"
+            aria-label="Menü öffnen"
+            aria-expanded="false"
+          >
+            <span class="ql-navbar__toggle-icon"></span>
+          </button>
+        )}
+      </div>
+
+      {/* Mobile Drawer */}
+      {showNavLinks && (
+        <div class="ql-navbar__mobile-drawer" id="mobile-drawer">
+          <ul class="ql-navbar__mobile-links">
+            <li><a href={homeLink} class="ql-mobile-link">Home</a></li>
+            <li><a href={ansatzLink} class="ql-mobile-link">Mein Ansatz</a></li>
+            <li><a href={angeboteLink} class="ql-mobile-link">Angebote &amp; Coaching</a></li>
+            <li><a href={ueberMichLink} class="ql-mobile-link">Über mich &amp; Expertise</a></li>
+            <li><a href={b2bLink} class="ql-mobile-link">B2B &amp; Corporate Health</a></li>
+            <li><a href={einblickeLink} class="ql-mobile-link">Einblicke</a></li>
+            <li><a href={kontaktLink} class="ql-mobile-link ql-navbar__mobile-cta">Erstgespräch anfragen</a></li>
+          </ul>
+        </div>
+      )}
+    </header>
+
+    <slot />
+
+    <Footer />
+
+    <script>
+      function initLayout() {
+        const navbar = document.getElementById('navbar');
+        const toggle = document.getElementById('nav-toggle');
+        const drawer = document.getElementById('mobile-drawer');
+        const mobileLinks = document.querySelectorAll('.ql-mobile-link');
+
+        // Scroll listener for sticky navbar
+        let ticking = false;
+        const handleScroll = () => {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              if (window.scrollY > 60) {
+                navbar?.classList.add('ql-navbar--scrolled');
+              } else {
+                navbar?.classList.remove('ql-navbar--scrolled');
+              }
+              ticking = false;
+            });
+            ticking = true;
+          }
+        };
+        handleScroll();
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        // Mobile drawer toggle
+        const closeMenu = () => {
+          drawer?.classList.remove('ql-navbar__mobile-drawer--open');
+          toggle?.classList.remove('ql-navbar__toggle--open');
+          toggle?.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('no-scroll');
+        };
+
+        if (toggle && drawer) {
+          toggle.addEventListener('click', () => {
+            const isOpen = drawer.classList.toggle('ql-navbar__mobile-drawer--open');
+            toggle.classList.toggle('ql-navbar__toggle--open', isOpen);
+            toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            document.body.classList.toggle('no-scroll', isOpen);
+          });
+
+          mobileLinks.forEach((link) => {
+            link.addEventListener('click', closeMenu);
+          });
+        }
+
+        // Scroll Reveal Observer
+        if (typeof IntersectionObserver !== 'undefined') {
+          const reveals = document.querySelectorAll('.ql-reveal');
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('ql-reveal--visible');
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
+          );
+
+          reveals.forEach((el) => observer.observe(el));
+        }
+      }
+
+      initLayout();
+      document.addEventListener('astro:page-load', initLayout);
+    </script>
+  </body>
+</html>

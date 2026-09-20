@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL 
+  : `${import.meta.env.BASE_URL}/`;
+
+const homeLink = `${base}`;
+const kontaktLink = `${base}#kontakt`;
+---
+
+<Layout 
+  title="Impressum | Dr. Stefanie Schinnerl"
+  description="Impressum und rechtliche Angaben gemäß § 5 ECG und § 25 Mediengesetz von Dr. Stefanie Schinnerl."
+  showNavLinks={true}
+>
+  <main class="ql-legal-page">
+    <div class="ql-legal-container">
+      {/* Header */}
+      <div class="ql-legal-header">
+        <span class="ql-kicker">RECHTLICHE HINWEISE</span>
+        <h1 class="ql-headline">Impressum</h1>
+        <p class="ql-subtext">
+          Angaben gemäß § 5 E-Commerce-Gesetz (ECG) und § 25 Abs. 5 Mediengesetz (MedienG)
+        </p>
+      </div>
+
+      <div class="ql-legal-card">
+        {/* Medieninhaberin */}
+        <section class="ql-legal-section">
+          <h2 class="ql-legal-title">Medieninhaberin &amp; Diensteanbieterin</h2>
+          <div class="ql-legal-content">
+            <p class="ql-legal-highlight">
+              <strong>Dr. Stefanie Schinnerl, MSc (WU)</strong>
+            </p>
+            <p>
+              c/o The whole Space<br />
+              Nußdorfer Straße 52/5<br />
+              1090 Wien<br />
+              Österreich
+            </p>
+          </div>
+        </section>
+
+        {/* Kontakt */}
+        <section class="ql-legal-section">
+          <h2 class="ql-legal-title">Kontakt</h2>
+          <div class="ql-legal-content">
+            <p>
+              <strong>E-Mail:</strong>{' '}
+              <a href="mailto:stefanie.schinnerl.office@gmail.com" class="ql-legal-link">
+                stefanie.schinnerl.office@gmail.com
+              </a>
+            </p>
+            <p>
+              <strong>Kontaktformular:</strong>{' '}
+              <a href={kontaktLink} class="ql-legal-link">
+                Direkt zum Kontaktformular
+              </a>
+            </p>
+          </div>
+        </section>
+
+        {/* Tätigkeitsbereich */}
+        <section class="ql-legal-section">
+          <h2 class="ql-legal-title">Tätigkeitsbereich</h2>
+          <div class="ql-legal-content">
+            <p>
+              Selbstständige Unterrichts- und Trainingstätigkeit in den Bereichen Bewegung, Fitness und Vitalität sowie Durchführung von Vorträgen und Workshops.
+            </p>
+          </div>
+        </section>
+
+        {/* Haftung für Inhalte und Verweise auf Dritte */}
+        <section class="ql-legal-section">
+          <h2 class="ql-legal-title">Haftung &amp; Verweise auf Dritte</h2>
+          <div class="ql-legal-content">
+            <p>
+              <strong>Haftung für eigene Inhalte:</strong> Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.
+            </p>
+            <p>
+              <strong>Verweise und Links auf Webseiten Dritter:</strong> Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte kein Einfluss besteht. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden derartige Links umgehend entfernt.
+            </p>
+          </div>
+        </section>
+
+        {/* Urheberrecht */}
+        <section class="ql-legal-section ql-legal-section--last">
+          <h2 class="ql-legal-title">Urheberrechtshinweis</h2>
+          <div class="ql-legal-content">
+            <p>
+              Alle Inhalte dieser Webseite (Bilder, Fotos, Texte, Videos) unterliegen dem Urheberrecht. Die unerlaubte Nutzung, Vervielfältigung oder Weitergabe von Teilen oder des gesamten Inhalts ist untersagt.
+            </p>
+          </div>
+        </section>
+
+        {/* Back Button */}
+        <div class="ql-legal-actions">
+          <a href={homeLink} class="ql-btn ql-btn--primary">
+            ← Zurück zur Startseite
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
