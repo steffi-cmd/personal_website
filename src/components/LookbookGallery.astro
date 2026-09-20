@@ -1,0 +1,408 @@
+---
+interface ImageItem {
+  id: number;
+  src: string;
+  alt: string;
+  position?: string;
+}
+
+const base = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL 
+  : `${import.meta.env.BASE_URL}/`;
+
+const resolveAsset = (path: string) => {
+  if (!path) return '';
+  if (path.startsWith('http://') || path.startsWith('https://')) return path;
+  const cleanBase = base.endsWith('/') ? base.slice(0, -1) : base;
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  return `${cleanBase}${cleanPath}`;
+};
+
+const DEFAULT_GALLERY_IMAGES: ImageItem[] = [
+  { id: 1, src: '/img/A7R00811.jpg', alt: 'Dr. Stefanie Schinnerl: Balance, Fokus und Erdung', position: 'center 20%' },
+  { id: 2, src: '/img/A7R00625 copy.jpg', alt: 'Individuelle Betreuung und persönliches Alignment', position: 'center 15%' },
+  { id: 3, src: '/img/A7R00615.jpg', alt: 'Klarheit, Bewegungsimpulse und Vitalität', position: 'center 20%' },
+  { id: 4, src: '/img/A7R00869.jpg', alt: 'Präzise Anleitung und gemeinsame Bewegung', position: 'center 25%' },
+  { id: 5, src: '/img/A7R00657.jpg', alt: 'Innere Ruhe, Achtsamkeit und mentale Klarheit', position: 'center 35%' },
+  { id: 6, src: '/img/A7R00963.jpg', alt: 'Kraftvolles Training mit Freude und Empathie', position: 'center 15%' },
+  { id: 7, src: '/img/A7R00725.jpg', alt: 'Kraftvolle Haltung, Stabilität und Souveränität', position: 'center 15%' },
+  { id: 8, src: '/img/A7R00744.jpg', alt: 'Gemeinsame Dynamik und Gruppenenergie in der Natur', position: '45% 40%' },
+  { id: 9, src: '/img/A7R00795.jpg', alt: 'Lebensfreude, Leichtigkeit und Verbindung', position: '65% 25%' },
+  { id: 10, src: '/img/A7R00901.jpg', alt: '1:1 Coaching, präzise Haltungsführung und Freude am Movement', position: 'center 20%' },
+  { id: 11, src: '/img/A7R00998.jpg', alt: 'Einfühlsames Mentoring, Assist und ganzheitliche Begleitung', position: 'center 15%' },
+];
+
+const images = DEFAULT_GALLERY_IMAGES.map(img => ({
+  ...img,
+  src: resolveAsset(img.src)
+}));
+---
+
+<div class="ql-lookbook-container" data-gallery-images={JSON.stringify(images)}>
+  <div class="ql-section-header" style="margin-bottom: 2.8rem;">
+    <span class="ql-kicker">GALERIE</span>
+    <h2 class="ql-headline">Einblicke &amp; Impressionen</h2>
+  </div>
+
+  <!-- 3-Slide Stage -->
+  <div class="ql-lookbook-stage">
+    <!-- Left Preview Slide -->
+    <div class="ql-lookbook-slide ql-lookbook-slide--left">
+      <img
+        src={images[images.length - 1].src}
+        alt={images[images.length - 1].alt}
+        style={`object-position: ${images[images.length - 1].position || 'center'};`}
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="ql-lookbook-overlay"></div>
+    </div>
+
+    <!-- Left Arrow Button -->
+    <button
+      type="button"
+      class="ql-lookbook-nav ql-lookbook-nav--prev"
+      aria-label="Vorheriges Foto"
+    >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+        <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </button>
+
+    <!-- Center Active Slide -->
+    <div class="ql-lookbook-slide ql-lookbook-slide--center">
+      <img
+        src={images[0].src}
+        alt={images[0].alt}
+        style={`object-position: ${images[0].position || 'center'};`}
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+    <!-- Right Arrow Button -->
+    <button
+      type="button"
+      class="ql-lookbook-nav ql-lookbook-nav--next"
+      aria-label="Nächstes Foto"
+    >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+        <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </button>
+
+    <!-- Right Preview Slide -->
+    <div class="ql-lookbook-slide ql-lookbook-slide--right">
+      <img
+        src={images[1].src}
+        alt={images[1].alt}
+        style={`object-position: ${images[1].position || 'center'};`}
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="ql-lookbook-overlay"></div>
+    </div>
+  </div>
+
+  <!-- Indicator Dots -->
+  <div class="ql-lookbook-dots">
+    {images.map((_, idx) => (
+      <button
+        type="button"
+        class={`ql-lookbook-dot ${idx === 0 ? 'is-active' : ''}`}
+        data-index={idx}
+        aria-label={`Gehe zu Bild ${idx + 1}`}
+      />
+    ))}
+  </div>
+</div>
+
+<style>
+  .ql-lookbook-container {
+    width: 100%;
+    padding: 95px 0 105px;
+    background-color: var(--color-bg);
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(44, 41, 39, 0.05);
+  }
+
+  .ql-lookbook-stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 2.2rem;
+  }
+
+  .ql-lookbook-slide {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-sm, 4px);
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    user-select: none;
+    background: var(--color-bg-alt, #EDE8E1);
+    transform: translateZ(0);
+  }
+
+  .ql-lookbook-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: all 0.4s ease;
+  }
+
+  .ql-lookbook-slide--center {
+    width: 400px;
+    height: 540px;
+    z-index: 3;
+    box-shadow: 0 22px 55px -12px rgba(44, 41, 39, 0.16);
+    transform: scale(1);
+  }
+
+  .ql-lookbook-slide--left,
+  .ql-lookbook-slide--right {
+    width: 320px;
+    height: 470px;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0.42;
+    transform: scale(0.94);
+    transition: all 0.5s ease;
+  }
+
+  .ql-lookbook-slide--left:hover,
+  .ql-lookbook-slide--right:hover {
+    opacity: 0.65;
+    transform: scale(0.96);
+  }
+
+  .ql-lookbook-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(250, 247, 242, 0.12);
+    pointer-events: none;
+  }
+
+  .ql-lookbook-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(44, 41, 39, 0.12);
+    color: var(--color-dark, #2C2927);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(44, 41, 39, 0.08);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px);
+  }
+
+  .ql-lookbook-nav:hover {
+    background: #FFFFFF;
+    transform: translateY(-50%) scale(1.08);
+    box-shadow: 0 8px 26px rgba(44, 41, 39, 0.15);
+    border-color: var(--color-accent, #B39F88);
+  }
+
+  .ql-lookbook-nav--prev {
+    left: calc(50% - 240px);
+  }
+
+  .ql-lookbook-nav--next {
+    right: calc(50% - 240px);
+  }
+
+  .ql-lookbook-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 2.4rem;
+  }
+
+  .ql-lookbook-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(44, 41, 39, 0.2);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .ql-lookbook-dot.is-active {
+    background: var(--color-accent, #B39F88);
+    width: 26px;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 1024px) {
+    .ql-lookbook-container {
+      padding: 80px 0 85px;
+    }
+    .ql-lookbook-slide--center {
+      width: 320px;
+      height: 450px;
+    }
+    .ql-lookbook-slide--left,
+    .ql-lookbook-slide--right {
+      width: 240px;
+      height: 380px;
+    }
+    .ql-lookbook-nav--prev {
+      left: calc(50% - 190px);
+    }
+    .ql-lookbook-nav--next {
+      right: calc(50% - 190px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .ql-lookbook-container {
+      padding: 65px 0 70px;
+    }
+    .ql-lookbook-slide--left,
+    .ql-lookbook-slide--right {
+      display: none;
+    }
+    .ql-lookbook-slide--center {
+      width: 85vw;
+      max-width: 340px;
+      height: 460px;
+    }
+    .ql-lookbook-nav--prev {
+      left: 12px;
+    }
+    .ql-lookbook-nav--next {
+      right: 12px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .ql-lookbook-slide--center {
+      width: 88vw;
+      height: 400px;
+    }
+  }
+</style>
+
+<script>
+  function initLookbook() {
+    document.querySelectorAll('.ql-lookbook-container').forEach((container) => {
+      if (container.hasAttribute('data-ready')) return;
+      container.setAttribute('data-ready', 'true');
+
+      const raw = container.getAttribute('data-gallery-images') || '[]';
+      const images = JSON.parse(raw);
+      if (!images || images.length === 0) return;
+
+      const total = images.length;
+      let currentIndex = 0;
+      let timer: number | null = null;
+      let isPaused = false;
+
+      const centerImg = container.querySelector('.ql-lookbook-slide--center img') as HTMLImageElement;
+      const leftImg = container.querySelector('.ql-lookbook-slide--left img') as HTMLImageElement;
+      const rightImg = container.querySelector('.ql-lookbook-slide--right img') as HTMLImageElement;
+      const leftSlide = container.querySelector('.ql-lookbook-slide--left');
+      const rightSlide = container.querySelector('.ql-lookbook-slide--right');
+      const prevBtn = container.querySelector('.ql-lookbook-nav--prev');
+      const nextBtn = container.querySelector('.ql-lookbook-nav--next');
+      const dots = container.querySelectorAll('.ql-lookbook-dot');
+
+      function update(index: number) {
+        currentIndex = (index + total) % total;
+        const prevIdx = (currentIndex - 1 + total) % total;
+        const nextIdx = (currentIndex + 1) % total;
+
+        if (centerImg) {
+          centerImg.src = images[currentIndex].src;
+          centerImg.alt = images[currentIndex].alt;
+          centerImg.style.objectPosition = images[currentIndex].position || 'center';
+        }
+        if (leftImg) {
+          leftImg.src = images[prevIdx].src;
+          leftImg.alt = images[prevIdx].alt;
+          leftImg.style.objectPosition = images[prevIdx].position || 'center';
+        }
+        if (rightImg) {
+          rightImg.src = images[nextIdx].src;
+          rightImg.alt = images[nextIdx].alt;
+          rightImg.style.objectPosition = images[nextIdx].position || 'center';
+        }
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('is-active', i === currentIndex);
+        });
+      }
+
+      function next() {
+        update(currentIndex + 1);
+      }
+
+      function prev() {
+        update(currentIndex - 1);
+      }
+
+      function startTimer() {
+        stopTimer();
+        timer = window.setInterval(() => {
+          if (!isPaused) next();
+        }, 4500);
+      }
+
+      function stopTimer() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); startTimer(); });
+      if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); startTimer(); });
+      if (leftSlide) leftSlide.addEventListener('click', () => { prev(); startTimer(); });
+      if (rightSlide) rightSlide.addEventListener('click', () => { next(); startTimer(); });
+
+      dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+          const idx = parseInt(dot.getAttribute('data-index') || '0', 10);
+          update(idx);
+          startTimer();
+        });
+      });
+
+      container.addEventListener('mouseenter', () => { isPaused = true; });
+      container.addEventListener('mouseleave', () => { isPaused = false; });
+
+      // Touch swipe
+      let touchStartX = 0;
+      let touchEndX = 0;
+      container.addEventListener('touchstart', (e: any) => {
+        touchStartX = e.targetTouches[0].clientX;
+      }, { passive: true });
+      container.addEventListener('touchend', (e: any) => {
+        touchEndX = e.changedTouches[0].clientX;
+        const diff = touchStartX - touchEndX;
+        if (diff > 45) { next(); startTimer(); }
+        else if (diff < -45) { prev(); startTimer(); }
+      }, { passive: true });
+
+      startTimer();
+    });
+  }
+
+  initLookbook();
+  document.addEventListener('astro:page-load', initLookbook);
+</script>
