@@ -1523,7 +1523,7 @@ img {
   margin-top: 2rem;
 }
 
-.ql-contact__form input,
+.ql-contact__form input:not([type="checkbox"]),
 .ql-contact__form select,
 .ql-contact__form textarea {
   font-family: var(--font-sans);
@@ -1543,7 +1543,7 @@ img {
   min-height: 130px;
 }
 
-.ql-contact__form input:focus,
+.ql-contact__form input:not([type="checkbox"]):focus,
 .ql-contact__form select:focus,
 .ql-contact__form textarea:focus {
   outline: none;
@@ -1551,7 +1551,7 @@ img {
   box-shadow: 0 0 0 3px rgba(179, 159, 136, 0.15);
 }
 
-.ql-contact__form input::placeholder,
+.ql-contact__form input:not([type="checkbox"])::placeholder,
 .ql-contact__form textarea::placeholder {
   color: var(--color-muted);
   opacity: 0.8;
@@ -1591,10 +1591,11 @@ img {
   color: var(--color-muted);
   cursor: pointer;
   margin: 0.4rem 0 0.6rem;
-  user-select: none;
 }
 
 .ql-contact__consent input[type="checkbox"] {
+  -webkit-appearance: checkbox !important;
+  appearance: auto !important;
   width: 1.15rem !important;
   height: 1.15rem !important;
   min-height: auto !important;
@@ -1619,6 +1620,34 @@ img {
 .ql-contact__form .ql-btn {
   margin-top: 0.5rem;
   width: 100%;
+}
+
+.ql-contact__status {
+  padding: 0.95rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.ql-contact__status--info {
+  background-color: rgba(179, 159, 136, 0.12);
+  color: var(--color-dark);
+  border: 1px solid rgba(179, 159, 136, 0.35);
+}
+
+.ql-contact__status--success {
+  background-color: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.ql-contact__status--error {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
 }
 
 /* ==========================================================================

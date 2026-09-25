@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Tiefes, warmes Anthrazit (Quiet Luxury Charcoal) -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#262321"/>
+      <stop offset="100%" stop-color="#1A1817"/>
+    </linearGradient>
+
+    <!-- Champagner-Gold Farbverlauf -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DFCFC0"/>
+      <stop offset="50%" stop-color="#B39F88"/>
+      <stop offset="100%" stop-color="#9E8A73"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Abgerundetes Luxus-Badge -->
+  <rect width="64" height="64" rx="16" fill="url(#bgGrad)"/>
+  
+  <!-- Zarte Gold-Kontur -->
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="none" stroke="#B39F88" stroke-width="1.2" stroke-opacity="0.35"/>
+
+  <!-- Ikonischer 4-Zack-Zierstern (✦) aus dem Marken-Claim BUSINESS ✦ BODY ✦ MIND -->
+  <path d="M 32 9 Q 32 32 55 32 Q 32 32 32 55 Q 32 32 9 32 Q 32 32 32 9 Z" fill="url(#goldGrad)"/>
+
+  <!-- Subtiler Glanzpunkt im Zentrum -->
+  <circle cx="32" cy="32" r="2.2" fill="#FAF7F2" fill-opacity="0.9"/>
+</svg>
