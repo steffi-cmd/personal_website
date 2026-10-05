@@ -1368,6 +1368,24 @@ img {
   margin: 0 auto;
 }
 
+.ql-b2b__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 980px;
+  margin: 0 auto;
+  align-items: stretch;
+  text-align: left;
+}
+
+@media (max-width: 860px) {
+  .ql-b2b__grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    gap: 1.5rem;
+  }
+}
+
 /* ==========================================================================
    ⑥ ABLAUF [Tone A: #FAF7F2]
    ========================================================================== */
