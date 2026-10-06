@@ -1402,6 +1402,66 @@ img {
   text-align: center;
 }
 
+.ql-process__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2.2rem;
+  border-bottom: 1px solid rgba(179, 159, 136, 0.22);
+  max-width: 520px;
+  margin: 1.8rem auto 2.8rem;
+  flex-wrap: wrap;
+}
+
+.ql-process__tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.4rem 0.85rem;
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 450;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: color 0.2s ease;
+  touch-action: manipulation;
+}
+
+.ql-process__tab:hover {
+  color: var(--color-dark);
+}
+
+.ql-process__tab.is-active {
+  color: var(--color-dark);
+  font-weight: 600;
+}
+
+.ql-process__tab.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+.ql-process__panel {
+  animation: qlFadeIn 0.35s ease;
+}
+
+@keyframes qlFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .ql-process__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1664,6 +1724,34 @@ img {
   background-color: #fef2f2;
   color: #991b1b;
   border: 1px solid #fecaca;
+}
+
+.ql-contact__direct {
+  margin-top: 1.85rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(179, 159, 136, 0.22);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.ql-contact__direct-link {
+  color: var(--color-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(179, 159, 136, 0.5);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.ql-contact__direct-link:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
 }
 
 /* ==========================================================================
