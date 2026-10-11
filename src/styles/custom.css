@@ -418,6 +418,16 @@ img {
   display: block;
 }
 
+/* Marken-Akzent: Zierstern ✦ in #B39F88 (Visitenkarten-Akzent) */
+.ql-sparkle {
+  color: var(--color-accent);
+  display: inline-block;
+  font-style: normal;
+  font-weight: 400;
+  vertical-align: 0.02em;
+  line-height: 1;
+}
+
 .ql-navbar__brand:hover {
   opacity: 0.82;
 }
@@ -1786,11 +1796,11 @@ img {
 .ql-footer__tagline {
   font-family: var(--font-sans);
   font-size: 0.82rem;
-  color: var(--color-accent);
-  letter-spacing: 0.06em;
+  color: #D8CFC4;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 400;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .ql-footer__nav {
@@ -2182,6 +2192,12 @@ img {
 
   .ql-atmospheric-banner__content {
     padding: 0 1.25rem;
+  }
+
+  .ql-atmospheric-banner__sub {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    line-height: 1.6;
   }
 
   .ql-process__card {
