@@ -76,4 +76,4 @@ npm run preview
 
 Die Website wird automatisch per **GitHub Actions** (`.github/workflows/deploy.yml`) gebaut und bereitgestellt, sobald Änderungen in den `main`-Branch fließen:
 
-🌐 **Live-URL:** [https://steffi-cmd.github.io/steffi_personal_website/](https://steffi-cmd.github.io/steffi_personal_website/)
+🌐 **Live-URL:** [https://stefanieschinnerl.com/](https://stefanieschinnerl.com/)
