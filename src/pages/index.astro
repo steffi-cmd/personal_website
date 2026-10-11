@@ -13,6 +13,8 @@ const resolveAsset = (path: string) => {
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   return `${cleanBase}${cleanPath}`;
 };
+
+const web3formsAccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '';
 ---
 
 <Layout
@@ -752,7 +754,7 @@ const resolveAsset = (path: string) => {
         </div>
 
         <form class="ql-contact__form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="df6320a6-7b41-4abd-b1a7-fbfc6fae85fc" />
+          <input type="hidden" name="access_key" value={web3formsAccessKey} />
           <input type="hidden" name="from_name" value="Dr. Stefanie Schinnerl Website" />
           {/* Honeypot Bot-Falle (für echte Nutzer unsichtbar, fängt automatisierte Spam-Bots ab) */}
           <input type="checkbox" name="botcheck" class="ql-contact__honeypot" style="display: none;" />
